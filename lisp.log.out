@@ -1,0 +1,20 @@
+Z-Chaff Version: zChaff 2007.3.12
+Solving lisp.log.cnf ......
+Decision: 0/421	Time: 0.366092/86400Decision: 0/421	Time: 0.408148/86400Decision: 0/421	Time: 0.459275/86400Decision: 0/421	Time: 0.507746/86400Decision: 0/421	Time: 0.55475/86400Decision: 0/421	Time: 0.604004/86400Decision: 0/421	Time: 0.645416/86400Decision: 0/421	Time: 0.710254/86400Decision: 0/421	Time: 0.757224/86400Decision: 0/421	Time: 0.815026/86400Decision: 0/421	Time: 0.865346/86400Decision: 0/421	Time: 0.915289/86400Decision: 0/421	Time: 0.97131/86400Decision: 0/421	Time: 1.03553/86400Decision: 0/421	Time: 1.09825/86400Decision: 0/421	Time: 1.16584/86400Decision: 0/421	Time: 1.23592/86400Decision: 0/421	Time: 1.3079/86400Decision: 0/421	Time: 1.37036/86400Decision: 0/421	Time: 1.43468/86400Decision: 0/421	Time: 1.5167/86400Decision: 0/421	Time: 1.58536/86400Decision: 0/421	Time: 1.64641/86400Decision: 0/421	Time: 1.72485/86400Decision: 0/421	Time: 1.81187/86400Decision: 0/421	Time: 1.8872/86400Decision: 0/421	Time: 1.96975/86400Decision: 0/421	Time: 2.05026/86400Decision: 2/421	Time: 2.19098/86400Decision: 2/421	Time: 2.2716/86400Decision: 2/421	Time: 2.37227/86400Decision: 2/421	Time: 2.45409/86400Decision: 2/421	Time: 2.55901/86400Decision: 2/421	Time: 2.65493/86400Decision: 3/421	Time: 2.81929/86400Decision: 3/421	Time: 2.91128/86400Decision: 3/421	Time: 3.00906/86400Decision: 3/421	Time: 3.09874/86400Decision: 3/421	Time: 3.1895/86400Decision: 4/421	Time: 3.29617/86400Decision: 5/421	Time: 3.45463/86400Decision: 5/421	Time: 3.55928/86400Decision: 5/421	Time: 3.65974/86400
+Instance Unsatisfiable
+Random Seed Used				0
+Max Decision Level				16
+Num. of Decisions				46196
+( Stack + Vsids + Shrinking Decisions )		46158 + 38 + 0
+Original Num Variables				421
+Original Num Clauses				1117
+Original Num Literals				3483
+Added Conflict Clauses				39906
+Num of Shrinkings				0
+Deleted Conflict Clauses			15536
+Deleted Clauses					15536
+Added Conflict Literals				1346071
+Deleted (Total) Literals			715257
+Number of Implication				3642105
+Total Run Time					3.88866
+RESULT:	UNSAT

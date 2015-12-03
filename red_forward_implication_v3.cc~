@@ -1,0 +1,152 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  red_forward_implication_v3.cc
+ *
+ *    Description:  This function performs forward implication on a 1-3 input gate.
+ *                  The inputs and output are integer sets. It reads the values from
+ *                  logic tables.
+ *
+ *        Version:  1.0
+ *        Created:  3/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu <eejessie@sjtu.edu.cn>
+ *
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+#include "class/CircuitNode.h"     
+#include "class/HashTable.h" 
+#include "class/queue.h" 
+#include "lib/forward_implication.h"
+#include "function/print_circuit.h"
+#include "function/helper.h"
+
+using namespace std;
+//using namespace nameSpace_ATPG;
+
+
+extern ofstream redFILE0, redFILE1;
+extern vector<int> outputList;
+
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+void red_forward_implication_v3(map<int, CircuitNode> &masterNodeList, HashTable &implicationNodeList, int inLineNumber, bool inStuckAtValue) 
+{
+	map<int, CircuitNode>::iterator itrm, itrm1, itrm2;
+    set <int>::iterator itrs, itrs1;
+    vector<CircuitNode*>::iterator itrv, itrv1;
+    
+    // Set all the line values to X. This is important since we don't want
+    // the previous values affecting current simulation.
+    for (itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++) 
+	{
+		itrm->second.lineValue.clear();
+		if(itrm->second.gateType == 9)
+        	itrm->second.lineValue.insert(0);
+        else if(itrm->second.gateType == 10)
+        	itrm->second.lineValue.insert(1);
+        else
+        	itrm->second.lineValue.insert(X);
+        
+    }
+
+	itrm = masterNodeList.find(inLineNumber);
+	itrm->second.lineValue.clear();
+	itrm->second.lineValue.insert(inStuckAtValue);
+	
+    queue assign_list;
+    assign_list.push(inLineNumber);
+    
+    print_circuit(masterNodeList, redFILE1);
+    
+    while(!assign_list.empty())
+    {
+        int cnode = assign_list.pop();
+        redFILE1 << "cnode = "<<cnode<<endl;
+        itrm = masterNodeList.find(cnode);
+        for(itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++)
+        {
+            int fanout = (*itrv)->lineNumber;  
+            redFILE1 << "fanout = "<<fanout<<endl;
+            itrm1 = masterNodeList.find(fanout);
+            itrs = itrm1->second.lineValue.begin();
+            if(*itrs == 0 || *itrs == 1)
+                continue;
+                        
+            set <int> *gateVector;
+            int fanin_size = itrm1->second.pointFanIn.size();
+            itrv1 = itrm1->second.pointFanIn.begin();
+     //       redFILE1 << "first input: "<<(*itrv1)->lineNumber<<endl;
+       //     redFILE1 << "fanin_size = "<<fanin_size<<endl;
+            gateVector = new set <int>[fanin_size];                   
+            int num = 0;
+		    for(itrv1 = itrm1->second.pointFanIn.begin(); itrv1 != itrm1->second.pointFanIn.end(); itrv1++)
+		    {
+			    itrm2 = masterNodeList.find((*itrv1)->lineNumber);
+			    gateVector[num++] = itrm2->second.lineValue;
+		    }
+            set<int> tempSet;
+            switch (fanin_size) {
+                 case 1:
+                     tempSet = forwardImplication (itrm1->second.gateType, gateVector[0]);
+                     break;
+                 case 2:
+                     tempSet = forwardImplication (itrm1->second.gateType, gateVector[0], gateVector[1]);
+                     break;
+                 default:
+                     cerr << "This ATPG generator only works if # of inputs is less than 3." << endl;
+                     cerr << "this node = "<<itrm1->second.lineNumber<<endl;
+                     exit (0);
+                     break;
+            }
+            delete []gateVector;
+		    itrm1->second.lineValue.clear();
+            itrm1->second.lineValue = tempSet;
+            itrs1 = tempSet.begin();
+            if(*itrs1 != X)
+                assign_list.push(fanout);
+        }
+    }
+
+
+	//Put lines with value that is not X into "implicationNodeList".
+	for (itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++)
+	{
+		itrs = itrm->second.lineValue.begin();
+		if ((*itrs)!=4)
+		{
+			int res = implicationNodeList.Insert_Hash(itrm->second.lineNumber);
+			while(res == 0)
+				res = implicationNodeList.Insert_Hash(itrm->second.lineNumber);
+		}
+	}
+		
+
+}
+
+
+

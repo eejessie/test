@@ -1,0 +1,14 @@
+#ifndef _READ_CIRCUIT_H
+#define _READ_CIRCUIT_H
+
+
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <map>
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+
+void ReadCircuit_v2(ifstream &inFile, map<int, CircuitNode> &NodeList, vector<int> &inputList, vector<int> &outputList, int circuitIndex);
+
+#endif

@@ -1,0 +1,17 @@
+#ifndef _IMPLICATE_H
+#define _IMPLICATE_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "class/CircuitNode.h"
+#include "class/FaultList.h"
+
+void forward_imply(map<int, CircuitNode> &masterNodeList, int ef_node, vector<int> &unjust_gates, vector<int> &extra_unjust_gates, FaultList &wt_error, int flag, map<int, int> &record_values, map<int, map<int, int> > &path_values);
+void backward_imply(map<int, CircuitNode> &masterNodeList, int ef_node, vector<int> &unjust_gates, vector<int> &extra_unjust_gates, FaultList &wt_error, vector<int> &remaining_unjust_gates, int flag, map<int, int> &record_values, map<int, map<int, int> > &path_values);
+
+int path_propagation(map<int, CircuitNode> &masterNodeList, int side_input, int ef_node, FaultList &wt_error, vector<int> &remaining_unjust_gates, int flag, map<int, int> &record_values, map<int, map<int, int> > &path_values);
+
+#endif

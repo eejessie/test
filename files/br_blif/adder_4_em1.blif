@@ -1,0 +1,159 @@
+.model adder_4_em1
+.inputs in[0] in[1] in[2] in[3] in[4] in[5] in[6] in[7] in[8] in[9] in[10] \
+ in[11] in[12]
+.outputs out
+.names in[3] in[7] n14
+00 1
+.names in[3] in[7] n15
+11 1
+.names n14 n15 n16
+00 1
+.names in[2] in[6] n17
+00 1
+.names in[2] in[6] n18
+11 1
+.names in[1] in[5] n19
+00 1
+.names in[1] in[5] n20
+11 1
+.names in[0] in[4] n21
+11 1
+.names n20 n21 n22
+00 1
+.names n19 n22 n23
+00 1
+.names n18 n23 n24
+00 1
+.names n17 n24 n25
+00 1
+.names n16 n25 n26
+01 1
+.names n16 n25 n27
+10 1
+.names n26 n27 n28
+00 1
+.names in[11] n28 n29
+00 1
+.names n17 n18 n30
+00 1
+.names n23 n30 n31
+01 1
+.names n23 n30 n32
+10 1
+.names n31 n32 n33
+00 1
+.names in[10] n33 n34
+00 1
+.names in[10] n33 n35
+11 1
+.names n19 n20 n36
+00 1
+.names n21 n36 n37
+10 1
+.names n21 n36 n38
+01 1
+.names n37 n38 n39
+00 1
+.names in[9] n39 n40
+00 1
+.names in[9] n39 n41
+11 1
+.names in[0] in[4] n42
+00 1
+.names n21 n42 n43
+00 1
+.names in[8] n43 n44
+10 1
+.names n41 n44 n45
+00 1
+.names n40 n45 n46
+00 1
+.names n35 n46 n47
+00 1
+.names n34 n47 n48
+00 1
+.names n29 n48 n49
+01 1
+.names n15 n25 n50
+00 1
+.names n14 n50 n51
+00 1
+.names in[12] n51 n52
+01 1
+.names in[12] n51 n53
+10 1
+.names n52 n53 n54
+00 1
+.names n49 n54 n55
+00 1
+.names in[11] n28 n56
+11 1
+.names n52 n56 n57
+11 1
+.names n49 n57 n58
+10 1
+.names n29 n56 n59
+00 1
+.names n48 n59 n60
+00 1
+.names n34 n35 n61
+00 1
+.names n46 n61 n62
+10 1
+.names n46 n61 n63
+01 1
+.names n62 n63 n64
+00 1
+.names n40 n41 n65
+00 1
+.names n44 n65 n66
+10 1
+.names n44 n65 n67
+01 1
+.names n66 n67 n68
+00 1
+.names n64 n68 n69
+00 1
+.names n60 n69 n70
+01 1
+.names n55 n70 n71
+01 1
+.names n58 n71 n72
+01 1
+.names n35 n40 n73
+01 1
+.names n56 n73 n74
+01 1
+.names n54 n74 n75
+00 1
+.names in[8] n43 n76
+01 1
+.names n65 n76 n77
+00 1
+.names n40 n61 n78
+10 1
+.names n40 n61 n79
+01 1
+.names n78 n79 n80
+00 1
+.names n53 n56 n81
+00 1
+.names n48 n81 n82
+01 1
+.names n59 n73 n83
+10 1
+.names n59 n73 n84
+01 1
+.names n83 n84 n85
+00 1
+.names n77 n80 n86
+00 1
+.names n75 n86 n87
+01 1
+.names n82 n87 n88
+01 1
+.names n85 n88 n89
+01 1
+.names n72 n89 out
+00 0
+.end

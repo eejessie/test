@@ -1,0 +1,35 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  adjust_ln.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  11/08/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#ifndef CALL_ABC_H
+#define CALL_ABC_H 
+ 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+	int call_abc();
+
+#endif 
+

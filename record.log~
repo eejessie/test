@@ -1,0 +1,142 @@
+
+adder_16_brc_adder_16_em100
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 336
+Time for remove redundancies: 77.163
+Time for rewiring: 180.141
+whole runtime = 260.076
+Inter circuit size = 336
+Final circuit size = 247
+1. gate number:
+#AND: 37, #OR: 26, #INV: 25
+
+adder_16_brc_adder_16_em300
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 274
+Time for remove redundancies: 71.009
+Time for rewiring: 143.833
+whole runtime = 217.831
+Inter circuit size = 274
+Final circuit size = 205
+1. gate number:
+#AND: 29, #OR: 20, #INV: 21
+
+
+
+
+
+
+adder_16_brc_adder_16_em500
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 274
+Time for remove redundancies: 69.797
+Time for rewiring: 139.682
+whole runtime = 211.924
+Inter circuit size = 274
+Final circuit size = 205
+1. gate number:
+#AND: 29, #OR: 20, #INV: 21
+
+adder_16_brc_adder_16_em700
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 243
+Time for remove redundancies: 67.216
+Time for rewiring: 118.242
+whole runtime = 188.387
+Inter circuit size = 243
+Final circuit size = 184
+1. gate number:
+#AND: 25, #OR: 17, #INV: 19
+
+adder_16_brc_adder_16_em1000
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 243
+Time for remove redundancies: 62.584
+Time for rewiring: 120.16
+whole runtime = 185.676
+Inter circuit size = 243
+Final circuit size = 184
+1. gate number:
+#AND: 25, #OR: 17, #INV: 19
+
+adder_16_brc_adder_16_em4000
+0. gate number: 
+#AND: 123, #OR: 0, #INV: 140
+inter size = 181
+Time for remove redundancies: 50.308
+Time for rewiring: 79.211
+whole runtime = 132.003
+Inter circuit size = 181
+Final circuit size = 142
+1. gate number:
+#AND: 17, #OR: 11, #INV: 15
+
+cla_16_brc_adder_16_em100
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+inter size = 392
+Time for remove redundancies: 57.759
+Time for rewiring: 846.494
+whole runtime = 904.35
+Inter circuit size = 392
+Final circuit size = 312
+1. gate number:
+#AND: 46, #OR: 28, #INV: 59
+
+cla_16_brc_adder_16_em300
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+inter size = 325
+Time for remove redundancies: 70.172
+Time for rewiring: 705.405
+whole runtime = 775.666
+Inter circuit size = 325
+Final circuit size = 263
+1. gate number:
+#AND: 37, #OR: 22, #INV: 51
+
+cla_16_brc_adder_16_em500
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+inter size = 314
+
+cla_16_brc_adder_16_em700
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+
+cla_16_brc_adder_16_em1000
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+
+cla_16_brc_adder_16_em4000
+0. gate number: 
+#AND: 134, #OR: 0, #INV: 143
+
+ksa_16_brc_adder_16_em100
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186
+
+ksa_16_brc_adder_16_em300
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186
+
+ksa_16_brc_adder_16_em500
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186
+
+ksa_16_brc_adder_16_em700
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186
+
+ksa_16_brc_adder_16_em1000
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186
+
+ksa_16_brc_adder_16_em4000
+0. gate number: 
+#AND: 208, #OR: 0, #INV: 186

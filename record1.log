@@ -1,0 +1,13 @@
+
+wallace_8_brc_mtp_8_em100
+0. gate number: 
+#AND: 440, #OR: 0, #INV: 424
+inter size = 1264
+Time for remove redundancies: 990.698
+Time for rewiring: 50204.3
+whole runtime = 51206.2
+Inter circuit size = 1264
+Final circuit size = 1099
+1. gate number:
+#AND: 248, #OR: 81, #INV: 159
+

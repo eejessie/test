@@ -1,0 +1,233 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  upd_circuit.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  5/13/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi WU <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+#include "class/CircuitNode.h"         // This class stores information about each node in the circuit.
+#include "class/ConnFault.h"
+#include "class/FaultList.h"
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+using namespace std;
+using namespace nameSpace_ATPG;
+
+namespace nameSpace_ATPG {
+
+int upd_circuit(map<int, CircuitNode> &comNodeList, struct ConnFault cf, int destType, FaultList &fault, int maxLineNumber)
+{
+	map<int,CircuitNode>::iterator itrm, itrm1, itrm2;
+	set<int>::iterator itrs;
+	//itrm = comNodeList.end();
+	//itrm--;
+	
+	//cout<<"Before this update, there are "<<comNodeList.size()<<" nodes in comNodeList"<<endl;
+	//cout<<"S = "<<cf.src<<", D = "<<cf.dest<<", P = "<<cf.pola<<endl;
+	//addedNode1 is the node to extend the 2 inputs to 3 inputs;
+	//addedNode2 is the node to transform the connection fault to stuck-at fault;
+	//addedNode3 is the input to addedNode2.  
+	CircuitNode *addedNode1, *addedNode2, *addedNode3, *addedNode4, *addedNode5, *addedNode6;
+	addedNode1 = new CircuitNode(GT);
+	addedNode2 = new CircuitNode(GT);
+	addedNode3 = new CircuitNode(PI);
+	addedNode4 = new CircuitNode(GT);
+	addedNode5 = new CircuitNode(FB);
+	addedNode6 = new CircuitNode(FB);
+
+	int newID1 = maxLineNumber + 1;
+	//cout<<"newID1 = "<<newID1<<endl;
+	int newID2 = newID1 + 1;
+	int newID3 = newID2 + 1;
+	int newID4 = newID3 + 1;
+	int newID5 = newID4 + 1;
+	int newID6 = newID5 + 1;
+	fault.lineNumber =  newID3;
+
+	addedNode1->lineNumber = newID1;
+	addedNode1->listFanOut.insert(cf.dest);
+	addedNode1->numberFanIn = 2;
+	addedNode1->numberFanOut = 1;
+	itrm = comNodeList.find(cf.dest);
+	for(itrs=itrm->second.listFanIn.begin(); itrs!=itrm->second.listFanIn.end(); itrs++)
+	{
+		addedNode1->listFanIn.insert(*itrs);
+		itrm1 = comNodeList.find(*itrs);
+		itrm1->second.listFanOut.clear();
+		itrm1->second.listFanOut.insert(newID1);
+	}
+
+	itrm->second.listFanIn.clear();
+	itrm->second.listFanIn.insert(newID1);
+	itrm->second.listFanIn.insert(newID2);
+
+	addedNode2->lineNumber = newID2; 
+	addedNode2->listFanOut.insert(cf.dest);
+	addedNode2->listFanIn.insert(newID3);
+	addedNode2->numberFanIn = 2;
+	addedNode2->numberFanOut = 1;
+		
+	addedNode3->lineNumber = newID3; 
+	addedNode3->gateType = 0;
+	addedNode3->listFanOut.insert(newID2);
+	addedNode3->numberFanIn = 0;
+	addedNode3->numberFanOut = 1;
+
+	addedNode5->lineNumber = newID5;
+	addedNode5->gateType = G_BRNCH;
+	addedNode5->listFanIn.insert(cf.src);
+	addedNode5->numberFanIn = 1;
+	addedNode5->numberFanOut = 1;
+
+	addedNode6->lineNumber = newID6;
+	addedNode6->gateType = G_BRNCH;
+	addedNode6->listFanIn.insert(cf.src);
+	addedNode6->numberFanIn = 1;
+	addedNode6->numberFanOut = 1;
+	
+	itrm1 = comNodeList.find(cf.src);
+	for(itrs = itrm1->second.listFanOut.begin(); itrs!=itrm1->second.listFanOut.end(); itrs++)
+	{
+		addedNode6->listFanOut.insert(*itrs);
+		itrm2 = comNodeList.find(*itrs);
+		itrm2->second.listFanIn.erase(cf.src);
+		itrm2->second.listFanIn.insert(newID6);
+	}
+	itrm1->second.listFanOut.clear();
+	itrm1->second.listFanOut.insert(newID5);
+	itrm1->second.listFanOut.insert(newID6);
+
+	if(!cf.pola)
+	{
+		addedNode2->listFanIn.insert(newID5);
+		addedNode5->listFanOut.insert(newID2);
+	}
+	else
+	{
+		addedNode2->listFanIn.insert(newID4);
+		addedNode4->lineNumber = newID4;
+		addedNode4->gateType = G_NOT;
+		addedNode4->listFanOut.insert(newID2);
+		addedNode4->listFanIn.insert(newID5);
+		addedNode4->numberFanIn = 1;
+		addedNode4->numberFanOut = 1;
+		addedNode5->listFanOut.insert(newID4);
+		
+	}		
+
+	switch(destType){
+		//The destination gate is an OR gate
+		case(G_OR):
+			addedNode1->gateType = G_OR;		
+			addedNode2->gateType = G_AND;
+			fault.stuckAtValue = 1;			
+			break;
+			
+		//The destination gate is a NOR gate
+		case(G_NOR):
+			addedNode1->gateType = G_OR;
+			itrm->second.gateType = G_NOR;
+			addedNode2->gateType = G_AND;	
+			fault.stuckAtValue = 1;			
+			break;
+
+		//The destination gate is an AND gate
+		case(G_AND):
+			addedNode1->gateType = G_AND;
+			addedNode2->gateType = G_OR;
+			fault.stuckAtValue = 0;
+			break;
+
+		//The destination gate is a NAND gate
+		case(G_NAND):
+			addedNode1->gateType = G_AND;		
+			itrm->second.gateType = G_NAND;
+			addedNode2->gateType = G_OR;	
+			fault.stuckAtValue = 0;
+			break;
+	}
+
+	addedNode1->internal = true;
+	addedNode2->internal = false;
+	addedNode3->internal = false;
+	addedNode5->internal = false;
+	addedNode6->internal = false;
+
+	addedNode1->circuitIndex = 1;
+	addedNode2->circuitIndex = 1;
+	addedNode3->circuitIndex = 1;	
+	addedNode5->circuitIndex = 1;
+	addedNode6->circuitIndex = 1;
+
+	comNodeList.insert(pair<int, CircuitNode>(newID1, *addedNode1));
+	comNodeList.insert(pair<int, CircuitNode>(newID2, *addedNode2));
+	comNodeList.insert(pair<int, CircuitNode>(newID3, *addedNode3));
+	comNodeList.insert(pair<int, CircuitNode>(newID5, *addedNode5));
+	comNodeList.insert(pair<int, CircuitNode>(newID6, *addedNode6));
+	if(cf.pola)
+	{
+		addedNode4->circuitIndex = 1;
+		addedNode4->internal = false;
+		comNodeList.insert(pair<int, CircuitNode>(newID4, *addedNode4));	
+	}
+
+	delete addedNode1;
+	delete addedNode2;
+	delete addedNode3;
+	delete addedNode4;
+	delete addedNode5;
+	delete addedNode6;
+
+	/*cout << "-------------------------------------------"<<endl;
+	cout << "After updating:"<<endl;
+	cout << "node\tnT\tgT\tFanIn\t\tFanOut"<<endl;
+	for (itrm = comNodeList.begin(); itrm != comNodeList.end(); itrm++)
+	{
+		cout << itrm->first<<"\t";
+		itrs = itrm->second.lineValue.begin();
+		cout <<itrm->second.nodeType<<"\t";
+		cout <<itrm->second.gateType<<"\t";
+		for(itrs = itrm->second.listFanIn.begin(); itrs != itrm->second.listFanIn.end(); itrs++)
+			cout <<*itrs<<" ";
+		cout << "\t";
+		for(itrs = itrm->second.listFanOut.begin(); itrs != itrm->second.listFanOut.end(); itrs++)
+			cout <<*itrs<<" ";
+		cout << endl;
+	}
+	cout << "-------------------------------------------"<<endl;*/
+
+	return newID1;
+
+}
+
+}/* nameSpace_ATPG */

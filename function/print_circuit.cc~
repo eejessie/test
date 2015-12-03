@@ -1,0 +1,67 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  merge_circuit.cc
+ *
+ *    Description:  This function merges the original circuit and the boolean relation 
+ *					circuit
+ *
+ *        Version:  1.0
+ *        Created:  16/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu <eejessie@sjtu.edu.cn>
+ *
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+
+using namespace std;
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+#include "../class/CircuitNode.h"         // This class stores information about each node in the circuit.
+
+
+void print_circuit(map <int, CircuitNode> masterNodeList_m)
+{
+	redFILE0 << "nT\tn\tgT\t#FI\t#FO\tFI"<<endl;
+	redFILE0 << "in\tn\tnT\tgT\tFI\t\tFO"<<endl;
+	for (itrm = masterNodeList_m.begin(); itrm != masterNodeList_m.end(); itrm++)
+	{
+		redFILE0 <<itrm->second.internal<<"\t";
+		redFILE0 << itrm->first<<"\t";
+		itrs = itrm->second.lineValue.begin();
+		redFILE0 <<itrm->second.nodeType<<"\t";
+		redFILE0 <<itrm->second.gateType<<"\t";
+		for(itrs = itrm->second.listFanIn.begin(); itrs != itrm->second.listFanIn.end(); itrs++)
+			redFILE0 <<*itrs<<" ";
+		redFILE0 << "\t\t";
+		for(itrs = itrm->second.listFanOut.begin(); itrs != itrm->second.listFanOut.end(); itrs++)
+			redFILE0 <<*itrs<<" ";
+		redFILE0 << endl;
+		
+	}
+		
+}

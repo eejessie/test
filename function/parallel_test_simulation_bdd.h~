@@ -1,0 +1,40 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  parallel_test_simulation_bdd.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  16/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+
+
+#ifndef PARALLEL_TEST_SIMULATION_BDD_H
+#define PARALLEL_TEST_SIMULATION_BDD_H
+
+
+vector<int> parallel_test_simulation_bdd(map<int, CircuitNode> &orNodeList, FaultList &sf, vector<string> &testVector, DdManager *dd, DdNode *dnode, int outputLevel, vector<int> *levelSet);
+
+#endif 
+

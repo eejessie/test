@@ -1,0 +1,16 @@
+#ifndef _FIND_SUB_NODE_H
+#define _FIND_SUB_NODE_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "class/CircuitNode.h"
+#include "class/FaultList.h"
+#include "DaC.h"
+
+void update_using_subnode(map<int, CircuitNode> &orNodeList, multimap<int, struct AW_src> &sub_node, int maxLineNumber);
+int find_sub_node(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &masterNodeList, int nt, int wt, multimap<int, struct AW_src> &sub_node);
+
+#endif

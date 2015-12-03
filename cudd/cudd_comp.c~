@@ -1,0 +1,98 @@
+/**CFile***********************************************************************
+
+  FileName    [cudd_compute.c]
+
+  SeeAlso     []
+
+  Author      [Fabio Somenzi]
+
+  Copyright   [Copyright (c) 1995-2004, Regents of the University of Colorado
+
+  All rights reserved.
+
+******************************************************************************/
+#include "cudd_comp.h"
+#include "ntr.h"
+#include "/home/eejessie/work/CUDD/cudd-2.4.1/cudd/cuddInt.h"
+
+
+/*---------------------------------------------------------------------------*/
+/* Constant declarations                                                     */
+/*---------------------------------------------------------------------------*/
+
+#define BUFLENGTH 8192
+
+/*---------------------------------------------------------------------------*/
+/* Stucture declarations                                                     */
+/*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*/
+/* Type declarations                                                         */
+/*---------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------*/
+/* Variable declarations                                                     */
+/*---------------------------------------------------------------------------*/
+
+#ifndef lint
+static char rcsid[] UTIL_UNUSED = "$Id: main.c,v 1.38 2004/08/13 18:28:28 fabio Exp fabio $";
+#endif
+
+static  char    buffer[BUFLENGTH];
+#ifdef DD_DEBUG
+extern  st_table *checkMinterms (BnetNetwork *net, DdManager *dd, st_table *previous);
+#endif
+
+/*---------------------------------------------------------------------------*/
+/* Macro declarations                                                        */
+/*---------------------------------------------------------------------------*/
+
+/**AutomaticStart*************************************************************/
+
+
+/**AutomaticEnd***************************************************************/
+
+/*---------------------------------------------------------------------------*/
+/* Definition of exported functions                                          */
+/*---------------------------------------------------------------------------*/
+
+int Eval_Value(DdManager * dd, DdNode * f, int * inputs)
+{
+    int comple;
+    DdNode *ptr;
+
+    comple = Cudd_IsComplement(f);
+    ptr = Cudd_Regular(f);
+    
+    while (!cuddIsConstant(ptr)) {
+	if (*(inputs+ptr->index) == 1) {
+	    ptr = cuddT(ptr);
+	} else {
+	    comple ^= Cudd_IsComplement(cuddE(ptr));
+	    ptr = Cudd_Regular(cuddE(ptr));
+	}
+    }
+    return comple;
+
+} /* end of Cudd_Eval */
+
+int cudd_comp(DdManager *dd, DdNode *node, int num_inputs, char *assign)
+{
+    int *pt_inputs;
+    pt_inputs = (int *)malloc(num_inputs*sizeof(int));
+    int i;
+    for(i = 0; i < num_inputs; i++)
+    {
+        pt_inputs[i] = assign[i]-48;
+        printf("%d ", pt_inputs[i]);
+    } 
+    printf("\n");
+    int res = Eval_Value(dd, node, pt_inputs);
+    free(pt_inputs);
+    if(res == 1)
+        printf("value for this assignment: 0\n");
+    else
+        printf("value for this assignment: 1\n");             
+}
+
+

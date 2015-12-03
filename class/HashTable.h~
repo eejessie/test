@@ -1,0 +1,55 @@
+//#ifndef _HASHTABLE_H_
+//#define _HASHTABLE_H_
+
+#include<iostream>  
+
+  
+typedef int KeyType; // 
+const int NULLKEY=-1; //
+const int DELKEY=-2;
+//  
+
+#define Elemtype int  
+ 
+  
+class HashTable  
+{  
+	private:  
+	    Elemtype *elem; //
+	    int count;// 
+	    int size; //
+	    int c;
+	    int Hash_length;
+	public:  
+	  
+	  	HashTable();
+	  	
+	    int Init_HashTable();
+	  
+	    void Destroy_HashTable();
+	  
+	    unsigned Hash(KeyType k);
+	  
+	    void Collision(int &p,int d);
+	    
+	    bool Search_Hash(KeyType k,int &p);  
+	  
+	    int Insert_Hash(Elemtype e);
+	    
+	    void ReCreate_HashTable();
+	  
+	    void Traverse_HashTable();
+	  
+	   	int Get_Data(int p);
+	   	
+	   	void Del_Data(int p);
+	    
+	    int Get_Size();
+	    
+	    int Data_Size();
+	    
+	    bool empty();  
+    
+};
+
+//#endif

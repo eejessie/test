@@ -1,0 +1,74 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  CircuitNode.h
+ *
+ *    Description:  This class contains all the parameters associated with every node
+ *                  in the circuit such as the inputs, outputs, type, line number.
+ *
+ *                  There are static members which keep track of total inputs, outputs
+ *                  and lines in the entire circuit.
+ *
+ *        Version:  1.0
+ *        Created:  12/02/2011
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+
+#ifndef CIRCUITNODE_H_
+#define CIRCUITNODE_H_
+
+#include <set>
+#include <vector>
+
+using namespace std;
+
+
+class CircuitNode {
+    public:
+        unsigned    int     nodeIndex;      // Node ID, unique.
+        unsigned    int     nodeType;       // Type of the node.
+        unsigned    int     lineNumber;     // Unique line number.
+        unsigned    int     gateType;       // Type of the gate if the node is gate.
+        unsigned    int     numberFanIn;    // Total inputs to this node.
+        unsigned    int     numberFanOut;   // Total outputs from this node.
+		unsigned    int     circuitIndex;    
+		int         rectFlag;
+		int     	lineLevel;      // Level of the line (after levelization).
+		bool        internal;
+		bool        unobs;
+		set         <int>       listFanIn;
+        vector      <CircuitNode*>   pointFanIn;      // List of inputs to this node.
+        vector      <CircuitNode*>   pointFanOut;     // List of outputs from this node.
+                    
+        set         <int>   lineValue;      // Value of the line (for simulation).
+        vector      <int>   multiValue;
+
+        static      int     totalNodes;     // Number of nodes, global.
+        static      int     totalInputs;    // Number of primary inputs, global.
+        static      int     totalOutputs;   // Number of primary outputs, global.
+
+		CircuitNode &operator=(CircuitNode& node);
+		//void operator=(CircuitNode& node);
+		CircuitNode(const CircuitNode &node);
+
+        /*
+         *--------------------------------------------------------------------------------------
+         *       Class:  CircuitNode
+         *      Method:  CircuitNode :: CircuitNode
+         * Description:  The circuit file is read and an object of this class is created for 
+         *               each line in the circuit file. Then this constructor is called which 
+         *               initializes some members and remaining members are directly written to 
+         *               by the values read from the file.
+         *--------------------------------------------------------------------------------------
+         */
+        CircuitNode();
+        CircuitNode (int inNodeType);
+};
+
+#endif /* CIRCUITNODE_H_ */
+

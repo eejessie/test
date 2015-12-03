@@ -1,0 +1,40 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  gen_cf.h
+ *
+ *    Description:  
+ *
+ *        Version:  1.0
+ *        Created:  16/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+
+#include "../class/CircuitNode.h"
+
+
+#ifndef GEN_CF_H
+#define GEN_CF_H
+
+	int gen_cf(map<int, CircuitNode> &masterNodeList_m, vector<ConnFault> &cf, int totalInputs, vector<string> &masterInputVector);
+
+
+#endif 
+

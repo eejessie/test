@@ -1,0 +1,28 @@
+# This is a c++ code. Using g++ compiler.
+CC=g++
+
+# Compiler flags.
+CFLAGS= -g
+
+
+MAINSRC = dec2bin.cc
+OTHSRC = 
+
+SRC = $(MAINSRC) $(OTHSRC)
+OBJ = $(SRC:.cc=.o)
+#TARGET = $(SRC:.cc=)
+TARGET = dec2bin
+
+# make all runs.
+all: $(TARGET)
+
+%.o: %.cc
+	$(CC) $(CFLAGS) -o $@ -c $<  
+
+$(TARGET): $(OBJ)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJ) 
+
+# make clean
+clean:
+	rm -f $(OBJ) $(TARGET)
+

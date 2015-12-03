@@ -1,0 +1,13 @@
+#ifndef _CAL_CMA_H
+#define _CAL_CMA_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "class/CircuitNode.h"
+
+int cal_CMA(map<int, CircuitNode> &masterNodeList, map<int, int> &MA, map<int, map<int, int> > &CMA, int cut_gate, map<int, map<int, int> > &path_values, multimap<int, vector<int> > &path_set, int wt);
+
+#endif

@@ -1,0 +1,39 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  red_forward_deletion_v2.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  16/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "../class/HashTable.h"
+
+#ifndef RED_FORWARD_DELETION_V2_H
+#define RED_FORWARD_DELETION_V2_H
+
+
+void red_forward_deletion_v2(map<int, CircuitNode> &simNodeList, HashTable &implicationNodeList, int red_line, bool red_stuck);
+
+#endif 
+

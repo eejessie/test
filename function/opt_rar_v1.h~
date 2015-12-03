@@ -1,0 +1,28 @@
+#ifndef OPT_RAR_V1_H
+#define OPT_RAR_V1_H
+
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+
+#include "../class/CircuitNode.h" 
+#include "../class/CircuitLine.h" 
+#include "../class/FaultList.h"   
+#include "../class/queue.h"       
+
+
+
+void opt_rar_v1(map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, int threshold);
+
+
+#endif 
+

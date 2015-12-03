@@ -1,0 +1,188 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  gen_cf.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  5/13/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi WU <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+#include "class/CircuitNode.h"         // This class stores information about each node in the circuit.
+#include "class/ConnFault.h"
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+using namespace std;
+using namespace nameSpace_ATPG;
+
+namespace nameSpace_ATPG {
+
+bool search_vector(vector <CircuitNode> & NodeList, int node)
+{
+	int i;
+	for(i=0; i<NodeList.size(); i++)
+		if(NodeList[i].lineNumber == node)
+			return true;
+	return false;
+}
+
+void find_tranfanout(map <int, CircuitNode> &orNodeList_m, vector <CircuitNode> &tranFanOut, int lineNumber)
+{
+	map<int,CircuitNode>::iterator itrm, itrm1;
+	set<int>::iterator itrs;
+
+	itrm = orNodeList_m.find(lineNumber);
+	if (itrm->second.nodeType == 3)         //If corrent line is a PO, then return;
+		return;
+	for(itrs=itrm->second.listFanOut.begin(); itrs!=itrm->second.listFanOut.end(); itrs++)
+		for(itrm1=orNodeList_m.begin(); itrm1!=orNodeList_m.end(); itrm1++)
+			if(itrm1->second.lineNumber == *itrs)
+			{
+				if(!search_vector(tranFanOut, *itrs))
+					tranFanOut.push_back(itrm1->second);
+				find_tranfanout(orNodeList_m, tranFanOut, *itrs);
+				break;
+			}
+}
+
+void find_tranfanin(map <int, CircuitNode> &orNodeList_m, vector <CircuitNode> &tranFanIn, int lineNumber)
+{
+	map<int,CircuitNode>::iterator itrm, itrm1;
+	set<int>::iterator itrs;
+
+	itrm = orNodeList_m.find(lineNumber);
+	if (itrm->second.nodeType == 1)         //If corrent line is a PI, then return;
+		return;
+	for(itrs=itrm->second.listFanIn.begin(); itrs!=itrm->second.listFanIn.end(); itrs++)
+		for(itrm1=orNodeList_m.begin(); itrm1!=orNodeList_m.end(); itrm1++)
+			if(itrm1->second.lineNumber == *itrs)
+			{
+				if (!search_vector(tranFanIn, *itrs))
+					tranFanIn.push_back(itrm1->second);
+				find_tranfanin(orNodeList_m, tranFanIn, *itrs);
+				break;
+			}
+}
+
+
+//gen_cf
+int gen_cf(map<int, CircuitNode> &masterNodeList_m, vector<ConnFault> &cf, vector<int> &inputList)
+{
+	int i, count_cf=0, flag=0;
+	map <int, CircuitNode> tempNodeList;
+	map <int, CircuitNode>::iterator itrm, itrm1;
+	set <int>::iterator itrs, itrs1;
+	vector <CircuitNode> tranFanOut;
+	vector <CircuitNode> tranFanIn;
+	vector <CircuitNode> tranFanOutIn;
+	vector <CircuitNode> safeNodeList;
+	CircuitNode currentNode(GT);
+
+	// Copy the nodes information in masterNodeList_m to tempNodeList.
+	for (itrm=masterNodeList_m.begin(); itrm != masterNodeList_m.end(); itrm++)
+		tempNodeList.insert(pair<int, CircuitNode>(itrm->second.lineNumber, itrm->second));
+
+	//Put the nodes in masterNodeList_m but not in tranFanOut and tranFanIn into safeNodeList.
+	for(itrm=masterNodeList_m.begin(); itrm!=masterNodeList_m.end(); itrm++)
+	{
+		//cout<<"current node is "<<itrm->second.lineNumber<<endl;
+		if(itrm->second.circuitIndex != 1)
+			continue;
+				
+		currentNode = itrm->second;
+		tranFanOut.clear();
+		tranFanIn.clear();
+		tranFanOutIn.clear();
+		safeNodeList.clear();
+
+		tranFanOut.push_back(currentNode);                    //Put the node itself into its transistive fanout list.
+		find_tranfanout(masterNodeList_m, tranFanOut, currentNode.lineNumber);
+		find_tranfanin(masterNodeList_m, tranFanIn, currentNode.lineNumber);
+		
+		for(i=0; i<tranFanOut.size(); i++)
+			tranFanOutIn.push_back(tranFanOut[i]);
+		for(i=0; i<tranFanIn.size(); i++)
+			tranFanOutIn.push_back(tranFanIn[i]);
+		for(itrm1=tempNodeList.begin(); itrm1!=tempNodeList.end(); itrm1++)
+		{
+			int flag = 0;
+			for(i=0; i<tranFanOutIn.size(); i++)
+				if (itrm1->second.lineNumber == tranFanOutIn[i].lineNumber)
+				{
+					flag = 1;
+					break;
+				}
+			if ( (flag == 0) && ((itrm1->second.circuitIndex == 1) || (itrm1->second.circuitIndex == 4)))
+				//The only destination can be GT or PO and the lineNumber of destination gate should not exceed the boundary.
+				if (itrm1->second.nodeType == 0 || itrm1->second.nodeType == 3)   
+					safeNodeList.push_back(itrm1->second);
+		}
+		
+		//test for each node in masterNodeList_m, whether safeNodeList contains the right nodes	
+		//cout<<"For node "<<itrm->second.lineNumber<<":"<<endl;	
+		for(i=0; i<safeNodeList.size(); i++)
+		{
+			//cout<<safeNodeList[i].lineNumber<<" ";
+			ConnFault *CF;
+			CF = new ConnFault[2];
+			CF[0].src = currentNode.lineNumber;
+			CF[0].dest = safeNodeList[i].lineNumber;
+			CF[0].pola = 0;
+			CF[1].src = currentNode.lineNumber;
+			CF[1].dest = safeNodeList[i].lineNumber;
+			CF[1].pola = 1;
+			cf.push_back(CF[0]);
+			cf.push_back(CF[1]);
+		}
+		//cout << endl;
+		count_cf = count_cf + 2*safeNodeList.size();					
+	}	
+
+	ofstream cfFILE;
+	cfFILE.open ("CF.log", ofstream::out);
+	#ifdef DEBUG 
+	cfFILE<<"----------------------------------------------"<<endl;
+	cfFILE << "total counts of connection faults is: "<<count_cf<<endl;
+	cfFILE << cf.size()<<endl;
+	for(i=0; i<cf.size(); i++)
+	{
+		cfFILE << "("<<cf[i].src<<", "<<cf[i].dest<<", "<<cf[i].pola<<")"<<endl;
+	}
+	#endif
+	
+	return count_cf;
+}
+
+}/* nameSpace_ATPG */
+
+
+
+

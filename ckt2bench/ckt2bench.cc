@@ -1,0 +1,171 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <math.h>
+#include <cassert>
+#include <ctime>
+#include <sys/timeb.h>
+
+#include "class/CircuitNode.h"         
+#include "class/CircuitLine.h"        
+#include "class/FaultList.h"           
+#include "class/TestList.h"        
+#include "lib/file_operations.h"
+#include "lib/radix_convert.h"
+#include "function/read_circuit_v2.h"
+#include "function/print_circuit.h"
+#include "function/copy_point_vector.h"
+#include "function/write_bench.h"
+#include "function/helper.h"
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+vector<int> inputList;
+vector<int> outputList;
+
+using namespace std;
+
+int check_inv_chain(map<int, CircuitNode> &orNodeList)
+{
+    map<int, CircuitNode>::iterator itrm, itrm1, itrm2, itrm3, itrm4;
+    vector<CircuitNode*>::iterator itrv, itrv1, itrv2, itrv3, itrv4;
+    
+    int count_minus = 0;
+    vector<int> delete_set;
+    for(itrm = orNodeList.begin(); itrm != orNodeList.end(); itrm++)
+	{
+	    int count_inv = 0;
+    	if(itrm->second.gateType == 5)
+		{
+		    int fanout_not_inv = 0;
+		    if(itrm->second.pointFanOut.size() == 1)
+		    {
+		        itrv1 = itrm->second.pointFanOut.begin();
+			    itrm1 = orNodeList.find((*itrv1)->lineNumber);
+			    if(itrm1->second.gateType != 5)
+			        fanout_not_inv = 1;
+		    }
+		    else if(itrm->second.pointFanOut.size() > 1)
+		        fanout_not_inv = 1;
+		      
+		    if(fanout_not_inv == 0)
+		        continue;
+		    
+		    count_inv++; 
+		    vector<int> inv_set;   
+		    inv_set.push_back(itrm->second.lineNumber);
+		     
+	        itrv2 = itrm->second.pointFanIn.begin();
+			itrm2 = orNodeList.find((*itrv2)->lineNumber);  
+			int  gate_type = itrm2->second.gateType;
+			int current_node = itrm2->second.lineNumber;			
+	        while(gate_type == 5)
+			{
+			//    redFILE1 << current_node << " ";
+			    inv_set.push_back(current_node);
+			    itrm3 = orNodeList.find(current_node);
+			    itrv4 = itrm3->second.pointFanIn.begin();
+			    itrm4 = orNodeList.find((*itrv4)->lineNumber);
+			    gate_type = itrm4->second.gateType;
+			    current_node = itrm4->second.lineNumber;
+			    count_inv++;
+			}
+            
+			if(count_inv % 2 == 0)
+			    count_minus += count_inv;
+			else
+			    count_minus = count_minus + count_inv - 1;
+			    
+			if(inv_set.size() >= 2)
+			{
+			    if(inv_set.size() % 2 == 0)
+			        delete_set.insert(delete_set.begin(), inv_set.begin(), inv_set.end());   
+			    else
+			    {
+			        vector<int>::iterator iv;
+			        iv = inv_set.begin();
+			        inv_set.erase(iv);
+			        delete_set.insert(delete_set.begin(), inv_set.begin(), inv_set.end());   
+			    }
+			}     
+		}
+    }
+    
+    for(int i = 0; i < delete_set.size(); i++)
+    {
+        int node = delete_set[i];
+        itrm = orNodeList.find(node);
+        if(itrm != orNodeList.end())
+        {
+            remove_inv(orNodeList, node);
+     //       redFILE1 << "remove inv: "<<node<<endl;
+        }
+    }
+    
+    int final_size = orNodeList.size();
+ //   int final_size = orNodeList.size() - count_minus;
+    return final_size;
+}
+
+
+int main(int argc, char *argv[])
+{
+	//Containers for circuits
+	map<int, CircuitNode> orNodeList_m;
+	map<int, CircuitNode> brNodeList_m;
+	map<int, CircuitNode> masterNodeList_m;
+	
+	//Iterators
+	vector<CircuitNode>::iterator itrv;
+	vector<CircuitNode*>::iterator itrv1;
+	set<int>::iterator itrs;
+	map<int, CircuitNode>::iterator itrm, itrm1, itrm2, itrm3, itrm4;
+
+	//Check the number of arguments
+    if (argc != 2) 
+	{
+       cerr << "ERROR: Usage: " << argv[0] << " <Circuit1 Filename> "<< endl;
+       exit(1);
+    }   
+
+	//Read the original circuit, the BR circuit and the BR pla file.
+    ifstream inFile1;
+	string fileName1 = argv[1];
+	inFile1.open(fileName1.c_str(), ios::in);
+	if(!inFile1)
+	{
+		cerr << "Cannot open file "<<fileName1<<endl;
+		exit(1);
+	}
+
+    ReadCircuit_v2(inFile1, orNodeList_m, inputList, outputList, 1);
+	inFile1.close();
+
+	int numPI = inputList.size();
+	int numPO = outputList.size();
+
+	cout <<"# PI: "<<numPI<<endl;
+	cout <<"# PO: "<<numPO<<endl;
+
+	cout<< "Input list:"<<endl;
+	for(int i=0; i<inputList.size(); i++)
+		cout<<inputList[i]<<" ";
+	cout<<endl;
+	
+	int final_size = check_inv_chain(orNodeList_m);
+
+    ofstream oufile;
+    string catname = "mtp";
+	write_bench_or(orNodeList_m, oufile, catname);
+	
+
+	return 0;
+	
+}

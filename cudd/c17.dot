@@ -1,0 +1,44 @@
+digraph "DD" {
+size = "7.5,10"
+center = true;
+edge [dir = none];
+{ node [shape = plaintext];
+  edge [style = invis];
+  "CONST NODES" [style = invis];
+" pi0 " -> " pi1 " -> " pi2 " -> " pi3 " -> "CONST NODES"; 
+}
+{ rank = same; node [shape = box]; edge [style = invis];
+"  po0  "; }
+{ rank = same; " pi0 ";
+"48";
+}
+{ rank = same; " pi1 ";
+"46";
+"47";
+}
+{ rank = same; " pi2 ";
+"41";
+"45";
+}
+{ rank = same; " pi3 ";
+"42";
+}
+{ rank = same; "CONST NODES";
+{ node [shape = box]; "3b";
+}
+}
+"  po0  " -> "48" [style = solid];
+"48" -> "47";
+"48" -> "46" [style = dotted];
+"46" -> "45";
+"46" -> "3b" [style = dashed];
+"47" -> "3b";
+"47" -> "41" [style = dashed];
+"41" -> "3b";
+"41" -> "3b" [style = dotted];
+"45" -> "42";
+"45" -> "3b" [style = dotted];
+"42" -> "3b";
+"42" -> "3b" [style = dotted];
+"3b" [label = "1"];
+}

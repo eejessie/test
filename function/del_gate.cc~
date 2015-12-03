@@ -1,0 +1,104 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  del_gate.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  5/13/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi WU <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+#include "class/CircuitNode.h"         // This class stores information about each node in the circuit.
+#include "class/ConnFault.h"
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+using namespace std;
+using namespace nameSpace_ATPG;
+
+namespace nameSpace_ATPG {
+
+void del_gate(map<int, CircuitNode> &comNodeList, int node)
+{
+	int retain_node;
+	map<int, CircuitNode>::iterator itrm, itrm1, itrm2;
+	set<int>::iterator itrs;
+
+	//cout << "The node to be deleted is "<<node<<endl;
+
+	itrm = comNodeList.find(node-1);
+	for(itrs=itrm->second.listFanIn.begin(); itrs!=itrm->second.listFanIn.end(); itrs++)
+		if(*itrs!=node)
+		{	retain_node = *itrs;
+			//cout << "The node to be retained is "<<retain_node<<endl;
+			break;
+		}
+	
+	itrm = comNodeList.find(node);       //node: newID3
+	comNodeList.erase(itrm);
+
+ 	itrm1 = comNodeList.find(node-1);    //node-1: newID2
+	
+	itrm = comNodeList.find(retain_node);
+	itrm->second.listFanOut.clear();
+	itrs = itrm1->second.listFanOut.begin();
+	itrm->second.listFanOut.insert(*itrs);
+
+	comNodeList.erase(itrm1);
+
+	itrm2 = comNodeList.find(*itrs);
+	itrm2->second.listFanIn.erase(node-1);
+	itrm2->second.listFanIn.insert(retain_node);
+
+	/*cout << "-------------------------------------------"<<endl;
+	cout << "After deletion:"<<endl;
+	for (itrm1 = comNodeList.begin(); itrm1 != comNodeList.end(); itrm1++)
+	{
+		cout << "lineNumber = "<< itrm1->first<<":"<<endl;
+		cout <<"       "<<"nodeType: "<<itrm1->second.nodeType<<" ";
+		cout <<"       "<<"gateType: "<<itrm1->second.gateType<<endl;
+		cout <<"       "<<"listFanIn: ";
+		for(itrs = itrm1->second.listFanIn.begin(); itrs != itrm1->second.listFanIn.end(); itrs++)
+			cout <<"       "<<*itrs<<" ";
+		cout << endl;
+		cout <<"       "<<"listFanOut: ";
+		for(itrs = itrm1->second.listFanOut.begin(); itrs != itrm1->second.listFanOut.end(); itrs++)
+			cout <<"       "<<*itrs<<" ";
+		cout << endl;
+	}
+	cout << "-------------------------------------------"<<endl;*/
+	
+}
+
+}/* nameSpace_ATPG */
+
+
+
+

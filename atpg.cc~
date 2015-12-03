@@ -1,0 +1,646 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  atpg.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  5/13/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi WU <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+#include <utility>
+
+#include "lib/forward_implication.h"   
+#include "lib/string_convert.h"
+#include "class/CircuitNode.h"        
+#include "class/CircuitLine.h"         
+#include "class/FaultList.h"          
+#include "class/TestList.h"           
+#include "class/HashTable.h"
+
+#include "function/helper.h"
+
+
+// Global constant definitions.
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+using namespace std;
+
+extern int PO_line;
+extern HashTable opl_hash;
+extern ofstream redFILE0, redFILE1;
+extern vector<int> inputList;
+extern vector<int> outputList;
+
+/*
+ * ============================================================================
+ * Functions to Perform Logical Operations on the Circuit.
+ * ============================================================================
+ */
+
+
+/* 3
+ * ===  FUNCTION  ======================================================================
+ *         Name:  SetLineLevel
+ *  Description:  This function divides the circuit in logical levels.
+ *                There is no feedback in a combinational circuit so we can go from 
+ *                level 0 to level MAX and find the proper input to output paths.
+ * =====================================================================================
+ */
+void SetLineLevel_helper (int node, map <int, CircuitNode> &tempNodeList, int &highestLevel)
+{
+	vector<CircuitNode*>::iterator itrv;
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	itrm = tempNodeList.find(node);
+	int old_level = itrm->second.lineLevel;
+	if(itrm == tempNodeList.end())
+	{
+	    redFILE1 << "error!"<<endl;
+	    exit(1);
+	}
+	
+//	redFILE1 << ""<<node<<"  ";
+
+	if(!itrm->second.pointFanOut.empty())
+	{
+//	    redFILE1 << "fanout is not empty!"<<endl;
+		for(itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++)
+		{
+			itrm1 = tempNodeList.find((*itrv)->lineNumber);
+			int fanout = itrm1->second.lineNumber;
+			int new_level = itrm1->second.lineLevel;
+			if(new_level <= old_level)
+			{
+				itrm1->second.lineLevel = old_level + 1;
+				new_level = itrm1->second.lineLevel;
+		    }
+			
+			if(new_level > highestLevel)
+			    highestLevel = new_level;
+			SetLineLevel_helper(fanout, tempNodeList, highestLevel);
+		}
+	}
+	else 
+	{
+	//    redFILE1 << "fanout is empty!"<<endl;
+	    return;
+    }
+}
+
+int SetLineLevel(map <int, CircuitNode> &masterNodeList, vector<int> &inputList) 
+{	
+	map<int, CircuitNode>::iterator itrm;
+
+	int i, outputLevel=0;
+    for (itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++) {
+        if (itrm->second.nodeType == 1 || itrm->second.gateType == 9 || itrm->second.gateType == 10)
+            itrm->second.lineLevel = 0;     // Level of primary inputs is 0.
+        else if(itrm->second.pointFanIn.empty())
+            itrm->second.lineLevel = 0;
+        else
+            itrm->second.lineLevel = -1;   // Level of all other nodes is -1, placeholder.
+    }
+		
+    int highestLevel = -1;
+	for (int i=0; i < inputList.size(); i++)
+	{
+  //      redFILE1 << endl << "*starting from node "<<inputList[i]<<endl;
+		SetLineLevel_helper(inputList[i], masterNodeList, highestLevel);
+	}
+	
+    for (itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++)
+	{
+		if(itrm->second.gateType == 9 || itrm->second.gateType == 10)
+		{
+		//    redFILE1 << "**starting from node "<<itrm->second.lineNumber<<endl;
+			SetLineLevel_helper(itrm->second.lineNumber, masterNodeList, highestLevel);
+	    }
+	}
+	
+	outputLevel = highestLevel;
+
+	return outputLevel;
+
+}
+
+int SetLineLevel_new(map <int, CircuitNode> &masterNodeList, vector<int> &inputList) 
+{	
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	vector<CircuitNode*>::iterator itrv;
+	
+	int highestLevel;
+	vector<int> sort_list;
+    top_sort(masterNodeList, sort_list);
+    
+    for(itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++) {
+        if (itrm->second.nodeType == 1 || itrm->second.gateType == 9 || itrm->second.gateType == 10)
+            itrm->second.lineLevel = 0;     // Level of primary inputs is 0.
+        else
+            itrm->second.lineLevel = -1;   // Level of all other nodes is -1, placeholder.
+    }
+	
+	for(int i = 0 ; i <  sort_list.size(); i++)
+	{
+	    itrm = masterNodeList.find(sort_list[i]);
+	    redFILE1 << "current node: "<<sort_list[i]<<endl;
+	    if(itrm->second.nodeType == 1 || itrm->second.gateType == 9 || itrm->second.gateType == 10 )
+	        continue;
+	    else
+	    {
+	        int clevel = itrm->second.lineLevel;
+	        for(itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++)
+	        {
+	            itrm1 = masterNodeList.find((*itrv)->lineNumber);
+	            if(itrm1->second.lineLevel + 1 > clevel)
+	            {
+	                itrm->second.lineLevel = itrm1->second.lineLevel+1;
+	                clevel = itrm->second.lineLevel;
+	            }
+	        }
+	        redFILE1 << "new level: "<<  itrm->second.lineLevel<<endl;
+	        if(itrm->second.lineLevel > highestLevel)
+	            highestLevel = itrm->second.lineLevel;
+	    }	        
+	}
+	return highestLevel;
+}
+
+
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  LogicSimulation      for checking whether output is 1
+ *  Description:  
+ * =====================================================================================
+ */
+//void LogicSimulation (map <int, CircuitNode> &masterNodeList, int totalInputs, string inVector, int outputLevel, vector<int> *levelSet, int &res) 
+void LogicSimulation (map <int, CircuitNode> &masterNodeList, int totalInputs, string inVector, int outputLevel, vector<int> *levelSet, map<int, int> &outputValue) 
+{
+    int *inputVector;
+   	inputVector = new int [totalInputs];
+    set <int> *gateVector;
+    gateVector = new set <int> [3];
+    set <int>::iterator itrSet, itrs;
+	vector<CircuitNode*>::iterator itrv;
+
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	
+//	redFILE1 << "##Current vector = "<<inVector<<endl;
+	
+    // Convert the input vector string to integer
+    // values to be applied to the circuit for simulation.
+    // (- 48) is done to convert ascii to integer.
+    for (int i = 0; i < totalInputs; i++) {
+        inputVector[i] = inVector[i] - 48;
+    }
+	
+    // Assign the vector to inputs and keep all other values empty.
+	int j;
+    for (itrm = masterNodeList.begin(), j = 0; itrm != masterNodeList.end(); itrm++) 
+    {
+        itrm->second.lineValue.clear();
+    
+        if (itrm->second.nodeType == 1)
+            itrm->second.lineValue.insert(inputVector[j++]);
+        if (itrm->second.gateType == G_stat0 )
+	    {
+	        itrm->second.lineValue.insert(0); 
+	        if(itrm->second.nodeType == 3)
+	            outputValue.insert(pair<int, int>(itrm->second.lineNumber, 0));
+	    }
+	    if (itrm->second.gateType == G_stat1 )
+	    {
+	        itrm->second.lineValue.insert(1);
+	        if(itrm->second.nodeType == 3)  
+	            outputValue.insert(pair<int, int>(itrm->second.lineNumber, 1));
+	    } 
+    }
+    
+    	
+    set <int> tempSet;  // To store the result of implication.
+	
+	for (int i = 1; i <= outputLevel; i++)
+	{
+        for(int j = 0; j < levelSet[i-1].size(); j++)
+		{		
+		 //   redFILE1 << "current node: "<<levelSet[i-1][j];   
+		    itrm = masterNodeList.find(levelSet[i-1][j]);
+			if (itrm->second.lineLevel == i)
+			{
+				int inputNumber = 0;			
+	            for (itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++) 
+					gateVector[inputNumber++] = (*itrv)->lineValue;
+	            
+	            tempSet.clear();
+				switch (itrm->second.pointFanIn.size()) 
+				{										
+	                case 1:
+	                    tempSet = forwardImplication (itrm->second.gateType, gateVector[0]);
+	                    break;
+	                case 2:
+	                    tempSet = forwardImplication (itrm->second.gateType, gateVector[0], gateVector[1]);
+	                    break;
+	                default:
+						cerr << "This node is "<<itrm->second.lineNumber<<endl;
+	                    cerr << "This ATPG generator only works if the number of inputs to a gate is less than 4." << endl;
+	                    cerr << "Currently there are " << itrm->second.numberFanIn << " inputs to the gate." << endl;
+	                    exit (0);
+	                    break;
+            	}
+            	
+			 	itrm->second.lineValue = tempSet;
+			 	itrs = tempSet.begin();
+			 //	redFILE1 << ", value = "<< *itrs<<endl;
+			/* 	if(itrm->second.lineNumber == PO_line)
+			 	{
+			 	    res = *itrs;
+            	    redFILE1 << "PO "<<PO_line<<" has value "<< *itrs<<endl;
+            	}   */
+			 			 	
+			 	int p;
+			 	if(opl_hash.Search_Hash(itrm->second.lineNumber, p) == 1)
+			 	    outputValue.insert(pair<int, int>(itrm->second.lineNumber, *itrs));
+			}
+			
+		}
+			
+	}
+
+	delete []inputVector;
+	delete []gateVector;
+	
+    return;               
+	
+}
+
+
+/* 4
+ * ===  FUNCTION  ======================================================================
+ *         Name:  CreateFaultObjects
+ *  Description:  This function generates one object of the CircuitLine class for every
+ *                unique line in the circuit. So, after going through this function, we 
+ *                have a list of objects for each line in the circuit. Every line may 
+ *                have a stuck at 0 or a stuck at 1 fault so values are set to true for 
+ *                both.
+ *
+ *                A map is used here with the line number as the key. Duplicate elements 
+ *                would be removed automatically by the map.
+ * =====================================================================================
+ */
+void CreateFaultObjects (map <int, CircuitLine> &masterLineList, map<int, CircuitNode> &masterNodeList) 
+{
+
+    set <int>::iterator itr;
+    map<int, CircuitNode>::iterator itrm;
+	vector<CircuitNode*>::iterator itrv;
+
+    for (itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++) 
+    {
+
+		if (itrm->second.nodeType == 1 )   //Ignore the PIs
+			continue;
+
+		if(itrm->second.gateType == 11)   //Ignore the buffers
+		    continue;
+		
+        // Create an object for every node.
+        CircuitLine *thisLine;
+        thisLine = new CircuitLine(itrm->second.lineNumber);
+        masterLineList.insert(pair<int, CircuitLine>(itrm->second.lineNumber, *thisLine));
+        delete thisLine;
+
+    }
+
+}
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  CollapseFaults
+ *  Description:  This function takes the list of lines in the circuit and then 
+ *                collapses the faults going from output to input.
+ *
+ *                Fault collapse for XOR, XNOR and Branches is not yet implemented.
+ * =====================================================================================
+ */
+
+void CollapseFaults (map <int, CircuitLine> &masterLineList, map<int, CircuitNode> &masterNodeList) 
+{
+    map <int, CircuitNode>::iterator itrm, itrm1;
+    map <int, CircuitLine>::iterator itrml, itrml0;
+    set <int>::iterator itrSet;
+    vector<CircuitNode*>::iterator itrv;
+   
+    int highestLevel = SetLineLevel(masterNodeList, inputList);
+
+    /*int highestLevel = 0;
+    for(itrml = masterLineList.begin(); itrml != masterLineList.end(); itrml++)
+    {
+    	itrm = masterNodeList.find(itrml->second.lineNumber);
+    	if(itrm->second.lineLevel > highestLevel)
+    		highestLevel = itrm->second.lineLevel;
+    }*/
+
+    for (int i = highestLevel; i > 0; i--) 
+    {
+        for (itrml = masterLineList.begin(); itrml != masterLineList.end(); itrml++) 
+        {
+        	itrm = masterNodeList.find(itrml->second.lineNumber);
+        	if(itrm->second.lineLevel == i)
+            {
+            	switch (itrm->second.gateType) 
+                {
+                    case G_PI:
+                        break;
+                    case G_BRNCH:
+                         for (itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++) {
+                        	itrml0 = masterLineList.find((*itrv)->lineNumber);
+                        	if(itrml0 == masterLineList.end())
+                        		continue;
+                            itrm1 = masterNodeList.find((*itrv)->lineNumber);
+                            if(itrm1->second.gateType == 5)
+                        	{
+                        	    masterLineList.at((*itrv)->lineNumber).isStuckAt_0 = false;
+                                masterLineList.at((*itrv)->lineNumber).isStuckAt_1 = false;
+                            }
+                        }
+                        break;
+                    case G_OR:
+                    case G_NOR:
+                        for (itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++) {
+                        	itrml0 = masterLineList.find((*itrv)->lineNumber);
+                        	if(itrml0 == masterLineList.end())
+                        		continue;
+                        	masterLineList.at((*itrv)->lineNumber).isStuckAt_0 = false;
+                            masterLineList.at((*itrv)->lineNumber).isStuckAt_1 = false;
+                        }
+                        for (itrSet = itrm->second.listFanIn.begin(); itrSet != itrm->second.listFanIn.end(); itrSet++) {
+                        	itrml0 = masterLineList.find(*itrSet);
+                        	if(itrml0 == masterLineList.end())
+                        		continue;
+                            if (itrSet != itrm->second.listFanIn.begin())
+                                masterLineList.at(*itrSet).isStuckAt_1 = false;
+
+                        }
+                        break;
+                    case G_NOT:
+                        break;
+                    case G_NAND:
+                    case G_AND:
+                        for (itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++) {
+                        	itrml0 = masterLineList.find((*itrv)->lineNumber);
+                        	if(itrml0 == masterLineList.end())
+                        		continue;
+                            itrm1 = masterNodeList.find((*itrv)->lineNumber);
+                            if(itrm1->second.gateType == 7 || itrm1->second.gateType == 3)
+                                continue;
+                        	masterLineList.at((*itrv)->lineNumber).isStuckAt_0 = false;
+                            masterLineList.at((*itrv)->lineNumber).isStuckAt_1 = false;
+                        }
+                        for (itrSet = itrm->second.listFanIn.begin(); itrSet != itrm->second.listFanIn.end(); itrSet++) {
+                        	itrml0 = masterLineList.find(*itrSet);
+                        	if(itrml0 == masterLineList.end())
+                        		continue;
+                            masterLineList.at(*itrSet).isStuckAt_0 = false;
+                        	//if (itrSet != itrm->second.listFanIn.begin())
+	                        //    masterLineList.at(*itrSet).isStuckAt_0 = false;
+                        }
+                        break;
+                    default:
+                        cerr << "Unknown gate type encountered. The possible gate type values are from 0-7." << endl;
+                        cerr << "Current gate type is " << itrm->second.gateType << endl;
+                        exit (0);
+                        break;
+                }
+            }
+        }
+    }
+}
+ 
+ 
+
+
+/* 6
+ * ===  FUNCTION  ======================================================================
+ *         Name:  CreateFaultList
+ *  Description:  Once the faults have been collapsed, this function generates a list 
+ *                of all possible faults and the line numbers associated with them. When 
+ *                running ATPG, we have to obtain a test for every fault in this list.
+ * =====================================================================================
+ */
+void CreateFaultList(map <int, CircuitLine> &masterLineList, vector <FaultList> &inFaultList, map <int, CircuitNode> &masterNodeList) 
+{
+	map<int, CircuitNode>::iterator itrm;
+	vector<CircuitNode*>::iterator itrv;
+
+	int flag = 0;         //Indicates whether a branch's fanout is AND gate.
+    for (map<int, CircuitLine>::iterator itr = masterLineList.begin(); itr != masterLineList.end(); itr++) 
+    {
+        if ((*itr).second.isStuckAt_0) 
+        {
+            FaultList *thisFault;
+            thisFault = new FaultList ((*itr).first, false);
+            inFaultList.push_back(*thisFault);
+            delete thisFault;
+        }
+        if ((*itr).second.isStuckAt_1)
+        {
+            FaultList *thisFault;
+            thisFault = new FaultList ((*itr).first, true);
+            inFaultList.push_back(*thisFault);
+            delete thisFault;
+        }
+    }
+}
+
+
+/* 7
+ * ===  FUNCTION  ======================================================================
+ *         Name:  SimpleLogicSimulation : for testing, propagate D/D bar to output
+ *  Description:  
+ * =====================================================================================
+ */
+int SimpleLogicSimulation (map <int, CircuitNode> &masterNodeList, vector<int> &inputList, vector<int> &inVector, int outputLevel, FaultList &objFault, vector<int> *levelSet, map<int, int> &MA_value) 
+{
+    int totalInputs = inputList.size();
+    set <int> *gateVector;
+    gateVector = new set <int> [2];
+    if(gateVector == NULL)
+    {
+        redFILE0 << "Error in simplelogicsimulation for gatevector"<<endl;
+        exit(1);
+    }
+    set <int>::iterator itrSet, itrs;
+	vector<CircuitNode*>::iterator itrv;
+
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	map<int, int>::iterator itrmi;
+
+    // Assign the vector to inputs and keep all other values empty.
+    redFILE1 << "In simple logic simulation, Input vector: "<<endl;
+    for(int i = 0; i < inputList.size(); i++)
+    {
+        itrm = masterNodeList.find(inputList[i]);
+        itrm->second.lineValue.clear();   
+        itrm->second.lineValue.insert(inVector[i]);
+        redFILE1 << inVector[i];
+    }   	
+    redFILE1 << endl;
+    for(itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++) 
+    {
+        if(itrm->second.nodeType != 1)
+        {
+            itrs = itrm->second.lineValue.begin();
+            if(*itrs == X)
+            {
+                itrm->second.lineValue.clear();
+                if (itrm->second.gateType == G_stat0 )
+                    itrm->second.lineValue.insert(0); 
+                if (itrm->second.gateType == G_stat1 )
+                    itrm->second.lineValue.insert(1);   
+            }
+        }
+    }
+    
+    itrm1 = masterNodeList.find(objFault.lineNumber);   
+    if(itrm1->second.nodeType == 1)
+    {
+    	itrs = itrm1->second.lineValue.begin();
+    	int value = *itrs;
+    	if(objFault.stuckAtValue == 1 && value == 0)
+    	{
+    		itrm1->second.lineValue.clear();
+    		itrm1->second.lineValue.insert(3);
+    	}
+    	else if(objFault.stuckAtValue == 0  && value == 1)
+    	{
+    		itrm1->second.lineValue.clear();
+			itrm1->second.lineValue.insert(2);
+		}
+		else 
+		{
+	        delete []gateVector;
+		    return 0;             //Assignment conflict: fault can't be excited.
+		}
+	}
+			
+	
+    set <int> tempSet;  // To store the result of implication.      
+	int flag = 0;
+	for (int i = 1; i <= outputLevel; i++)
+	{
+	    for(int j = 0; j < levelSet[i-1].size(); j++)
+		{		    
+		    itrm = masterNodeList.find(levelSet[i-1][j]);
+			if (itrm->second.lineLevel == i)
+			{
+			//    redFILE1 << "current node = "<<levelSet[i-1][j]<<", ";
+				int inputNumber = 0;			
+	            for (itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++) 
+					gateVector[inputNumber++] = (*itrv)->lineValue;
+			
+				switch (itrm->second.pointFanIn.size()) 
+				{										
+	                case 1:
+	                    tempSet = forwardImplication (itrm->second.gateType, gateVector[0]);
+	                    break;
+	                case 2:
+	                    tempSet = forwardImplication (itrm->second.gateType, gateVector[0], gateVector[1]);
+	                    break;
+	                default:
+						cerr << "This node is "<<itrm->second.lineNumber<<endl;
+	                    cerr << "This ATPG generator only works if the number of inputs to a gate is less than 4." << endl;
+	                    cerr << "Currently there are " << itrm->second.numberFanIn << " inputs to the gate." << endl;
+	                    exit (0);
+	                    break;
+            	}       
+            	itrSet = tempSet.begin();   
+          //  	redFILE1 << "value = "<<*itrSet<<endl;       	
+            	if(itrm->second.lineNumber == objFault.lineNumber)
+	            {	            	
+	            	if(objFault.stuckAtValue == 1)
+	            	{
+	            		if((*itrSet == 0))                        //Fault has been excited.
+	            		{
+	            			tempSet.clear();	            			
+	               			tempSet.insert(3);
+	               		}
+	               		else if(*itrSet == 4)                    //Fault hasn't been excited.
+	               		{                       
+	               			itrm->second.lineValue = tempSet;
+	                        delete []gateVector;
+	               			return 1;
+	               		}
+	               		else if(*itrSet == 1)                   //Fault can't be excited.
+	               		{
+	                        delete []gateVector;
+	               			return 0;
+	                    }
+	               	}
+					else if(objFault.stuckAtValue == 0)
+					{
+						if((*itrSet == 1))                       //Fault has been excited.
+						{
+	            			tempSet.clear();
+							tempSet.insert(2);
+						}
+						else if(*itrSet == 4)                    //Fault hasn't been excited.
+						{
+							itrm->second.lineValue = tempSet;
+	                        delete []gateVector;
+	               			return 1;
+	               		}
+						else if(*itrSet == 0)                    //Fault can't be excited.
+	               		{
+	                        delete []gateVector;
+	               			return 0;
+	               	    }
+	               	}
+			    }			 	
+			 	
+			 	itrmi = MA_value.find(itrm->second.lineNumber);
+            	if(*itrSet != X && itrmi != MA_value.end() && itrmi->second != *itrSet)
+            	{
+            	    redFILE1 << "In simplelogicsimulation, value conflict!"<<endl;
+            	    redFILE1 << "Current node = "<<itrm->second.lineNumber<<endl;
+            	    redFILE1 << "MA value = "<<itrmi->second<<", current value = "<<*itrSet<<endl;
+            	    delete []gateVector;
+            	    return -1;
+            	}	
+            	itrm->second.lineValue = tempSet;	 
+			}			
+		}			
+	}
+	delete []gateVector;
+	
+	//if(flag == 1)                  //Fault hasn't been excited.
+	//	return 1;
+	
+    return 2;               //Fault is excited.	
+}
+
+

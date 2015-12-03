@@ -1,0 +1,98 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  helper.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  16/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+
+
+#ifndef HELPER_H
+#define HELPER_H 
+ 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+#include "../class/ConnFault.h"
+#include "../class/HashTable.h"
+
+
+	void GenerateMasterInputVectors (vector<string> &masterInputVector, int totalInputs);
+	void GenerateMasterInputVectors_some(vector<string> &masterInputVector, int totalInputs);
+	void vector_erase(CircuitNode &node, int line, int flag);
+	void vector_insert(CircuitNode &node, int line, int flag, map<int, CircuitNode> &nodeList);
+	int search_vector_int(vector<int> &NodeList, int node);
+	int search_set_int(set<int> &NodeList, int node);
+	int search_vector_node(vector<CircuitNode> &masterNodeList, int line);
+	void search_vector_fault(vector<FaultList> &NodeList, int node, vector<int> &flagVec);
+	void collapse_circuit(map<int, CircuitNode> &masterNodeList);
+	void insertion_sort_asc(vector <int> &highestNodeList, int count);
+	void dtob(unsigned int d, vector<int> &bstr, int wordSize);
+	void find_tranfanout_hash(map <int, CircuitNode> &orNodeList_m, HashTable &tranFanOut, int lineNumber);
+	void find_tranfanout_hash_output(map<int, CircuitNode> &orNodeList_m, HashTable &tranFanOut, int lineNumber);
+	void find_tranfanin_hash(map <int, CircuitNode> &orNodeList_m, HashTable &tranFanIn, int lineNumber);
+	void find_tranfanout(map <int, CircuitNode> &orNodeList_m, vector<int> &tranFanOut, int lineNumber);
+	void find_tranfanin(map <int, CircuitNode> &orNodeList_m, vector<int> &tranFanIn, int lineNumber);
+	int comp_map(map<int, int> m1, map<int, int> m2);
+	
+	void collapse_circuit_v2(map<int, CircuitNode> &masterNodeList, int node);
+	void collapse_circuit_v2_main(map<int, CircuitNode> &masterNodeList);
+	
+	void local_implication_helper(map <int, CircuitNode> &masterNodeList, int inLineNumber, vector<int> &result_node);
+	void local_implication(map <int, CircuitNode> &masterNodeList, int inLineNumber, bool inStuckAtValue, vector<int> &result_node);
+	
+	bool remove_vector(vector<vector<int> > & NumVec, vector<int> & FlagVec);
+    void compute_cost(map<int, CircuitNode> &orNodeList_m, vector <FaultList> &original_sf, multimap<int, FaultList> &cost_sf, int first_cost);
+    void compute_cost_cone(map<int, CircuitNode> &orNodeList_m, vector <FaultList> &original_sf, multimap<int, FaultList> &cost_sf, int first_cost);
+    
+    void create_fault_list(map <int, CircuitNode> &masterNodeList_m, vector<FaultList> &orFaultList);
+    
+    void simplify_circuit(map<int, CircuitNode> &orNodeList, int sa_line, int sa_value);
+    void update_testpool(vector<string> &testPool, string testVector);
+    
+    void vector_fault_insert(vector<FaultList> &record, FaultList &fault);
+       
+    void form_cone_circuit(map<int, CircuitNode> &masterNodeList, map<int, CircuitNode> &cone_masterNodeList, int node);   
+    void form_fanout_cone_circuit(map<int, CircuitNode> &brNodeList, map<int, CircuitNode> &fanout_cone_circuit, int output_node); 
+       
+    void find_dominator(map<int, CircuitNode> &masterNodeList, map<int, int> &dom, int target_node);
+    void find_dominator_main(map<int, CircuitNode> &masterNodeList, map<int, int> &dom, int target_node);
+    void find_dominator_new_helper(map<int, CircuitNode> &orNodeList, map<int, int> &dom, int target_node, int output_node);
+    void find_dominator_new(map<int, CircuitNode> &orNodeList, map<int, int> &dom, int target_node, HashTable &tfo);
+    void find_dominator_br(map<int, CircuitNode> &brNodeList, map<int, map<int, int> > &br_dom);
+    
+    int cal_cost(map<int, CircuitNode> &tmp_orNodeList, int sa_line, int sa_value);
+    
+    int check_red_sat_minisat(map<int, CircuitNode> &tmp_orNodeList, vector<string> &br_lisp_log, ofstream &oufile);
+    int check_red_sat(map<int, CircuitNode> &tmp_orNodeList, vector<string> &br_lisp_log, ofstream &oufile);
+    int check_red_sat_abc(map<int, CircuitNode> &tmp_orNodeList, map<int, CircuitNode> &brNodeList, vector<string> &br_bench_log, ofstream &oufile);
+    
+    void rem_new_unt(map<int, CircuitNode> &tmp_orNodeList, map<int, CircuitNode> &brNodeList, map<int, CircuitNode> &tmp_masterNodeList, multimap<int, int> &ICA, int wa_line, int sa_line, int sa_value, int this_cost, vector<string> &br_bench_log, ofstream &oufile);
+    
+    void top_sort(map<int, CircuitNode> &nodeList, vector<int> &sort_list);
+    
+    void remove_inv(map<int, CircuitNode> &nodeList, int node);
+    
+
+#endif 
+

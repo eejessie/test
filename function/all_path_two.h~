@@ -1,0 +1,47 @@
+#ifndef _ALL_PATH_TWO_H
+#define _ALL_PATH_TWO_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include "class/CircuitNode.h"
+
+
+class node
+{
+	public:
+	int number;
+	node *next;
+	node(int a,node *b)
+	{
+	   number=a;
+	   next=b;
+	}
+};
+ 
+class stacks
+{
+	public:
+	node * top;
+	stacks(node * a=NULL)
+	{
+	   top=NULL;
+	}
+	void push(int a)
+	{
+	   if (top==NULL)
+		top =new node(a,NULL);
+	   else top=new node(a,top);
+	}
+	void pop()
+	{
+	   node *b=top;
+	   top=top->next;
+	   delete b;
+	}
+}; //保存已加入路径结点的栈
+
+int all_path_two(map<int, CircuitNode> &masterNodeList, int start, int end, vector<int> &all_nodes, map<int, vector<int> > &all_paths);
+
+#endif

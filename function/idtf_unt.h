@@ -1,0 +1,39 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  idtf_unt.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  11/08/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#ifndef IDTF_UNT_H
+#define IDTF_UNT_H 
+ 
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+
+
+
+#include "../class/CircuitNode.h"
+
+
+void intersect(multimap<int, FaultList> &S_untest, multimap<int, FaultList> &untSet);
+
+void idtf_unt(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &masterNodeList, multimap<int, int> &ic, multimap<int, FaultList> &untFaultSet);
+
+#endif 
+

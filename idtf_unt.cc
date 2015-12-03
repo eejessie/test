@@ -1,0 +1,363 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <math.h>
+#include <cassert>
+#include <ctime>
+#include <sys/timeb.h>
+
+#include "class/CircuitNode.h"         
+#include "class/CircuitLine.h"        
+#include "class/FaultList.h"           
+#include "class/TestList.h"  
+#include "class/HashTable.h"          
+#include "lib/file_operations.h"
+#include "lib/radix_convert.h"
+#include "function/read_circuit.h"
+#include "function/print_circuit.h"
+#include "function/copy_point_vector.h"
+#include "function/atpg.h"
+#include "function/adjust_ln.h"
+#include "function/merge_circuit.h"
+#include "function/helper.h"
+#include "function/run_logic_simulation.h"
+#include "function/recursive_learning_un.h"
+
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+using namespace std;
+
+extern int rmax;
+extern ofstream redFILE1;
+
+void deter_unobs(map<int, CircuitNode> &masterNodeList, int node, map<int, int> &uncont, map<int, map<int, int> > &unobs_set)
+{
+    //Iterators
+	vector<CircuitNode*>::iterator itrv, itrv1;
+	set<int>::iterator itrs;
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	map<int, int>::iterator itrmi;
+	map<int, map<int, int> >::iterator itrmm, itrmm1;
+	
+    itrm = masterNodeList.find(node);
+    if(itrm->second.nodeType == 1)//PI
+        return;
+    if(itrm->second.pointFanOut.size() == 1) //not stem
+    {
+        itrm->second.unobs = true;
+        unobs_set.insert(pair<int, map<int, int> >(node, uncont));
+        for(itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++)
+            deter_unobs(masterNodeList, (*itrv)->lineNumber, uncont, unobs_set);
+    }
+    else if(itrm->second.pointFanOut.size() > 1) //stem
+    {
+        int count_branch_unobs = 0;
+        for(itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++)
+        {
+            if((*itrv)->unobs == true)
+                count_branch_unobs++;         
+        }
+        if(count_branch_unobs == itrm->second.pointFanOut.size())
+        {
+            map<int, int> current_uncont;
+            for(itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++)
+            {
+                itrmm = unobs_set.find((*itrv)->lineNumber);
+                if(itrmm != unobs_set.end())
+                {
+                    map<int, int> each_uncont = itrmm->second;
+                    for(itrmi = each_uncont.begin(); itrmi != each_uncont.end(); itrmi++)
+                        current_uncont.insert(pair<int, int>(itrmi->first, itrmi->second));
+                }
+            }
+            itrm->second.unobs = true;
+            unobs_set.insert(pair<int, map<int, int> >(node, current_uncont));
+            for(itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++)
+                deter_unobs(masterNodeList, (*itrv)->lineNumber, current_uncont, unobs_set);
+        }
+        else
+            return;
+    }    
+}
+
+void deter_unobs_new(map<int, CircuitNode> &masterNodeList, int node, map<int, int> &unobs_set)
+{
+    vector<CircuitNode*>::iterator itrv, itrv1;
+    set<int>::iterator itrs;
+    map<int, int>::iterator itrmi, itrmi1;
+    map<int, CircuitNode>::iterator itrm, itrm1, itrm2;
+
+    queue assign_list;
+    assign_list.push(node);
+    while(!assign_list.empty())
+    {
+        int cnode = assign_list.pop();
+        itrm = masterNodeList.find(cnode);
+        if(itrm->second.nodeType == 1)//PI
+            continue;
+        int fanout_size = itrm->second.pointFanOut.size();
+        if(fanout_size == 1) //not stem
+        {
+            itrm->second.unobs = true;
+            unobs_set.insert(pair<int, int>(cnode, cnode));
+            for(itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++)
+            {
+                int fanin = (*itrv)->lineNumber;
+                itrm1 = masterNodeList.find(fanin);
+                if(itrm1->second.unobs == false)
+                    assign_list.push(fanin);
+            }
+        }
+        else if(fanout_size > 1) //stem
+        {
+            int count_branch_unobs = 0;
+            for(itrv = itrm->second.pointFanOut.begin(); itrv != itrm->second.pointFanOut.end(); itrv++)
+            {
+                if((*itrv)->unobs == true)
+                    count_branch_unobs++;         
+            }
+            if(count_branch_unobs == fanout_size)
+            {
+                itrm->second.unobs = true;
+                unobs_set.insert(pair<int, int>(cnode, cnode));
+                for(itrv = itrm->second.pointFanIn.begin(); itrv != itrm->second.pointFanIn.end(); itrv++)          
+                {
+                    int fanin = (*itrv)->lineNumber;
+                    itrm1 = masterNodeList.find(fanin);
+                    if(itrm1->second.unobs == false)
+                        assign_list.push(fanin);
+                }
+            }
+        }    
+    }
+}
+
+
+void faults_unt_with(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &masterNodeList, int node, int val, multimap<int, FaultList> &untSet)
+{
+    vector<CircuitNode*>::iterator itrv, itrv1;
+    set<int>::iterator itrs;
+    map<int, int>::iterator itrmi, itrmi1;
+    map<int, CircuitNode>::iterator itrm, itrm1;
+    typedef multimap<int, FaultList>::iterator PAT;
+
+    for(itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++)
+	{
+	    itrm->second.lineValue.clear();
+	    if(itrm->second.gateType == 9)
+	        itrm->second.lineValue.insert(0);
+	    else if(itrm->second.gateType == 10)
+	        itrm->second.lineValue.insert(1);
+	    else    
+	        itrm->second.lineValue.insert(X);
+	}
+	itrm = masterNodeList.find(node);
+    itrm->second.lineValue.clear();
+    itrm->second.lineValue.insert(val);
+
+    int r = 0;
+    int consist_flag;
+    int rmax1 = 1;
+    map<int, int> MA;
+    recursive_learning_un(masterNodeList, orNodeList, node, r, rmax1, MA, untSet, consist_flag);
+    if(consist_flag == 0)
+    {
+   //     redFILE1 << "inconsistency occurs!"<<endl;
+        return;
+    }
+    MA.insert(pair<int, int>(node, val));
+    
+    for(itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++)
+        itrm->second.unobs = false;
+    
+    map<int, int> unobs_start, unobs_set;    
+    for(itrmi = MA.begin(); itrmi != MA.end(); itrmi++)
+    {
+        /*itrm = orNodeList.find(itrmi->first);
+        if(itrm == orNodeList.end())
+            continue;*/
+
+        //untestable faults due to uncontrollability
+        FaultList canfault(itrmi->first, 1-itrmi->second);
+        itrm = orNodeList.find(itrmi->first);
+        if(itrm != orNodeList.end())
+            untSet.insert(pair<int, FaultList>(itrmi->first, canfault));
+        
+        //find starting points of unobservability
+        if(itrmi->second == 1)   
+        {
+            itrm = masterNodeList.find(itrmi->first);
+            if(itrm->second.pointFanOut.size() == 1)
+            {
+                itrv = itrm->second.pointFanOut.begin();
+                itrm1 = masterNodeList.find((*itrv)->lineNumber);
+                if(itrm1->second.gateType == 7)//AND gate
+                    for(itrv1 = itrm1->second.pointFanIn.begin(); itrv1 != itrm1->second.pointFanIn.end(); itrv1++)
+                    {
+                        if((*itrv1)->lineNumber != itrmi->first)
+                        {
+                            (*itrv1)->unobs = true;
+                            unobs_start.insert(pair<int, int>((*itrv1)->lineNumber, (*itrv1)->lineNumber));                         
+                            break;
+                        }
+                    }
+            }
+        }        
+                
+        if(itrmi->second == 0)
+        {
+            itrm = masterNodeList.find(itrmi->first);
+            if(itrm->second.pointFanOut.size() == 1)
+            {
+                itrv = itrm->second.pointFanOut.begin();
+                itrm1 = masterNodeList.find((*itrv)->lineNumber);
+                if(itrm1->second.gateType == 3)//OR gate
+                    for(itrv1 = itrm1->second.pointFanIn.begin(); itrv1 != itrm1->second.pointFanIn.end(); itrv1++)
+                    {
+                        if((*itrv1)->lineNumber != itrmi->first)
+                        {
+                            (*itrv1)->unobs = true;
+                            unobs_start.insert(pair<int, int>((*itrv1)->lineNumber, (*itrv1)->lineNumber));
+                            break;
+                        }
+                    }
+            }
+        }
+    }//for(itrmi = MA.begin(); itrmi != MA.end(); itrmi++)
+    
+//    redFILE1 << "**unobservable lines start at: "<<endl; 
+    for(itrmi = unobs_start.begin(); itrmi != unobs_start.end(); itrmi++)
+        deter_unobs_new(masterNodeList, itrmi->first, unobs_set);
+    
+/*    redFILE1 << "**unobservable lines inferred: "<<endl; 
+    for(itrmi = unobs_set.begin(); itrmi != unobs_set.end(); itrmi++)
+       redFILE1 << itrmi->first<<" ";
+    redFILE1 << endl;*/
+    
+   // redFILE1 << "**untestable faults due to unobservability: "<<endl;
+    for(itrmi = unobs_set.begin(); itrmi != unobs_set.end(); itrmi++)
+    {
+        itrm = orNodeList.find(itrmi->first);
+        if(itrm == orNodeList.end())
+            continue;
+        pair<PAT, PAT> range = untSet.equal_range(itrmi->first);
+        int num_sa0 = 0, num_sa1 = 0;
+        for(PAT ite = range.first; ite != range.second; ite++)
+            if(ite->second.stuckAtValue == 0)
+                num_sa0++;
+            else
+                num_sa1++;
+        if(num_sa0 == 0 && num_sa1 == 0)
+        {            
+            FaultList canfault(itrmi->first, 0);    
+            untSet.insert(pair<int, FaultList>(itrmi->first, canfault));
+            canfault.stuckAtValue = 1;
+            untSet.insert(pair<int, FaultList>(itrmi->first, canfault));
+        }
+        else if(num_sa0 == 0 && num_sa1 > 0)
+        {
+            FaultList canfault(itrmi->first, 0);
+            untSet.insert(pair<int, FaultList>(itrmi->first, canfault));
+        }
+        else if(num_sa0 > 0 && num_sa1 == 0)
+        {
+            FaultList canfault(itrmi->first, 1);
+            untSet.insert(pair<int, FaultList>(itrmi->first, canfault));
+        }        
+    }
+   
+}
+
+void intersect(multimap<int, FaultList> &S_untest, multimap<int, FaultList> &untSet)
+{
+    //redFILE1 << "Coming into intersect: "<<endl;
+    
+    typedef multimap<int, FaultList>::iterator PAT;
+    PAT itrmf, ite;
+     
+ /*   redFILE1 << "S_untest: "<<endl;
+    for(itrmf = S_untest.begin(); itrmf != S_untest.end(); itrmf++)
+        redFILE1 << "("<<itrmf->second.lineNumber<<", "<<itrmf->second.stuckAtValue<<")  ";
+    redFILE1 << endl<<"untSet: "<<endl;
+    for(itrmf = untSet.begin(); itrmf != untSet.end(); itrmf++)
+        redFILE1 << "("<<itrmf->second.lineNumber<<", "<<itrmf->second.stuckAtValue<<")  ";*/
+        
+    multimap<int, FaultList> new_untest;
+    for(itrmf = untSet.begin(); itrmf != untSet.end(); itrmf++)
+    {
+        pair<PAT, PAT> range = S_untest.equal_range(itrmf->first);
+        for(ite = range.first; ite != range.second; ite++)
+            if(ite->second.stuckAtValue == itrmf->second.stuckAtValue)
+            {
+               // redFILE1 << "this fault: "<<"("<<itrmf->first<<", "<<itrmf->second.stuckAtValue<<") is inserted"<<endl;
+                new_untest.insert(pair<int, FaultList>(itrmf->first, itrmf->second));
+                //break;
+            }
+        
+    }
+    S_untest.clear();
+    S_untest = new_untest;
+}
+
+
+void idtf_unt(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &masterNodeList, multimap<int, int> &ic, multimap<int, FaultList> &untFaultSet)
+{
+    multimap<int, int>::iterator itrmi, itrmi1;
+    typedef multimap<int, FaultList>::iterator PAT;
+    PAT itrmf, ite;
+
+    multimap<int, FaultList > S_untest;
+
+   for(itrmi = ic.begin(); itrmi != ic.end(); itrmi++)
+   {
+      /*  redFILE1 << "-----------------------------------------"<<endl;
+        redFILE1 << "finding untestable faults with current ic: ";
+        redFILE1 << "("<<itrmi->first<<", "<<itrmi->second<<")"<<endl;*/
+        multimap<int, FaultList> untSet;           
+        faults_unt_with(orNodeList, masterNodeList, itrmi->first, itrmi->second, untSet);
+ 
+        if(itrmi == ic.begin())
+            S_untest = untSet;
+        else
+        {
+            //redFILE1 <<"Intersect S_untest and untSet:"<<endl;
+            intersect(S_untest, untSet);
+        }
+        //insertion_sort_fault(S_untest, S_untest.size());            
+   }
+  // redFILE1 << endl<<"intersection of all untestable faults:"<<endl;
+   for(itrmf = S_untest.begin(); itrmf != S_untest.end(); itrmf++)
+   {
+        pair<PAT, PAT> range = untFaultSet.equal_range(itrmf->first);
+        int flag_exist = 0;
+        for(ite = range.first; ite != range.second; ite++)
+            if(ite->second.stuckAtValue == itrmf->second.stuckAtValue)
+            {
+                flag_exist = 1;
+                //break;
+            }
+        if(flag_exist == 0)
+        {
+            untFaultSet.insert(pair<int, FaultList>(itrmf->first, itrmf->second));
+      //      redFILE1 << "%("<<itrmf->second.lineNumber<<", "<<itrmf->second.stuckAtValue<<") ";
+        }
+   }
+   //redFILE1 << endl << endl;
+
+}
+
+
+
+
+
+
+

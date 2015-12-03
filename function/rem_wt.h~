@@ -1,0 +1,14 @@
+#ifndef _REM_WT_H
+#define _REM_WT_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+
+void rem_wt(map<int, CircuitNode> &orNodeList, FaultList &wt_error, vector<int> &stop_gate);
+
+#endif

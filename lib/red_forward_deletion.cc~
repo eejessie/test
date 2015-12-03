@@ -1,0 +1,126 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  red_forward_deletion.cc
+ *
+ *    Description:  This function performs forward implication on a 1-3 input gate.
+ *                  The inputs and output are integer sets. It reads the values from
+ *                  logic tables.
+ *
+ *        Version:  1.0
+ *        Created:  12/02/2011
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Aditya Shevade <aditya.shevade@gmail.com>,
+ *                  Amey Marathe <marathe.amey@gmail.com>,
+ *                  Samik Biswas <samiksb@gmail.com>,
+ *                  Viraj Bhogle <viraj.bhogle@gmail.com>  
+ *
+ * =====================================================================================
+ */
+
+using namespace std;
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+// This file contains the tables which are looked up for determinig the output.
+
+#ifndef LOGIC_TABLES_H_
+#include "../include/logic_tables.h"
+#endif
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "../include/global_defines.h"
+#endif
+
+namespace nameSpace_ATPG {
+
+/*-----------------------------------------------------------------------------
+ * The function forwardImplication is overloaded. The gates in the circuits
+ * we analyze can have up to 3 inputs. Depending on the number of inputs passed
+ * the proper function is executed.
+ *
+ * Sets are used since we don't want duplicate values at the output. Set will
+ * remove duplicate values.
+ *
+ * The best way to get the result of any logical operation is to do a table
+ * lookup. The tables are defined in the logic_tables.h file included above.
+ * The tables can be of any valued logic. We are currently using 5 valued
+ * logic in our test generator.
+ *-----------------------------------------------------------------------------*/
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  red_forward_deletion
+ *  Description:  The function takes in an STL set as input and returns a set as output.
+ *                The version defined below is a single input version.
+ *                Set is used since multiple inputs may give same result.
+ * =====================================================================================
+ */
+void red_forward_deletion (vector <CircuitNode> &simNodeList, vector <int> remov_list, int red_linelevel, int highest_level) {
+
+	int i,j;
+	set <int> tempFanIn;
+	for (i=0; (i<masterNodeList.size()) && (masterNodeList[i].linelevel >= red_linelevel); i++){
+			if (masterNodeList[i].lineLevel == highest_level){
+                //save the line number of the inputs to the current node in tmepFanIn. 
+				for(j=0;j<masterNodeList[i].numberFanIn;j++)
+					tempFanIn.insert(masterNodeList[i].listFanIn[j]);
+
+				//A primary output is a gate type, which may have 1-3 inputs.
+				switch(masterNodeList[i].numberFanIn){
+					case 1:
+						if (masterNodeList[i].lineValue[0] == 0 || masterNodeList[i].lineValue[0] == 1){							
+							masterNodeList[i].numberFanIn = 0; 
+							masterNodeList[i].listFanIn.clear();
+							remov_list.insert(tempFanIn[0].lineNumber);
+						}
+						else {};
+						
+
+					case 2:
+						if (masterNodeList[i].lineValue[0] == 0 || masterNodeList[i].lineValue[0] == 1){
+							masterNodeList[i].numberFanIn = 0;
+							masterNodeList[i].listFanIn.clear();
+							remov_list.insert(tempFanIn[0].lineNumber);
+							remov_list.insert(tempFanIn[1].lineNumber);				
+
+						}
+						else if (masterNodeList[i].lineValue[0] == X){
+							if (masterNodeList[i].gateType == G_AND){
+								if (tempFanIn[0].lineValue == 1)
+									masterNodeList[i].gateType = tempFanIn[1].gateType;
+								else if (tempFanIn[1].lineValue == 1)
+									masterNodeList[i].gateType = tempFanIn[0].gateType;
+								else {};
+							}
+							else if (masterNodeList[i].gateType == G_OR){
+								if (tempFanIn[0].lineValue == 0)
+									masterNodeList[i].gateType = tempFanIn[1].gateType;
+								else if (tempFanIn[1].lineValue == 0)
+									masterNodeList[i].gateType = tempFanIn[0].gateType;
+								else {};
+							}
+							else {};
+						}
+						else {};
+
+					case 3:
+					
+										
+
+
+
+				}
+			}
+					
+
+
+	}
+
+
+}
+

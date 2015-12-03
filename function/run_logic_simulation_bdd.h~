@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "/home/eejessie/work/CUDD/cudd-2.4.1/cudd/cudd.h"
+#include "/home/eejessie/work/CUDD/cudd-2.4.1/cudd/cuddInt.h"
+
+#ifndef RUN_LOGIC_SIMULATION_BDD_H
+#define RUN_LOGIC_SIMULATION_BDD_H
+
+void run_logic_simulation_bdd(map<int, CircuitNode> &orNodeList, int totalInputs, vector<string> & InputVector, DdManager *dd, DdNode *node);
+
+#endif 
+

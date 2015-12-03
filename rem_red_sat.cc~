@@ -1,0 +1,143 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <ctime>
+#include <sys/timeb.h>
+
+#include "class/CircuitNode.h"        
+#include "class/CircuitLine.h" 
+#include "class/ConnFault.h"
+#include "function/copy_point_vector.h"
+#include "function/print_circuit.h"
+#include "function/helper.h"
+#include "function/atpg.h"
+#include "function/merge_circuit.h"
+#include "function/run_logic_simulation.h"
+#include "function/red_forward_deletion_v2.h"
+#include "function/red_backward_deletion.h"
+#include "function/ATPG_checker.h"
+#include "function/compute_MA.h"
+#include "function/write_lisp.h"
+
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+using namespace std;
+
+extern ofstream redFILE0, redFILE1, oufile;
+extern vector<int> inputList;
+extern vector<string> masterInputVector;
+extern int totalInputs;
+extern vector<string> testPool;
+int flag_unt = 1;
+
+
+void rem_max_red_sat(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &brNodeList, map<int, CircuitNode> &masterNodeList, vector<FaultList> &original_sf, multimap<int, FaultList> &cost_sf, int &th_cost, vector<string> &br_lisp_log)
+{
+    map<int, CircuitNode>::iterator itrm;
+
+    if(cost_sf.empty())
+        return;
+
+     multimap<int, FaultList>::reverse_iterator itrmf_r;
+	 itrmf_r = cost_sf.rbegin(); 
+	 cout << endl << "("<<itrmf_r->second.lineNumber<<", "<<itrmf_r->second.stuckAtValue<<"): "<<endl;
+	 redFILE1 << endl << "("<<itrmf_r->second.lineNumber<<", "<<itrmf_r->second.stuckAtValue<<"): "<<endl;
+	 redFILE0 << endl << "("<<itrmf_r->second.lineNumber<<", "<<itrmf_r->second.stuckAtValue<<"): "<<endl; 
+    
+	redFILE1 << "cost of current fault: "<<itrmf_r->first<<endl;
+	
+	
+//	else  
+	{
+        struct timeb startTime, endTime;  
+        FaultList objFault(itrmf_r->second.lineNumber, itrmf_r->second.stuckAtValue);
+        int line = itrmf_r->second.lineNumber;
+        int sa_value = itrmf_r->second.stuckAtValue;
+                
+        map<int, CircuitNode> tmp_orNodeList;
+        copy_point_vector1(orNodeList, tmp_orNodeList);
+        simplify_circuit(tmp_orNodeList, line, sa_value);                
+        ftime(&startTime);
+        int isTestable = check_red_sat(tmp_orNodeList, br_lisp_log, oufile);
+        ftime(&endTime);
+        redFILE1 << "Time for sat: "<<((endTime.time - startTime.time)*1000 + (endTime.millitm - startTime.millitm))/1000.0<<endl<<endl;
+	    cout << "Time for sat: "<<((endTime.time - startTime.time)*1000 + (endTime.millitm - startTime.millitm))/1000.0<<endl<<endl;
+	    
+	    if(isTestable == -1)
+            exit(1);
+       		
+        //if(!untestable)
+        if(isTestable)
+        {
+            redFILE1 << "**Current fault is testable!"<<endl;
+            multimap<int, FaultList>::iterator itrmf = cost_sf.end();
+            itrmf--;
+            cost_sf.erase(itrmf);
+            rem_max_red_sat(orNodeList, brNodeList, masterNodeList, original_sf, cost_sf, th_cost, br_lisp_log);
+        }        
+        else
+        {
+            cout << "**Current fault is untestable!"<<endl;
+            redFILE1 << "**Current fault is untestable!"<<endl;
+            flag_unt = 1;
+                       
+            int old_size = orNodeList.size();   
+            simplify_circuit(orNodeList, itrmf_r->second.lineNumber, itrmf_r->second.stuckAtValue);
+            int new_size = orNodeList.size();
+            int cost = old_size - new_size;
+            
+            redFILE1 << "after remove redundancy, circuit size = "<<orNodeList.size()<<", cost = "<<cost<<endl;
+            	    
+		    merge_circuit(masterNodeList, orNodeList, brNodeList);
+
+            ftime(&startTime);
+		    cost_sf.clear();				    
+		    compute_cost(orNodeList, original_sf, cost_sf, th_cost);	
+		    ftime(&endTime);
+            redFILE1 << "Time for compute_cost: "<<((endTime.time - startTime.time)*1000 + (endTime.millitm - startTime.millitm))/1000.0<<endl<<endl;
+            
+		    rem_max_red_sat(orNodeList, brNodeList, masterNodeList, original_sf, cost_sf, th_cost, br_lisp_log);
+				
+        }
+    }
+}
+
+
+
+void rem_red_sat(map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, vector <FaultList> &orFaultList, vector<string> &br_lisp_log)
+{
+
+    map<int, CircuitNode>::iterator itrm;
+
+	redFILE1 << "**start compute_cost:"<<endl;
+	cout << "**start compute_cost:"<<endl;
+	
+	multimap<int, FaultList> cost_sf;
+	int first_cost = 100000;
+	compute_cost(orNodeList_m, orFaultList, cost_sf, first_cost);
+/*    int th_cost = totalInputs/4;
+    int th_cost = 0;
+    compute_cost_fanin(orNodeList_m, orFaultList, cost_sf, th_cost);*/
+	
+	redFILE1 << "**start rem_max_red:"<<endl;
+	cout << "**start rem_max_red:"<<endl;
+            
+	rem_max_red_sat(orNodeList_m, brNodeList_m, masterNodeList_m, orFaultList, cost_sf, first_cost, br_lisp_log);
+
+	merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+	redFILE1 << "At the end of rem_red, circuit size = "<<orNodeList_m.size()<<endl;
+}
+
+

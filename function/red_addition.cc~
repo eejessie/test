@@ -1,0 +1,277 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  red_addition.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  3/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "class/CircuitNode.h"
+#include "class/ConnFault.h"
+
+#include "atpg.cc"
+#include "head/upd_circuit.cc"
+#include "head/del_gate.cc"
+#include "head/run_logic_simulation.cc"
+//#include "head/print_circuit.h"
+
+
+
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+using namespace std;
+using namespace nameSpace_ATPG;
+
+
+extern vector <string> masterInputVector;
+extern vector <string> masterInputVector1;
+extern vector <string> masterTestVector;
+extern vector <TestList> masterTestList;
+extern ofstream redFILE0;
+
+//extern bool search_vector(vector <CircuitNode> & NodeList, int node);
+//extern void find_tranfanout(map <int, CircuitNode> &orNodeList_m, vector <CircuitNode> &tranFanOut, int lineNumber);
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  SimpleLogicSimulation
+ *  Description:  Simple logic simulation. The number of inputs are provided to it.
+ *                It generates a random input vector, simulates the circuit and then 
+ *                generates the output value.
+ * =====================================================================================
+ */
+bool search_in_vector(vector <CircuitNode> & NodeList, int node)
+{
+	int i;
+	for(i=0; i<NodeList.size(); i++)
+		if(NodeList[i].lineNumber == node)
+			return true;
+	return false;
+}
+
+
+
+void find_tran_fanout(map <int, CircuitNode> &orNodeList_m, vector <CircuitNode> &tranFanOut, int lineNumber)
+{
+	map<int,CircuitNode>::iterator itrm, itrm1;
+	set<int>::iterator itrs;
+
+	itrm = orNodeList_m.find(lineNumber);
+	if (itrm->second.nodeType == 3)         //If corrent line is a PO, then return;
+		return;
+	for(itrs=itrm->second.listFanOut.begin(); itrs!=itrm->second.listFanOut.end(); itrs++)
+		for(itrm1=orNodeList_m.begin(); itrm1!=orNodeList_m.end(); itrm1++)
+			if(itrm1->second.lineNumber == *itrs)
+			{
+				if(!search_in_vector(tranFanOut, *itrs))
+					tranFanOut.push_back(itrm1->second);
+				find_tranfanout(orNodeList_m, tranFanOut, *itrs);
+				break;
+			}
+}
+
+
+
+/*Judge if both the source and destination of this fault are in the current circuit.
+If yes, return 1; else, return 0.*/
+int fault_exist(map<int, CircuitNode> &orNodeList_m, ConnFault &cf)
+{
+	map<int, CircuitNode>::iterator itrm;
+	//set<int>::iterator itrs;
+
+	bool exist_src = 0, exist_dest = 0;
+	for(itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+		if(cf.src == itrm->second.lineNumber)
+		{
+			exist_src = 1;
+			break;
+		}
+	for(itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+		if(cf.dest == itrm->second.lineNumber)
+		{
+			exist_dest = 1;
+			break;
+		}
+
+	vector <CircuitNode> tranFanOut; 
+	if((exist_src == 1) && (exist_dest == 1)) 
+	{
+		find_tran_fanout(orNodeList_m, tranFanOut, cf.dest);
+		if(search_in_vector(tranFanOut, cf.src))
+		{
+			redFILE0 << "src is in the transistive fanout of dest."<<endl;
+			return 0;		
+		}
+		else
+		{
+			redFILE0 << "This fault exists in the current circuit."<<endl;
+			return 1;
+		}
+	}
+	else
+	{
+		redFILE0 << "This fault doesn't exist in the current circuit."<<endl;
+		return 0;
+	}
+}
+
+
+void red_addition(map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, vector<ConnFault> &cf, int threshold, int totalInputs)
+{
+	vector<CircuitNode>::iterator itrv;
+	vector<ConnFault>::iterator itrvc;
+	set<int>::iterator itrs;
+	map<int, CircuitNode>::iterator itrm;
+    map<int, CircuitNode> backupOrNodeList;
+	map<int, CircuitNode> backupMasterNodeList;
+
+	//redFILE0.open ("red_addition.log", ofstream::out);
+		int t = 0;
+		while((!cf.empty()) && (t < threshold))
+		{		
+			//Backup the initial "orNodeList_m" and "masterNodeList".
+			backupOrNodeList = orNodeList_m;
+			backupMasterNodeList = masterNodeList_m;
+
+
+			redFILE0<<"-------------------------------------------------------"<<endl;
+			itrvc = cf.begin();
+			redFILE0<<"(S, D, P) = ("<<(*itrvc).src<<","<<(*itrvc).dest<<","<<(*itrvc).pola<<")"<<endl;
+
+			//Judge if this CF exists in the current circuit.
+			int exist = fault_exist(orNodeList_m, *itrvc);
+			if(!exist)
+			{
+				cf.erase(itrvc);
+				continue;
+			}
+
+			itrm = orNodeList_m.find((*itrvc).dest);
+			int destType = itrm->second.gateType;
+
+			if((destType != 2) && (destType != 3) && (destType != 4) && (destType != 6) && (destType != 7))
+			{
+				redFILE0 << "Gate type of "<<itrm->second.lineNumber<<" is "<<destType<<endl;
+				redFILE0 << "Not satisfying."<<endl;
+				cf.erase(itrvc);	
+				t = t + 1;		
+				continue;
+			}
+
+			
+			//1. Add the necessary wires and gates to test if the current CF is redundant.
+			FaultList fault(0, false);	
+			itrm = masterNodeList_m.end();
+			itrm--;
+			int maxLineNumber = itrm->second.lineNumber;	
+			//Update circuit to prepare for redundancy addition
+			int newID1 = upd_circuit(orNodeList_m, *itrvc, destType, fault, maxLineNumber);
+		
+			maxLineNumber = merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+			
+			// Levelize the circuit.
+	    	int outputLevel = SetLineLevel(masterNodeList_m);			
+
+			//2. Run atpg to test if this cf is redundant.
+			//The InputVector now should be InputVector2.
+			masterTestList.clear();
+			TestAllVectorsATPG (masterNodeList_m, totalInputs+1, fault.lineNumber, fault.stuckAtValue, masterInputVector1, masterTestList, outputLevel);
+
+			
+			//3. If this cf fault is untestable, then add this cf connection	
+			if(masterTestList.empty())
+			{
+				redFILE0<<"The current cf is untestable!"<<endl;
+
+				//If this connection is added, delete the auxiliary lines.
+				del_gate(orNodeList_m, newID1+2);
+				
+				//Run logic simulation on the whole circuit.	
+				maxLineNumber = merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+
+				redFILE0 <<"(S, D, P) = ("<<(*itrvc).src<<","<<(*itrvc).dest<<","<<(*itrvc).pola<<") is added."<<endl;
+				redFILE0 << "--------------------------------------------------"<<endl;
+				redFILE0 << "Run logic simulation after red_addition: del_gate"<<endl;
+				redFILE0 <<"(S, D, P) = ("<<(*itrvc).src<<","<<(*itrvc).dest<<","<<(*itrvc).pola<<")"<<endl;		
+				int flag = 0;
+				for (itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+				{
+					if(itrm->second.nodeType == 3 )
+						if (itrm->second.gateType == G_stat0 || itrm->second.gateType == G_stat1)
+						{	
+							flag = 1;
+							break;
+						}
+
+				}
+				if(flag == 1)
+				{
+					RunLogicSimulation2(orNodeList_m, brNodeList_m, masterNodeList_m, totalInputs, masterInputVector);
+				}
+				else
+					RunLogicSimulation1(masterNodeList_m, totalInputs, masterInputVector);
+				redFILE0 << endl<< endl;
+
+			}
+												
+
+			//4. If this cf fault is testable, then recover the masterNodeList_m.
+			else
+			{
+				redFILE0 <<"The current cf is testable!"<<endl;
+				redFILE0<<"The test vector for the current fault is: "<<masterTestList[0].testVector<<endl;
+				orNodeList_m = backupOrNodeList;	
+				masterNodeList_m = backupMasterNodeList;
+			}
+
+			cf.erase(itrvc);	
+			t = t + 1;		
+
+		}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

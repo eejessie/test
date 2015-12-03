@@ -1,0 +1,16 @@
+#ifndef _RECT_NETWORK_H
+#define _RECT_NETWORK_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "class/CircuitNode.h"
+#include "class/FaultList.h"
+
+
+int build_AND_CMA(map<int, CircuitNode> &masterNodeList, map<int, int> &current_CMA, int &maxLineNumber);
+int rect_network(map<int, CircuitNode> &masterNodeList, int alt_node, int interface_node, int &maxLineNumber);
+
+#endif

@@ -1,0 +1,549 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  red_removal.cc
+ *
+ *    Description:  
+ *
+ *        License:  
+ *
+ *        Version:  1.0
+ *        Created:  3/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu <eejessie@sjtu.edu.cn>
+ *         
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+
+#include "class/CircuitNode.h"         // This class stores information about each node in the circuit.
+#include "class/CircuitLine.h"         // This class stores the line number and stuck at faults. Both faults for unique line.
+#include "class/FaultList.h"           // This class stores the line number and stuck at fault. Only one fault, for analysis.
+#include "class/TestList.h"            // This class contains the line number, fault and test vector with a flag to indicate if test is possible.
+
+#include "head/red_forward_implication_v2.h"
+#include "head/red_forward_deletion_v2.h"
+#include "head/red_backward_deletion.h"
+#include "head/run_logic_simulation.cc"
+#include "head/print_circuit.h"
+
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+using namespace std;
+using namespace nameSpace_ATPG;
+
+
+/*
+ * The number of objects of the CircuitNode class depend on the number of lines in the circuit.
+ * This vector is the list of all lines in a circuit.
+ */
+//extern vector <CircuitNode> buMasterNodeList;
+extern vector <CircuitNode> masterNodeList;
+extern vector <string> masterInputVector;
+extern vector <string> masterTestVector;
+extern vector <TestList> masterTestList;
+extern ofstream redFILE0;
+
+
+
+
+//For lines that have only one branch output, delete that branch.
+void collapse_circuit(map<int, CircuitNode> &masterNodeList)
+{
+	redFILE0 << "Enter into collapse_circuit!"<<endl;
+
+	map<int, CircuitNode>::iterator itrm, itrm1, itrm2;
+	set <int>::iterator itrs, itrs1;
+	set <int> tempFanOut;
+
+	map <int, CircuitNode> del_list;
+
+	int num_fanout = 0;
+	for(itrm = masterNodeList.begin(); itrm != masterNodeList.end(); itrm++)
+	{
+		if(itrm->second.nodeType == 2)
+		{
+			itrs = itrm->second.listFanIn.begin();
+			itrm1 = masterNodeList.find(*itrs);
+			num_fanout = itrm1->second.listFanOut.size();
+			if(num_fanout == 1)
+			{				
+				tempFanOut = itrm->second.listFanOut;
+				redFILE0 << "Node "<<itrm->second.lineNumber << " is pushed into del_lise."<<endl;
+				del_list.insert(pair<int, CircuitNode>(itrm->first, itrm->second));
+				
+				itrm1->second.listFanOut.clear();
+				itrm1->second.listFanOut = tempFanOut;
+		
+				for(itrs1 = tempFanOut.begin(); itrs1 != tempFanOut.end(); itrs1++)
+				{
+					itrm2 = masterNodeList.find(*itrs1);
+					itrm2->second.listFanIn.erase(itrm->second.lineNumber);
+					itrm2->second.listFanIn.insert(itrm1->second.lineNumber);
+				}
+
+			}
+			
+		}
+	}
+
+	for(itrm = del_list.begin(); itrm != del_list.end(); itrm++)
+	{
+		redFILE0 << "Node "<<itrm->first <<" is deleted due to collapse."<<endl;
+		masterNodeList.erase(itrm->second.lineNumber);
+	}
+}
+
+
+
+//fault_exist
+/*Judge if the line of this fault are in the current circuit.
+If yes, return 1; else, return 0.*/
+int fault_exist(map<int, CircuitNode> &masterNodeList_m, int lineNumber)
+{
+	map<int, CircuitNode>::iterator itrm;
+
+	//cout << "lineNumber = "<<lineNumber<<endl;
+	bool exist_line = 0;
+	//cout << "flag1"<<endl;
+	for(itrm = masterNodeList_m.begin(); itrm != masterNodeList_m.end(); itrm++)
+		if(lineNumber == itrm->second.lineNumber)
+		{
+			exist_line = 1;
+			break;
+		}
+	//cout << "flag2"<<endl;
+	
+	if(exist_line == 1) 
+	{
+		//cout << "This fault exists in the current circuit."<<endl;
+		return 1;
+	}
+	else
+	{
+		//cout << "This fault doesn't exist in the current circuit."<<endl;
+		return 0;
+	}
+}
+
+
+
+void red_removal_original(map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, vector <CircuitNode> &implicationNodeList, vector<FaultList> &original_sf, int ini_size, int totalInputs)
+{
+		
+
+	redFILE0 << "*********************************************"<<endl;
+	redFILE0 << "Enter into red_removal_original:"<<endl;
+	redFILE0 << "*********************************************"<<endl;
+
+	vector<FaultList>::iterator itrvf;
+	map<int, FaultList>::iterator itrmf;
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	set<int>::iterator itrs;
+	map<int, FaultList> cost_sf;
+	bool exist_line=0;
+	int new_size, save_size, maxLineNumber;
+
+	if(original_sf.empty())
+		return;
+
+	map<int, CircuitNode> tempNodeList_m, backupOrNodeList_m, backupMasterNodeList_m;
+	backupOrNodeList_m = orNodeList_m;
+	tempNodeList_m = orNodeList_m;
+	backupMasterNodeList_m =  masterNodeList_m;
+
+	
+	//Find the untestable faults in original_sf and then compute the cost for these faults.
+	//Store them in cost_sf. The key is their cost.
+	redFILE0 << "*********************************************"<<endl;
+	redFILE0 << "Computation of fault costs starts!"<<endl;
+	redFILE0 << "*********************************************"<<endl;
+	for(itrvf = original_sf.begin(); itrvf != original_sf.end(); itrvf++)
+	{    
+				
+			//Judge if the line of this fault are in the current circuit.
+			//If yes, continue the code; else, skip this fault.
+			int exist = fault_exist(tempNodeList_m, (*itrvf).lineNumber);
+		    if (!exist)
+			{
+				continue;
+			}
+			
+
+			int red_line = (*itrvf).lineNumber;
+			bool red_stuck = (*itrvf).stuckAtValue;
+
+			redFILE0 << "-----------------------------------------------"<<endl;
+			redFILE0 << "Test if this saf is redundant:"<<endl;
+			FaultList *thisFault;
+			redFILE0 <<"	("<<red_line<<","<<red_stuck<<")"<<endl;
+
+
+			//Run atpg to test if this saf is redundant.
+			//ATPG should be operated on the whole circuit "masterNodeList_m".
+			masterNodeList_m = backupMasterNodeList_m;
+			int outputLevel = SetLineLevel(masterNodeList_m);	
+			masterTestList.clear();
+			TestAllVectorsATPG (masterNodeList_m, totalInputs, red_line, red_stuck, masterInputVector, masterTestList, outputLevel);
+
+			tempNodeList_m = backupOrNodeList_m;		
+
+			if(masterTestList.empty()) 
+			{		
+				redFILE0 << "Current fault "<<"	("<<red_line<<","<<red_stuck<<")"<<" is untestable!"<<endl;
+				
+
+				/*************************************/
+				/*redundancy forward deletion*/
+				/*************************************/
+			    red_forward_deletion_v2(tempNodeList_m, implicationNodeList, red_line, red_stuck);
+				collapse_circuit(tempNodeList_m);
+
+				
+				redFILE0 << endl<< "After forward deletion, circuit size is "<<tempNodeList_m.size()<<endl<<endl;
+				redFILE0 << "-------------------------------------------"<<endl;
+				print_circuit(tempNodeList_m);
+				redFILE0 << "-------------------------------------------"<<endl;
+				
+
+				//Run logic simulation on the whole circuit.					
+				redFILE0 << "--------------------------------------------------"<<endl;
+				redFILE0 << "Run logic simulation after red_foward_deletion_v2:"<<endl;	
+				masterNodeList_m.clear();
+				maxLineNumber = merge_circuit(masterNodeList_m, tempNodeList_m, brNodeList_m);
+				int flag = 0;
+				for (itrm = tempNodeList_m.begin(); itrm != tempNodeList_m.end(); itrm++)
+				{
+					if(itrm->second.nodeType == 3 )
+						if (itrm->second.gateType == G_stat0 || itrm->second.gateType == G_stat1)
+						{	
+							flag = 1;
+							break;
+						}
+
+				}
+				if(flag == 1)
+				{
+					RunLogicSimulation2(tempNodeList_m, brNodeList_m, masterNodeList_m, totalInputs, masterInputVector);
+				}
+				else
+					RunLogicSimulation1(masterNodeList_m, totalInputs, masterInputVector);
+
+
+				/*************************************/
+				/*redundancy backward deletion*/
+				/*************************************/
+				red_backward_deletion(tempNodeList_m);
+				collapse_circuit(tempNodeList_m);
+
+				redFILE0 << endl <<"After backward deletion, circuit size is "<<tempNodeList_m.size()<<endl<<endl;
+				redFILE0 << "-------------------------------------------"<<endl;
+				print_circuit(tempNodeList_m);
+				redFILE0 << "-------------------------------------------"<<endl;
+				
+
+				//Run logic simulation on the whole circuit.	
+				masterNodeList_m.clear();
+				maxLineNumber = merge_circuit(masterNodeList_m, tempNodeList_m, brNodeList_m);
+				redFILE0 << "--------------------------------------------------"<<endl;
+				redFILE0 << "Run logic simulation after red_backward_deletion:"<<endl;	
+				flag = 0;
+				for (itrm = tempNodeList_m.begin(); itrm != tempNodeList_m.end(); itrm++)
+				{
+					if(itrm->second.nodeType == 3 )
+						if (itrm->second.gateType == G_stat0 || itrm->second.gateType == G_stat1)
+						{	
+							flag = 1;
+							break;
+						}
+				}
+				if(flag == 1)
+					RunLogicSimulation2(tempNodeList_m, brNodeList_m, masterNodeList_m, totalInputs, masterInputVector);
+				else
+					RunLogicSimulation1(masterNodeList_m, totalInputs, masterInputVector);
+				
+
+				int internal_left=0;
+				new_size = tempNodeList_m.size();
+				/*for(itrm = tempNodeList_m.begin(); itrm != tempNodeList_m.end(); itrm++)
+					if(itrm->second.internal == true)
+						internal_left++;
+				new_size = new_size - internal_left;*/
+				save_size =  ini_size - new_size;
+				redFILE0 << "ini_size =" <<ini_size<<endl;
+				redFILE0 << "new_size =" <<new_size<<endl;
+				redFILE0 << "save_size = "<<save_size<<endl;
+				cost_sf.insert(pair<int, FaultList>(save_size, (*itrvf)));	
+				redFILE0 << "fault "<<"("<<red_line<<", "<<red_stuck<<") is pushed into cost_sf!"<<endl;	
+
+			}
+			else
+				redFILE0 << "Current fault "<<"	("<<red_line<<","<<red_stuck<<")"<<" is testable!"<<endl;
+		
+	}
+	redFILE0 << "*********************************************"<<endl;
+	redFILE0 << "Computation of fault costs ends!"<<endl;
+	redFILE0 << "*********************************************"<<endl;
+			
+	if(!cost_sf.empty())
+	{
+		//Run redundancy removal based on the fault in original_sf with the maximum cost.
+		itrmf = cost_sf.end();
+		itrmf--;
+		
+		implicationNodeList.clear();
+		int red_line = itrmf->second.lineNumber;
+		bool red_stuck = itrmf->second.stuckAtValue;
+
+		redFILE0 << "Fault in cost_sf with maximum cost is "<<"("<<red_line<<", "<<red_stuck<<")"<<endl;
+		redFILE0 << "Maximum cost is "<<itrmf->first<<endl;
+
+       
+		/*************************************/
+		/*redundancy forward deletion*/
+		/*************************************/
+		red_forward_deletion_v2(orNodeList_m, implicationNodeList, red_line, red_stuck);
+		collapse_circuit(orNodeList_m);
+		redFILE0 << endl<< "After forward deletion, circuit size is "<<orNodeList_m.size()<<endl<<endl;
+		redFILE0 << "-------------------------------------------"<<endl;
+		print_circuit(orNodeList_m);
+		redFILE0 << "-------------------------------------------"<<endl;
+
+		//Run logic simulation on the whole circuit.					
+		redFILE0 << "--------------------------------------------------"<<endl;
+		redFILE0 << "Run logic simulation after red_foward_deletion:"<<endl;	
+		masterNodeList_m.clear();
+		maxLineNumber = merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+		int flag = 0;
+		for (itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+		{
+			if(itrm->second.nodeType == 3 )
+				if (itrm->second.gateType == G_stat0 || itrm->second.gateType == G_stat1)
+				{	
+					flag = 1;
+					break;
+				}
+		}
+		if(flag == 1)
+			RunLogicSimulation2(orNodeList_m, brNodeList_m, masterNodeList_m, totalInputs, masterInputVector);
+		else
+			RunLogicSimulation1(masterNodeList_m, totalInputs, masterInputVector);
+
+		/*************************************/
+		/*redundancy backward deletion*/
+		/*************************************/
+		red_backward_deletion(orNodeList_m);
+		collapse_circuit(orNodeList_m);
+		redFILE0 << endl <<"After backward deletion, circuit size is "<<orNodeList_m.size()<<endl<<endl;
+		redFILE0 << "-------------------------------------------"<<endl;
+		print_circuit(orNodeList_m);
+		redFILE0 << "-------------------------------------------"<<endl;
+		
+		//Run logic simulation on the whole circuit.					
+		redFILE0 << "--------------------------------------------------"<<endl;
+		redFILE0 << "Run logic simulation after red_backward_deletion:"<<endl;	
+		masterNodeList_m.clear();
+		maxLineNumber = merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+		flag = 0;
+		for (itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+		{
+			if(itrm->second.nodeType == 3 )
+				if (itrm->second.gateType == G_stat0 || itrm->second.gateType == G_stat1)
+				{	
+					flag = 1;
+					break;
+				}
+		}
+		if(flag == 1)
+			RunLogicSimulation2(orNodeList_m, brNodeList_m, masterNodeList_m, totalInputs, masterInputVector);
+		else
+			RunLogicSimulation1(masterNodeList_m, totalInputs, masterInputVector);
+
+
+        //Delete the current fault in "original_sf"
+		for(itrvf = original_sf.begin(); itrvf != original_sf.end(); itrvf++)
+		{
+			if(itrmf->second.lineNumber == (*itrvf).lineNumber && itrmf->second.stuckAtValue == (*itrvf).stuckAtValue)
+			{
+				original_sf.erase(itrvf);
+				break;
+			}
+		}
+		redFILE0 << "Faults in original_sf now:"<<endl;
+		for(int j=0; j<original_sf.size(); j++)
+			redFILE0 << "("<<original_sf[j].lineNumber <<","<<original_sf[j].stuckAtValue<<"), ";
+		redFILE0 <<endl;
+		
+		//Merge the new original circuit with the BR circuit to form the new whole circuit.
+		masterNodeList_m.clear();
+		merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+
+		red_removal_original(orNodeList_m, brNodeList_m, masterNodeList_m, implicationNodeList, original_sf, ini_size, totalInputs);
+	}
+}
+
+//Run redundancy removal based on new_sf		
+void red_removal_new(map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, vector <CircuitNode> &implicationNodeList, vector<FaultList> &new_sf, int totalInputs)
+{		
+	redFILE0 << "*********************************************"<<endl;
+	redFILE0<< "Enter into red_removal_new:"<<endl;
+	redFILE0 << "*********************************************"<<endl;
+
+    vector<FaultList>::iterator itrvf;
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	set <int>::iterator itrs;
+	bool exist_line = 0;
+	while(!new_sf.empty())
+	{
+			itrvf = new_sf.begin();
+			//Judge if line of this fault are in the current circuit.
+			//If yes, continue the code; else, skip this fault.
+			int exist = fault_exist(orNodeList_m, (*itrvf).lineNumber);
+		    if (!exist)
+			{
+				new_sf.erase(itrvf);
+				continue;
+			}
+
+			int red_line = (*itrvf).lineNumber;
+			bool red_stuck = (*itrvf).stuckAtValue;
+
+			
+			redFILE0  << "Test if the saf is redundant:"<<endl;
+			FaultList *thisFault;
+			redFILE0  <<"("<<red_line<<","<<red_stuck<<")"<<endl;
+
+			//Run atpg to test if this saf is redundant.
+			//ATPG should be operated on the whole circuit "masterNodeList_m".
+	        int outputLevel = SetLineLevel(masterNodeList_m);	
+			masterTestList.clear();
+			TestAllVectorsATPG (masterNodeList_m, totalInputs, red_line, red_stuck, masterInputVector, masterTestList, outputLevel);
+
+			if(masterTestList.empty()) 
+			{
+				redFILE0 << "Current fault "<<"	("<<red_line<<","<<red_stuck<<")"<<" is untestable!"<<endl;
+				//redundancy forward deletion
+				implicationNodeList.clear();
+			    red_forward_deletion_v2(orNodeList_m, implicationNodeList, red_line, red_stuck);
+
+				redFILE0 << endl<< "After forward deletion, circuit size is "<<orNodeList_m.size()<<endl<<endl;
+				redFILE0 << "-------------------------------------------"<<endl;
+				print_circuit(orNodeList_m);
+				redFILE0 << "-------------------------------------------"<<endl;
+
+				//redundancy backward deletion
+				red_backward_deletion(orNodeList_m);
+				redFILE0 << endl <<"After backward deletion, circuit size is "<<orNodeList_m.size()<<endl<<endl;
+				redFILE0 << "-------------------------------------------"<<endl;
+				print_circuit(orNodeList_m);
+				redFILE0 << "-------------------------------------------"<<endl;				
+
+
+			}
+
+			redFILE0 << "Current fault "<<"	("<<red_line<<","<<red_stuck<<")"<<" is testable!"<<endl;
+			new_sf.erase(itrvf);
+
+			//Merge the new original circuit with the BR circuit to form the new whole circuit.
+			merge_circuit(masterNodeList_m, orNodeList_m, brNodeList_m);
+	}
+}
+
+
+//Check if this line is in the original stuck-af-fault list.
+int check_osf(vector<CircuitNode> &masterNodeList, int lineNumber)
+{
+	vector<CircuitNode>::iterator itrv;
+
+	for(itrv = masterNodeList.begin(); itrv != masterNodeList.end(); itrv++)
+		if((*itrv).lineNumber == lineNumber)
+		{
+			return 1;
+		}
+	if ( itrv == masterNodeList.end())
+		return 0;
+}
+
+
+//red_removal
+void red_removal(vector <CircuitNode> &buOrNodeList, map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m, map<int, CircuitNode> &masterNodeList_m, vector<CircuitNode> &masterNodeList, int totalInputs, int ini_size)
+//buOrNodeList: compute initial circuit size
+//orNodeList_m: run redundancy removal on it
+//masterNodeList_m: to perform atpg
+//masterNodeList: to create fault object
+{
+	vector<FaultList> original_sf, new_sf;             //Store the original stuck-at-faults and new stuck-at-faults.
+	vector<FaultList>::iterator itrvf;
+
+	map <int, CircuitLine> masterLineList_m;
+	vector <FaultList> orFaultList;
+
+	vector <CircuitNode> implicationNodeList;
+
+	set<int>::iterator itrs;
+	map<int, CircuitNode>::iterator itrm;
+
+
+	//Generate a fault list of stuck-at faults for the new original network.
+	//Faults are stored in "orFaultList".
+	masterLineList_m.clear();
+	CreateFaultObjects(masterLineList_m, masterNodeList);
+	//CollapseFaults(orLineList_m, orNodeList);
+	CreateFaultList(masterLineList_m, orFaultList);
+
+      
+	redFILE0 << "Faults in orFaultList"<<endl;
+	for(int j=0; j<orFaultList.size(); j++)
+		redFILE0 << "("<<orFaultList[j].lineNumber <<","<<orFaultList[j].stuckAtValue<<"), ";
+	redFILE0 <<endl; 
+
+	//Generate stuck-at-faults for original connections and new added connections
+	for(itrvf = orFaultList.begin(); itrvf != orFaultList.end(); itrvf++)
+		if (check_osf(buOrNodeList, (*itrvf).lineNumber))     //masterNodeList stores the whole circuit before red_addition.
+			original_sf.push_back(*itrvf);
+		else
+			new_sf.push_back(*itrvf);
+
+	redFILE0 << "Faults in original_sf"<<endl;
+	for(int j=0; j<original_sf.size(); j++)
+		redFILE0 << "("<<original_sf[j].lineNumber <<","<<original_sf[j].stuckAtValue<<"), ";
+	redFILE0 <<endl; 
+
+	redFILE0 << "Faults in new_sf"<<endl;
+	for(int j=0; j<new_sf.size(); j++)
+		redFILE0 << "("<<new_sf[j].lineNumber <<","<<new_sf[j].stuckAtValue<<"), ";
+	redFILE0 <<endl; 
+
+
+	//Remove redundancies based on original_sf.
+	red_removal_original(orNodeList_m, brNodeList_m,  masterNodeList_m, implicationNodeList, original_sf, ini_size, totalInputs);
+	
+	//Remove redundancies based on new_sf.
+	red_removal_new(orNodeList_m, brNodeList_m, masterNodeList_m, implicationNodeList, new_sf, totalInputs);
+
+	collapse_circuit(orNodeList_m);
+}
+
+
+

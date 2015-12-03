@@ -1,0 +1,4419 @@
+# PI: 3
+# PO: 4
+Input list:
+0 1 2 
+Output list:
+96 97 98 99 
+
+
+Circuit size = 50
+Circuit size = 120
+Circuit size = 169
+
+inter size = 50
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Starting rar!
+totalInputs = 3
+****************************
+generating CF phase starts!
+****************************
+# total CF: 378
+*****************************
+generating CF phase is done!
+*****************************
+threshold = 10
+******************************************************
+Round 1 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round1,  # cf is 378
+
+In round 1, before red_addition:
+The original circuit size is 50
+**************************************************************
+(S, D, P) = (0,15,0)
+Current fault (657,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,15,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (0,19,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (0,19,1)
+Current fault (675,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,23,0)
+Current fault (681,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,23,1)
+Current fault (687,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,25,0)
+Current fault (693,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,25,1)
+Current fault (699,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (0,27,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (0,27,1)
+
+The current cf is testable!
+number of added wires in this round: 6
+In round 1, after red_addtion:
+The original circuit size is 71
+*********************************
+In round 1, redundancy removal phase starts!
+*********************************
+
+In round 1, before red_removal:
+The original circuit size is 71
+Enter into red_removal:
+before collapse, #fault: 366
+after collapse, #fault: 199
+**start removal original redundancies:
+
+(650, 1): 
+cost of current fault: 50
+start podem:
+
+**Current fault is testable!
+
+(650, 0): 
+cost of current fault: 50
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(25, 1): 
+cost of current fault: 50
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 1): 
+cost of current fault: 50
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 50
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 50
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(28, 1): 
+cost of current fault: 39
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(6, 1): 
+cost of current fault: 30
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(27, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+start podem:
+Current fault (27,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 46, cost = 25
+Time for compute_cost: 0.009
+
+
+(650, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(15, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(15, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(3, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(14, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+Current fault (659,1) is untestable!
+
+Current fault (677,0) is untestable!
+In round 1, after red_removal, circuit size is 39
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 1
+last_size = 50
+new_size = 39
+*******************************************************************
+Round 1 ends!
+*******************************************************************
+******************************************************
+Round 2 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round2,  # cf is 368
+
+In round 2, before red_addition:
+The original circuit size is 39
+**************************************************************
+(S, D, P) = (2,10,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (2,10,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (2,12,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (2,12,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (2,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (2,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (7,10,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (7,10,1)
+Current fault (721,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (7,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (7,17,1)
+Current fault (733,0) is untestable!
+The current cf is untestable and added!
+number of added wires in this round: 2
+In round 2, after red_addtion:
+The original circuit size is 47
+*********************************
+In round 2, redundancy removal phase starts!
+*********************************
+
+In round 2, before red_removal:
+The original circuit size is 47
+Enter into red_removal:
+before collapse, #fault: 318
+after collapse, #fault: 170
+**start removal original redundancies:
+
+(3, 0): 
+cost of current fault: 29
+start podem:
+
+**Current fault is testable!
+
+(3, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(650, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(21, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(14, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+start podem:
+Current fault (5,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 45, cost = 2
+Time for compute_cost: 0.007
+
+
+(3, 0): 
+cost of current fault: 27
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 26
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (4,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 42, cost = 3
+Time for compute_cost: 0.006
+
+
+(650, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(14, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+
+
+
+
+
+In round 2, after red_removal, circuit size is 42
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 2
+last_size = 39
+new_size = 42
+*******************************************************************
+Round 2 ends!
+*******************************************************************
+******************************************************
+Round 3 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round3,  # cf is 356
+
+In round 3, before red_addition:
+The original circuit size is 39
+**************************************************************
+(S, D, P) = (7,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (7,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (8,10,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (8,10,1)
+Current fault (685,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (8,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (8,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (8,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (8,17,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (8,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (8,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,12,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (10,12,1)
+Current fault (709,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (10,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (10,17,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (10,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,21,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (10,21,1)
+Current fault (733,0) is untestable!
+The current cf is untestable and added!
+number of added wires in this round: 3
+In round 3, after red_addtion:
+The original circuit size is 51
+*********************************
+In round 3, redundancy removal phase starts!
+*********************************
+
+In round 3, before red_removal:
+The original circuit size is 51
+Enter into red_removal:
+before collapse, #fault: 326
+after collapse, #fault: 171
+**start removal original redundancies:
+
+(10, 1): 
+cost of current fault: 35
+start podem:
+
+**Current fault is testable!
+
+(3, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 24
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(650, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(21, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (35,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 48, cost = 3
+Time for compute_cost: 0.008
+
+
+(10, 1): 
+cost of current fault: 32
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 24
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(14, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+start podem:
+Current fault (14,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 46, cost = 2
+Time for compute_cost: 0.008
+
+
+(10, 1): 
+cost of current fault: 31
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 23
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (9,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 43, cost = 3
+Time for compute_cost: 0.006
+
+
+(10, 1): 
+cost of current fault: 28
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+Current fault (711,0) is untestable!
+In round 3, after red_removal, circuit size is 39
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 3
+last_size = 39
+new_size = 39
+*******************************************************************
+Round 3 ends!
+*******************************************************************
+******************************************************
+Round 4 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round4,  # cf is 330
+
+In round 4, before red_addition:
+The original circuit size is 39
+**************************************************************
+(S, D, P) = (10,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (10,650,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (10,650,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,12,0)
+Current fault (691,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (11,12,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,17,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,21,0)
+Current fault (715,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (11,21,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (11,650,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (11,650,1)
+
+The current cf is testable!
+number of added wires in this round: 2
+In round 4, after red_addtion:
+The original circuit size is 45
+*********************************
+In round 4, redundancy removal phase starts!
+*********************************
+
+In round 4, before red_removal:
+The original circuit size is 45
+Enter into red_removal:
+before collapse, #fault: 314
+after collapse, #fault: 167
+**start removal original redundancies:
+
+(10, 1): 
+cost of current fault: 29
+start podem:
+
+**Current fault is testable!
+
+(3, 1): 
+cost of current fault: 23
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(21, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(12, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(3, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (35,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 42, cost = 3
+Time for compute_cost: 0.008
+
+
+(10, 1): 
+cost of current fault: 26
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(14, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+start podem:
+Current fault (14,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 40, cost = 2
+Time for compute_cost: 0.007
+
+
+(10, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+Current fault (693,1) is untestable!
+
+
+
+In round 4, after red_removal, circuit size is 37
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 4
+last_size = 39
+new_size = 37
+*******************************************************************
+Round 4 ends!
+*******************************************************************
+******************************************************
+Round 5 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round5,  # cf is 300
+
+In round 5, before red_addition:
+The original circuit size is 37
+**************************************************************
+(S, D, P) = (12,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,650,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (12,650,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,10,0)
+Current fault (724,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (13,10,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (13,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,17,0)
+Current fault (736,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (13,17,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (13,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,21,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (13,21,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (13,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (13,650,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (13,650,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (15,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (15,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,10,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (16,10,1)
+
+The current cf is testable!
+number of added wires in this round: 2
+In round 5, after red_addtion:
+The original circuit size is 43
+*********************************
+In round 5, redundancy removal phase starts!
+*********************************
+
+In round 5, before red_removal:
+The original circuit size is 43
+Enter into red_removal:
+before collapse, #fault: 310
+after collapse, #fault: 165
+**start removal original redundancies:
+
+(10, 1): 
+cost of current fault: 21
+start podem:
+
+**Current fault is testable!
+
+(6, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(21, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(94, 1): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+start podem:
+Current fault (5,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 41, cost = 2
+Time for compute_cost: 0.007
+
+
+(10, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (37,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 38, cost = 3
+Time for compute_cost: 0.006
+
+
+(10, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(10, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+Current fault (726,1) is untestable!
+
+
+
+In round 5, after red_removal, circuit size is 35
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 5
+last_size = 37
+new_size = 35
+*******************************************************************
+Round 5 ends!
+*******************************************************************
+******************************************************
+Round 6 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round6,  # cf is 240
+
+In round 6, before red_addition:
+The original circuit size is 35
+**************************************************************
+(S, D, P) = (16,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,21,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (16,21,1)
+Current fault (751,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (16,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (16,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (16,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (17,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,21,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (17,21,1)
+Current fault (775,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (17,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (17,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (17,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (18,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,21,0)
+Current fault (793,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (18,21,1)
+
+The current cf is testable!
+number of added wires in this round: 3
+In round 6, after red_addtion:
+The original circuit size is 46
+*********************************
+In round 6, redundancy removal phase starts!
+*********************************
+
+In round 6, before red_removal:
+The original circuit size is 46
+Enter into red_removal:
+before collapse, #fault: 316
+after collapse, #fault: 164
+**start removal original redundancies:
+
+(650, 1): 
+cost of current fault: 25
+start podem:
+**Current fault is testable!
+
+(650, 0): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(30, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(94, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(31, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (31,0) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 43, cost = 3
+Time for compute_cost: 0.006
+
+
+(650, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 14
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+
+
+
+
+
+
+Current fault (795,1) is untestable!
+In round 6, after red_removal, circuit size is 40
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 6
+last_size = 35
+new_size = 40
+*******************************************************************
+Round 6 ends!
+*******************************************************************
+******************************************************
+Round 7 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round7,  # cf is 198
+
+In round 7, before red_addition:
+The original circuit size is 35
+**************************************************************
+(S, D, P) = (18,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (18,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (18,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (19,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (19,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (20,17,1)
+Current fault (763,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (20,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (20,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (20,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (21,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (21,17,1)
+Current fault (787,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (21,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (21,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (21,649,1)
+
+The current cf is testable!
+number of added wires in this round: 2
+In round 7, after red_addtion:
+The original circuit size is 43
+*********************************
+In round 7, redundancy removal phase starts!
+*********************************
+
+In round 7, before red_removal:
+The original circuit size is 43
+Enter into red_removal:
+before collapse, #fault: 310
+after collapse, #fault: 161
+**start removal original redundancies:
+
+(650, 1): 
+cost of current fault: 22
+start podem:
+**Current fault is testable!
+
+(650, 0): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(21, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 22
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 19
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+start podem:
+Current fault (94,0) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 39, cost = 4
+Time for compute_cost: 0.005
+
+
+(650, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+
+
+
+
+
+In round 7, after red_removal, circuit size is 39
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 7
+last_size = 35
+new_size = 39
+*******************************************************************
+Round 7 ends!
+*******************************************************************
+******************************************************
+Round 8 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round8,  # cf is 140
+
+In round 8, before red_addition:
+The original circuit size is 35
+**************************************************************
+(S, D, P) = (22,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,17,0)
+Current fault (745,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (22,17,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (22,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (22,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (22,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (23,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (23,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (24,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (25,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (26,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,21,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,21,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (27,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,17,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,17,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,649,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (28,649,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,21,0)
+Current fault (769,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (95,21,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (95,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (95,649,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (95,649,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (649,15,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,15,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,17,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (649,17,1)
+
+The current cf is testable!
+number of added wires in this round: 2
+In round 8, after red_addtion:
+The original circuit size is 41
+*********************************
+In round 8, redundancy removal phase starts!
+*********************************
+
+In round 8, before red_removal:
+The original circuit size is 41
+Enter into red_removal:
+before collapse, #fault: 306
+after collapse, #fault: 163
+**start removal original redundancies:
+
+(650, 1): 
+cost of current fault: 20
+start podem:
+**Current fault is testable!
+
+(650, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(30, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 16
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(21, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(31, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (31,0) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 38, cost = 3
+Time for compute_cost: 0.005
+
+
+(650, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(650, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 17
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(649, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+
+
+Current fault (747,1) is untestable!
+
+
+
+In round 8, after red_removal, circuit size is 35
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 8
+last_size = 35
+new_size = 35
+*******************************************************************
+Round 8 ends!
+*******************************************************************
+******************************************************
+Round 9 starts!
+******************************************************
+**********************************
+redundancy addition phase starts!
+**********************************
+
+At the beginning of round9,  # cf is 20
+
+In round 9, before red_addition:
+The original circuit size is 35
+**************************************************************
+(S, D, P) = (649,19,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,19,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,21,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (649,21,1)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (649,23,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,23,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,25,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,25,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,27,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,27,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,28,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,28,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (649,650,0)
+
+The current cf is testable!
+**************************************************************
+(S, D, P) = (649,650,1)
+Current fault (763,0) is untestable!
+The current cf is untestable and added!
+**************************************************************
+(S, D, P) = (650,10,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (650,10,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (650,12,0)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (650,12,1)
+This fault doesn't exist in the current circuit.
+**************************************************************
+(S, D, P) = (650,649,0)
+src is in the transistive fanout of dest.
+**************************************************************
+(S, D, P) = (650,649,1)
+src is in the transistive fanout of dest.
+number of added wires in this round: 1
+In round 9, after red_addtion:
+The original circuit size is 39
+*********************************
+In round 9, redundancy removal phase starts!
+*********************************
+
+In round 9, before red_removal:
+The original circuit size is 39
+Enter into red_removal:
+before collapse, #fault: 302
+after collapse, #fault: 157
+**start removal original redundancies:
+
+(649, 1): 
+cost of current fault: 29
+start podem:
+
+**Current fault is testable!
+
+(650, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(650, 0): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(17, 1): 
+cost of current fault: 18
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(3, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(649, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(17, 0): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(30, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(94, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(6, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(3, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(651, 0): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 1): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(33, 0): 
+cost of current fault: 1
+start parallel pattern fault simulation:
+*Current fault is testable!
+**start removal new redundancies:
+
+
+
+
+
+
+
+
+In round 9, after red_removal, circuit size is 39
+
+**********************************
+redundancy removal phase is done!
+**********************************
+
+At the end of round 9
+last_size = 35
+new_size = 39
+*******************************************************************
+Round 9 ends!
+*******************************************************************
+Final result:
+The original circuit size is 35
+Circuit size = 35
+*********************************************
+rF	Val	ci	n	nT	gT	FI		FO
+0	0	1	0	1	0			3 4 
+0	0	1	1	1	0			6 9 
+0	0	1	2	1	0			30 31 33 
+0	0	1	3	2	1	0 		7 
+0	0	1	4	2	1	0 		722 
+0	0	1	6	2	1	1 		8 
+0	1	1	7	0	5	3 		689 
+0	1	1	8	0	5	6 		689 
+0	0	1	9	2	1	1 		722 
+0	1	1	11	0	5	722 		717 718 
+0	0	1	13	0	5	689 		738 739 
+0	0	1	16	0	5	94 		17 
+0	0	1	17	0	7	16 738 		18 
+0	1	1	18	0	5	17 		650 
+0	1	1	20	0	5	31 		21 
+0	1	1	21	0	7	20 717 		22 
+0	0	1	22	0	5	21 		650 
+0	0	1	30	2	1	2 		95 
+0	0	1	31	2	1	2 		20 
+0	0	1	33	2	1	2 		96 
+0	1	1	94	2	1	95 		16 
+0	1	1	95	0	5	30 		94 651 
+0	0	1	96	3	11	33 		
+0	3	1	97	3	11	649 		
+0	0	1	98	3	11	650 		
+0	1	1	99	3	11	651 		
+0	3	1	649	0	7	718 739 		97 
+0	0	1	650	0	7	18 22 		98 
+0	1	1	651	2	1	95 		99 
+0	1	1	689	0	7	7 8 		13 
+0	1	1	717	2	1	11 		21 
+0	1	1	718	2	1	11 		649 
+0	0	1	722	0	7	4 9 		11 
+0	0	1	738	2	1	13 		17 
+0	3	1	739	2	1	13 		649 
+*********************************************
+
+Circuit size = 35
+*********************************************
+rF	Val	ci	n	nT	gT	FI		FO
+0	0	1	0	1	0			3 4 
+0	0	1	1	1	0			6 9 
+0	0	1	2	1	0			30 31 33 
+0	0	1	3	2	1	0 		7 
+0	0	1	4	2	1	0 		722 
+0	0	1	6	2	1	1 		8 
+0	1	1	7	0	5	3 		689 
+0	1	1	8	0	5	6 		689 
+0	0	1	9	2	1	1 		722 
+0	1	1	11	0	5	722 		717 718 
+0	0	1	13	0	5	689 		738 739 
+0	0	1	16	0	5	94 		17 
+0	0	1	17	0	7	16 738 		18 
+0	1	1	18	0	5	17 		650 
+0	1	1	20	0	5	31 		21 
+0	1	1	21	0	7	20 717 		22 
+0	0	1	22	0	5	21 		650 
+0	0	1	30	2	1	2 		95 
+0	0	1	31	2	1	2 		20 
+0	0	1	33	2	1	2 		96 
+0	1	1	94	2	1	95 		16 
+0	1	1	95	0	5	30 		94 651 
+0	0	1	96	3	11	33 		
+0	3	1	97	3	11	649 		
+0	0	1	98	3	11	650 		
+0	1	1	99	3	11	651 		
+0	3	1	649	0	7	718 739 		97 
+0	0	1	650	0	7	18 22 		98 
+0	1	1	651	2	1	95 		99 
+0	1	1	689	0	7	7 8 		13 
+0	1	1	717	2	1	11 		21 
+0	1	1	718	2	1	11 		649 
+0	0	1	722	0	7	4 9 		11 
+0	0	1	738	2	1	13 		17 
+0	3	1	739	2	1	13 		649 
+*********************************************
+
+Run logic simulation on the whole circuit:
+Final circuit size = 35

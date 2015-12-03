@@ -1,0 +1,113 @@
+digraph "DD" {
+size = "7.5,10"
+center = true;
+edge [dir = none];
+{ node [shape = plaintext];
+  edge [style = invis];
+  "CONST NODES" [style = invis];
+" pi0 " -> " pi1 " -> " pi2 " -> " pi3 " -> " pi4 " -> " pi5 " -> " pi6 " -> "CONST NODES"; 
+}
+{ rank = same; node [shape = box]; edge [style = invis];
+"  po0  "; }
+{ rank = same; " pi0 ";
+"613";
+}
+{ rank = same; " pi1 ";
+"612";
+"60d";
+}
+{ rank = same; " pi2 ";
+"60c";
+"610";
+"603";
+"611";
+}
+{ rank = same; " pi3 ";
+"5fd";
+"5c2";
+"60f";
+"602";
+"608";
+"5ca";
+"600";
+}
+{ rank = same; " pi4 ";
+"5ff";
+"5c1";
+"601";
+"5c9";
+"60e";
+"5fc";
+"607";
+}
+{ rank = same; " pi5 ";
+"5a3";
+"5c5";
+"5c0";
+"5f6";
+"5f0";
+}
+{ rank = same; " pi6 ";
+"5a4";
+}
+{ rank = same; "CONST NODES";
+{ node [shape = box]; "59a";
+}
+}
+"  po0  " -> "613" [style = dotted];
+"613" -> "60d";
+"613" -> "612" [style = dashed];
+"612" -> "610";
+"612" -> "611" [style = dashed];
+"60d" -> "60c";
+"60d" -> "603" [style = dashed];
+"60c" -> "5fd";
+"60c" -> "5c2" [style = dashed];
+"610" -> "60f";
+"610" -> "602" [style = dashed];
+"603" -> "600";
+"603" -> "602" [style = dashed];
+"611" -> "5ca";
+"611" -> "608" [style = dashed];
+"5fd" -> "5fc";
+"5fd" -> "59a" [style = dashed];
+"5c2" -> "59a";
+"5c2" -> "5c1" [style = dashed];
+"60f" -> "60e";
+"60f" -> "59a" [style = dashed];
+"602" -> "59a";
+"602" -> "601" [style = dashed];
+"608" -> "59a";
+"608" -> "607" [style = dashed];
+"5ca" -> "5c9";
+"5ca" -> "59a" [style = dashed];
+"600" -> "5ff";
+"600" -> "59a" [style = dashed];
+"5ff" -> "5f0";
+"5ff" -> "59a" [style = dashed];
+"5c1" -> "59a";
+"5c1" -> "5c0" [style = dotted];
+"601" -> "5f6";
+"601" -> "59a" [style = dashed];
+"5c9" -> "59a";
+"5c9" -> "5c5" [style = dashed];
+"60e" -> "5c0";
+"60e" -> "5a3" [style = dotted];
+"5fc" -> "59a";
+"5fc" -> "5f0" [style = dashed];
+"607" -> "59a";
+"607" -> "5f6" [style = dashed];
+"5a3" -> "59a";
+"5a3" -> "59a" [style = dotted];
+"5c5" -> "5a4";
+"5c5" -> "59a" [style = dashed];
+"5c0" -> "5a4";
+"5c0" -> "59a" [style = dotted];
+"5f6" -> "59a";
+"5f6" -> "5a4" [style = dotted];
+"5f0" -> "59a";
+"5f0" -> "5a4" [style = dashed];
+"5a4" -> "59a";
+"5a4" -> "59a" [style = dotted];
+"59a" [label = "1"];
+}

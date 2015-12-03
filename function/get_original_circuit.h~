@@ -1,0 +1,13 @@
+#ifndef _GET_ORIGINAL_CIRCUIT_H
+#define _GET_ORIGINAL_CIRCUIT_H
+
+
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include "class/CircuitNode.h"
+
+void get_original_circuit(map<int, CircuitNode> &orNodeList, map<int, CircuitNode> &masterNodeList, map<int, int> &input_gate, map<int, int> &output_gate);
+
+#endif

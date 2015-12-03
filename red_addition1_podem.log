@@ -1,0 +1,6166 @@
+# PI: 4
+# PO: 10
+Input list:
+0 1 2 3 
+Output list:
+90 91 92 93 94 95 96 97 98 99 
+
+
+Circuit size = 85
+Circuit size = 368
+Circuit size = 447
+
+**start compute_cost:
+**start rem_max_red:
+
+(13, 1): 
+cost of current fault: 58
+start podem:
+
+**Current fault is testable!
+
+(11, 1): 
+cost of current fault: 41
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 1): 
+cost of current fault: 40
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 29
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(18, 0): 
+cost of current fault: 25
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(31, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 1): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(28, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+start podem:
+Current fault (28,0) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 74, cost = 11
+Time for compute_cost: 0.039
+
+
+(13, 1): 
+cost of current fault: 47
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 1): 
+cost of current fault: 44
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 1): 
+cost of current fault: 36
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 32
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 0): 
+cost of current fault: 15
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(41, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(19, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 0): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(13, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(42, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(42, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+start podem:
+Current fault (42,0) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 69, cost = 5
+Time for compute_cost: 0.034
+
+
+(13, 1): 
+cost of current fault: 49
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 1): 
+cost of current fault: 39
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 1): 
+cost of current fault: 31
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 27
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 1): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 0): 
+cost of current fault: 10
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 1): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(19, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(13, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(40, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(36, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+start podem:
+**Current fault is testable!
+
+(34, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(46, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(45, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(43, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (43,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 66, cost = 3
+Time for compute_cost: 0.03
+
+
+(13, 1): 
+cost of current fault: 48
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 1): 
+cost of current fault: 36
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 27
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 0): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 0): 
+cost of current fault: 13
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(25, 1): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(13, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 0): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(46, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(45, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(27, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+start podem:
+Current fault (27,1) is untestable!
+**Current fault is untestable!
+after remove redundancy, circuit size = 63, cost = 3
+Time for compute_cost: 0.015
+
+
+(13, 1): 
+cost of current fault: 45
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 1): 
+cost of current fault: 35
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 0): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 1): 
+cost of current fault: 21
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 0): 
+cost of current fault: 20
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 0): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(18, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 1): 
+cost of current fault: 12
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(31, 1): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 0): 
+cost of current fault: 11
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(8, 0): 
+cost of current fault: 9
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(19, 1): 
+cost of current fault: 8
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(44, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(22, 1): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(13, 0): 
+cost of current fault: 7
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(9, 1): 
+cost of current fault: 6
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(41, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(36, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(34, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(32, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(26, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(23, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 1): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(20, 0): 
+cost of current fault: 5
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(11, 0): 
+cost of current fault: 4
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(46, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(45, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(21, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(12, 1): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(4, 0): 
+cost of current fault: 3
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(37, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(35, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+start podem:
+
+**Current fault is testable!
+
+(33, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(7, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+
+(5, 1): 
+cost of current fault: 2
+start parallel pattern fault simulation:
+*Current fault is testable!
+At the end of rem_red, circuit size = 63
+inter size = 63
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+Starting rar!
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(13, 1): 
+cost of current fault: 45
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(13,3)  (17,2)  (21,0)  (41,0)  (44,0)  (45,2)  (46,2)  (757,1)  (761,0)  
+MA_obs:
+
+MA_forced:
+(13,2)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(8, 1): 
+cost of current fault: 35
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,3)  (9,0)  (15,2)  (26,0)  (33,2)  (35,2)  (36,0)  (37,2)  (55,0)  (56,0)  (750,1)  (754,1)  (759,0)  
+MA_obs:
+
+MA_forced:
+(8,2)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(18, 0): 
+cost of current fault: 21
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(11,0)  (12,0)  (13,0)  (16,1)  (17,1)  (18,2)  (21,0)  (31,0)  (32,0)  (34,0)  (36,0)  (41,0)  (44,0)  (45,1)  (46,1)  (47,2)  (48,2)  (49,2)  (59,0)  (60,0)  (61,0)  (752,1)  (753,1)  (754,1)  (757,1)  (760,0)  (761,0)  
+MA_obs:
+
+MA_forced:
+(11,0)  (13,0)  (16,1)  (17,1)  (18,2)  (45,1)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 12
+(12,18)  (21,18)  (31,18)  (32,18)  (34,18)  (36,18)  (41,18)  (44,18)  (46,18)  (59,18)  (60,18)  (61,18)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 18), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 18), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(11, 1): 
+cost of current fault: 21
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(11,3)  (12,0)  (16,2)  (31,0)  (32,0)  (34,0)  (36,0)  (59,0)  (60,0)  (61,0)  (752,1)  (753,1)  (754,1)  (760,0)  
+MA_obs:
+(13,0)  (17,1)  (18,2)  (21,0)  (41,0)  (44,0)  (45,1)  (46,1)  (47,2)  (48,2)  (49,2)  (757,1)  (761,0)  
+MA_forced:
+(11,2)  (13,0)  (17,1)  (45,1)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(31, 0): 
+cost of current fault: 20
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(11,1)  (12,1)  (13,0)  (16,0)  (17,1)  (18,0)  (20,0)  (21,0)  (23,0)  (26,0)  (31,2)  (41,0)  (44,0)  (45,1)  (46,1)  (47,0)  (48,0)  (49,0)  (59,2)  (60,2)  (61,2)  (748,1)  (749,1)  (750,1)  (757,1)  (760,1)  (761,0)  
+MA_obs:
+
+MA_forced:
+(12,1)  (13,0)  (17,1)  (31,2)  (46,1)  (760,1)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 12
+(11,31)  (18,31)  (20,31)  (21,31)  (23,31)  (26,31)  (41,31)  (44,31)  (45,31)  (47,31)  (48,31)  (49,31)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 31), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 31), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 31), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(19, 0): 
+cost of current fault: 12
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,0)  (5,0)  (7,0)  (8,0)  (9,0)  (14,1)  (15,1)  (19,2)  (22,0)  (23,0)  (26,0)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (44,0)  (51,2)  (52,2)  (53,0)  (54,0)  (55,0)  (56,0)  (749,1)  (750,1)  (753,1)  (754,1)  (757,1)  (758,0)  (759,0)  
+MA_obs:
+
+MA_forced:
+(4,0)  (8,0)  (14,1)  (15,1)  (19,2)  (33,1)  (758,0)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 15
+(5,19)  (7,19)  (9,19)  (22,19)  (23,19)  (26,19)  (34,19)  (35,19)  (36,19)  (37,19)  (44,19)  (53,19)  (54,19)  (55,19)  (56,19)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 19), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 19), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 19), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(18, 1): 
+cost of current fault: 12
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(18,3)  (47,3)  (48,3)  (49,3)  
+MA_obs:
+
+MA_forced:
+(18,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(4, 1): 
+cost of current fault: 12
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,3)  (5,0)  (7,0)  (14,2)  (22,0)  (23,0)  (34,0)  (44,0)  (53,0)  (54,0)  (749,1)  (753,1)  (757,1)  (758,0)  
+MA_obs:
+(8,0)  (9,0)  (15,1)  (19,2)  (26,0)  (33,1)  (35,1)  (36,0)  (37,1)  (51,2)  (52,2)  (55,0)  (56,0)  (750,1)  (754,1)  (759,0)  
+MA_forced:
+(4,2)  (8,0)  (15,1)  (33,1)  (758,0)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(31, 1): 
+cost of current fault: 11
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(31,3)  (59,3)  (60,3)  (61,3)  
+MA_obs:
+
+MA_forced:
+(31,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(22, 0): 
+cost of current fault: 11
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,1)  (5,1)  (7,1)  (8,0)  (9,0)  (14,0)  (15,1)  (19,0)  (20,0)  (22,2)  (26,0)  (32,0)  (33,1)  (35,1)  (36,0)  (37,1)  (51,0)  (52,0)  (53,2)  (54,2)  (55,0)  (56,0)  (748,1)  (750,1)  (752,1)  (754,1)  (758,1)  (759,0)  
+MA_obs:
+
+MA_forced:
+(5,1)  (8,0)  (15,1)  (22,2)  (35,1)  (758,1)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 14
+(4,22)  (7,22)  (9,22)  (19,22)  (20,22)  (26,22)  (32,22)  (33,22)  (36,22)  (37,22)  (51,22)  (52,22)  (55,22)  (56,22)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 22), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 22), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 22), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 22), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 22), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(8, 0): 
+cost of current fault: 9
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,2)  (9,1)  (15,3)  (33,3)  (35,3)  (37,3)  (55,1)  (56,1)  (759,1)  
+MA_obs:
+
+MA_forced:
+(8,2)  (759,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(19, 1): 
+cost of current fault: 8
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(19,3)  (51,3)  (52,3)  
+MA_obs:
+
+MA_forced:
+(19,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(44, 1): 
+cost of current fault: 7
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(44,3)  (757,2)  
+MA_obs:
+
+MA_forced:
+(44,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(44, 0): 
+cost of current fault: 7
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,1)  (5,1)  (7,1)  (8,0)  (9,0)  (13,1)  (14,0)  (15,1)  (17,0)  (18,0)  (19,0)  (20,0)  (21,1)  (22,1)  (23,0)  (26,0)  (31,0)  (32,0)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (41,1)  (44,2)  (45,0)  (46,0)  (47,0)  (48,0)  (49,0)  (51,0)  (52,0)  (53,1)  (54,1)  (55,0)  (56,0)  (59,0)  (60,0)  (61,0)  (748,1)  (749,1)  (750,1)  (752,1)  (753,1)  (754,1)  (757,3)  (758,1)  (759,0)  (761,1)  
+MA_obs:
+
+MA_forced:
+(7,1)  (8,0)  (15,1)  (21,1)  (37,1)  (41,1)  (44,2)  (758,1)  (759,0)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 62
+(0,41)  (4,41)  (4,44)  (5,41)  (5,44)  (7,41)  (9,41)  (9,44)  (13,41)  (13,44)  (18,41)  (18,44)  (19,41)  (19,44)  (20,41)  (20,44)  (22,41)  (22,44)  (23,41)  (23,44)  (26,41)  (26,44)  (31,41)  (31,44)  (32,41)  (32,44)  (33,41)  (33,44)  (34,41)  (34,44)  (35,41)  (35,44)  (36,41)  (36,44)  (45,41)  (45,44)  (46,41)  (46,44)  (47,41)  (47,44)  (48,41)  (48,44)  (49,41)  (49,44)  (51,41)  (51,44)  (52,41)  (52,44)  (53,41)  (53,44)  (54,41)  (54,44)  (55,41)  (55,44)  (56,41)  (56,44)  (59,41)  (59,44)  (60,41)  (60,44)  (61,41)  (61,44)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 41), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 44), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 44), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(41, 0): 
+cost of current fault: 7
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,0)  (9,0)  (13,1)  (15,1)  (17,0)  (18,0)  (20,0)  (21,1)  (23,0)  (26,0)  (31,0)  (32,0)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (41,2)  (45,0)  (46,0)  (47,0)  (48,0)  (49,0)  (55,0)  (56,0)  (59,0)  (60,0)  (61,0)  (748,1)  (749,1)  (750,1)  (752,1)  (753,1)  (754,1)  (759,0)  (761,1)  
+MA_obs:
+(4,1)  (5,1)  (7,1)  (14,0)  (19,0)  (22,1)  (44,2)  (51,0)  (52,0)  (53,1)  (54,1)  (757,3)  (758,1)  
+MA_forced:
+(7,1)  (8,0)  (15,1)  (21,1)  (37,1)  (41,2)  (758,1)  (759,0)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 22
+(9,41)  (13,41)  (18,41)  (20,41)  (23,41)  (26,41)  (31,41)  (32,41)  (33,41)  (34,41)  (35,41)  (36,41)  (45,41)  (46,41)  (47,41)  (48,41)  (49,41)  (55,41)  (56,41)  (59,41)  (60,41)  (61,41)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 41), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 41), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 41), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 41), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(22, 1): 
+cost of current fault: 7
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(22,3)  (53,3)  (54,3)  
+MA_obs:
+
+MA_forced:
+(22,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(13, 0): 
+cost of current fault: 7
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(13,2)  (17,3)  (21,1)  (45,3)  (46,3)  (761,1)  
+MA_obs:
+
+MA_forced:
+(13,2)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(9, 1): 
+cost of current fault: 6
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,0)  (9,3)  (15,1)  (33,1)  (35,1)  (37,1)  (55,3)  (56,3)  (759,0)  
+MA_obs:
+
+MA_forced:
+(9,2)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(41, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(41,3)  
+MA_obs:
+(4,1)  (5,1)  (7,1)  (14,0)  (19,0)  (20,0)  (32,0)  (44,3)  (51,0)  (52,0)  (748,1)  (752,1)  (757,2)  (758,1)  
+MA_forced:
+(7,1)  (41,2)  (758,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(36, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(36,3)  (754,2)  
+MA_obs:
+
+MA_forced:
+(36,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(36, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,1)  (9,1)  (11,1)  (12,1)  (13,0)  (15,0)  (16,0)  (17,1)  (18,0)  (19,0)  (20,0)  (21,0)  (22,0)  (23,0)  (26,0)  (31,1)  (32,0)  (33,0)  (34,0)  (35,0)  (36,2)  (37,0)  (41,0)  (44,0)  (45,1)  (46,1)  (47,0)  (48,0)  (49,0)  (51,0)  (52,0)  (53,0)  (54,0)  (55,1)  (56,1)  (59,1)  (60,1)  (61,1)  (748,1)  (749,1)  (750,1)  (752,1)  (753,1)  (754,3)  (757,1)  (759,1)  (760,1)  (761,0)  
+MA_obs:
+
+MA_forced:
+(9,1)  (12,1)  (13,0)  (17,1)  (31,1)  (36,2)  (46,1)  (56,1)  (61,1)  (759,1)  (760,1)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 53
+(1,31)  (8,31)  (8,36)  (9,31)  (11,31)  (11,36)  (18,31)  (18,36)  (19,31)  (19,36)  (20,31)  (20,36)  (21,31)  (21,36)  (22,31)  (22,36)  (23,31)  (23,36)  (26,31)  (26,36)  (32,36)  (33,31)  (33,36)  (34,36)  (35,31)  (35,36)  (37,31)  (37,36)  (41,31)  (41,36)  (44,31)  (44,36)  (45,31)  (45,36)  (47,31)  (47,36)  (48,31)  (48,36)  (49,31)  (49,36)  (51,31)  (51,36)  (52,31)  (52,36)  (53,31)  (53,36)  (54,31)  (54,36)  (55,31)  (55,36)  (56,31)  (59,36)  (60,36)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 36), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 36), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(34, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(34,3)  (753,2)  
+MA_obs:
+
+MA_forced:
+(34,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(34, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,1)  (5,1)  (7,1)  (8,0)  (9,0)  (11,1)  (12,1)  (13,0)  (14,0)  (15,1)  (16,0)  (17,1)  (18,0)  (19,0)  (20,0)  (21,0)  (22,1)  (23,0)  (26,0)  (31,1)  (32,0)  (33,1)  (34,2)  (35,1)  (36,0)  (37,1)  (41,0)  (44,0)  (45,1)  (46,1)  (47,0)  (48,0)  (49,0)  (51,0)  (52,0)  (53,1)  (54,1)  (55,0)  (56,0)  (59,1)  (60,1)  (61,1)  (748,1)  (749,1)  (750,1)  (752,1)  (753,3)  (754,1)  (757,1)  (758,1)  (759,0)  (760,1)  (761,0)  
+MA_obs:
+
+MA_forced:
+(5,1)  (8,0)  (12,1)  (13,0)  (15,1)  (17,1)  (22,1)  (31,1)  (34,2)  (35,1)  (46,1)  (54,1)  (60,1)  (758,1)  (759,0)  (760,1)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 89
+(0,31)  (1,31)  (2,22)  (3,22)  (4,22)  (4,31)  (4,34)  (5,31)  (7,22)  (7,31)  (7,34)  (8,31)  (9,22)  (9,31)  (9,34)  (11,22)  (11,31)  (11,34)  (12,22)  (13,22)  (18,22)  (18,31)  (18,34)  (19,22)  (19,31)  (19,34)  (20,22)  (20,31)  (20,34)  (21,22)  (21,31)  (21,34)  (22,31)  (23,31)  (23,34)  (26,22)  (26,31)  (26,34)  (31,22)  (32,22)  (32,34)  (33,22)  (33,31)  (33,34)  (35,31)  (36,22)  (36,34)  (37,22)  (37,31)  (37,34)  (41,22)  (41,31)  (41,34)  (44,22)  (44,31)  (44,34)  (45,22)  (45,31)  (45,34)  (46,22)  (47,22)  (47,31)  (47,34)  (48,22)  (48,31)  (48,34)  (49,22)  (49,31)  (49,34)  (51,22)  (51,31)  (51,34)  (52,22)  (52,31)  (52,34)  (53,31)  (53,34)  (54,31)  (55,22)  (55,31)  (55,34)  (56,22)  (56,31)  (56,34)  (59,22)  (59,34)  (60,22)  (61,22)  (61,34)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (2, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (3, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 34), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 34), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(32, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(32,3)  (752,2)  
+MA_obs:
+
+MA_forced:
+(32,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(32, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,0)  (5,0)  (7,0)  (8,0)  (9,0)  (11,1)  (12,1)  (13,0)  (14,1)  (15,1)  (16,0)  (17,1)  (18,0)  (19,1)  (20,0)  (21,0)  (22,0)  (23,0)  (26,0)  (31,1)  (32,2)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (41,0)  (44,0)  (45,1)  (46,1)  (47,0)  (48,0)  (49,0)  (51,1)  (52,1)  (53,0)  (54,0)  (55,0)  (56,0)  (59,1)  (60,1)  (61,1)  (748,1)  (749,1)  (750,1)  (752,3)  (753,1)  (754,1)  (757,1)  (758,0)  (759,0)  (760,1)  (761,0)  
+MA_obs:
+
+MA_forced:
+(4,0)  (8,0)  (12,1)  (13,0)  (14,1)  (15,1)  (17,1)  (19,1)  (31,1)  (32,2)  (33,1)  (46,1)  (52,1)  (59,1)  (758,0)  (759,0)  (760,1)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 89
+(0,31)  (1,31)  (2,19)  (3,19)  (4,31)  (5,19)  (5,31)  (5,32)  (7,19)  (7,31)  (7,32)  (8,31)  (9,19)  (9,31)  (9,32)  (11,19)  (11,31)  (11,32)  (12,19)  (13,19)  (18,19)  (18,31)  (18,32)  (19,31)  (20,31)  (20,32)  (21,19)  (21,31)  (21,32)  (22,19)  (22,31)  (22,32)  (23,19)  (23,31)  (23,32)  (26,19)  (26,31)  (26,32)  (31,19)  (33,31)  (34,19)  (34,32)  (35,19)  (35,31)  (35,32)  (36,19)  (36,32)  (37,19)  (37,31)  (37,32)  (41,19)  (41,31)  (41,32)  (44,19)  (44,31)  (44,32)  (45,19)  (45,31)  (45,32)  (46,19)  (47,19)  (47,31)  (47,32)  (48,19)  (48,31)  (48,32)  (49,19)  (49,31)  (49,32)  (51,31)  (51,32)  (52,31)  (53,19)  (53,31)  (53,32)  (54,19)  (54,31)  (54,32)  (55,19)  (55,31)  (55,32)  (56,19)  (56,31)  (56,32)  (59,19)  (60,19)  (60,32)  (61,19)  (61,32)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (2, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (3, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 31), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 31), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 32), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 32), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(26, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(26,3)  (750,2)  
+MA_obs:
+
+MA_forced:
+(26,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(26, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,1)  (9,1)  (11,0)  (12,0)  (13,0)  (15,0)  (16,1)  (17,1)  (18,1)  (19,0)  (20,0)  (21,0)  (22,0)  (23,0)  (26,2)  (31,0)  (32,0)  (33,0)  (34,0)  (35,0)  (36,0)  (37,0)  (41,0)  (44,0)  (45,1)  (46,1)  (47,1)  (48,1)  (49,1)  (51,0)  (52,0)  (53,0)  (54,0)  (55,1)  (56,1)  (59,0)  (60,0)  (61,0)  (748,1)  (749,1)  (750,3)  (752,1)  (753,1)  (754,1)  (757,1)  (759,1)  (760,0)  (761,0)  
+MA_obs:
+
+MA_forced:
+(9,1)  (11,0)  (13,0)  (16,1)  (17,1)  (18,1)  (26,2)  (45,1)  (49,1)  (55,1)  (759,1)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 53
+(1,18)  (8,18)  (8,26)  (9,18)  (12,18)  (12,26)  (19,18)  (19,26)  (20,26)  (21,18)  (21,26)  (22,18)  (22,26)  (23,26)  (31,18)  (31,26)  (32,18)  (32,26)  (33,18)  (33,26)  (34,18)  (34,26)  (35,18)  (35,26)  (36,18)  (36,26)  (37,18)  (37,26)  (41,18)  (41,26)  (44,18)  (44,26)  (46,18)  (46,26)  (47,26)  (48,26)  (51,18)  (51,26)  (52,18)  (52,26)  (53,18)  (53,26)  (54,18)  (54,26)  (55,18)  (56,18)  (56,26)  (59,18)  (59,26)  (60,18)  (60,26)  (61,18)  (61,26)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 26), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 26), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 26), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 26), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 26), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 26), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(23, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(23,3)  (749,2)  
+MA_obs:
+
+MA_forced:
+(23,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(23, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,1)  (5,1)  (7,1)  (8,0)  (9,0)  (11,0)  (12,0)  (13,0)  (14,0)  (15,1)  (16,1)  (17,1)  (18,1)  (19,0)  (20,0)  (21,0)  (22,1)  (23,2)  (26,0)  (31,0)  (32,0)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (41,0)  (44,0)  (45,1)  (46,1)  (47,1)  (48,1)  (49,1)  (51,0)  (52,0)  (53,1)  (54,1)  (55,0)  (56,0)  (59,0)  (60,0)  (61,0)  (748,1)  (749,3)  (750,1)  (752,1)  (753,1)  (754,1)  (757,1)  (758,1)  (759,0)  (760,0)  (761,0)  
+MA_obs:
+
+MA_forced:
+(5,1)  (8,0)  (11,0)  (13,0)  (15,1)  (16,1)  (17,1)  (18,1)  (22,1)  (23,2)  (35,1)  (45,1)  (48,1)  (53,1)  (758,1)  (759,0)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 89
+(0,18)  (1,18)  (2,22)  (3,22)  (4,18)  (4,22)  (4,23)  (5,18)  (7,18)  (7,22)  (7,23)  (8,18)  (9,18)  (9,22)  (9,23)  (11,22)  (12,18)  (12,22)  (12,23)  (13,22)  (18,22)  (19,18)  (19,22)  (19,23)  (20,22)  (20,23)  (21,18)  (21,22)  (21,23)  (22,18)  (26,22)  (26,23)  (31,18)  (31,22)  (31,23)  (32,18)  (32,22)  (32,23)  (33,18)  (33,22)  (33,23)  (34,18)  (34,23)  (35,18)  (36,18)  (36,22)  (36,23)  (37,18)  (37,22)  (37,23)  (41,18)  (41,22)  (41,23)  (44,18)  (44,22)  (44,23)  (45,22)  (46,18)  (46,22)  (46,23)  (47,22)  (47,23)  (48,22)  (49,22)  (49,23)  (51,18)  (51,22)  (51,23)  (52,18)  (52,22)  (52,23)  (53,18)  (54,18)  (54,23)  (55,18)  (55,22)  (55,23)  (56,18)  (56,22)  (56,23)  (59,18)  (59,22)  (59,23)  (60,18)  (60,22)  (60,23)  (61,18)  (61,22)  (61,23)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (2, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (3, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (20, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 22), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 23), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 22), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 23), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(20, 1): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(20,3)  (748,2)  
+MA_obs:
+
+MA_forced:
+(20,2)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(20, 0): 
+cost of current fault: 5
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,0)  (5,0)  (7,0)  (8,0)  (9,0)  (11,0)  (12,0)  (13,0)  (14,1)  (15,1)  (16,1)  (17,1)  (18,1)  (19,1)  (20,2)  (21,0)  (22,0)  (23,0)  (26,0)  (31,0)  (32,0)  (33,1)  (34,0)  (35,1)  (36,0)  (37,1)  (41,0)  (44,0)  (45,1)  (46,1)  (47,1)  (48,1)  (49,1)  (51,1)  (52,1)  (53,0)  (54,0)  (55,0)  (56,0)  (59,0)  (60,0)  (61,0)  (748,3)  (749,1)  (750,1)  (752,1)  (753,1)  (754,1)  (757,1)  (758,0)  (759,0)  (760,0)  (761,0)  
+MA_obs:
+
+MA_forced:
+(4,0)  (8,0)  (11,0)  (13,0)  (14,1)  (15,1)  (16,1)  (17,1)  (18,1)  (19,1)  (20,2)  (33,1)  (45,1)  (47,1)  (51,1)  (758,0)  (759,0)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 89
+(0,18)  (1,18)  (2,19)  (3,19)  (4,18)  (5,18)  (5,19)  (5,20)  (7,18)  (7,19)  (7,20)  (8,18)  (9,18)  (9,19)  (9,20)  (11,19)  (12,18)  (12,19)  (12,20)  (13,19)  (18,19)  (19,18)  (21,18)  (21,19)  (21,20)  (22,18)  (22,19)  (22,20)  (23,19)  (23,20)  (26,19)  (26,20)  (31,18)  (31,19)  (31,20)  (32,18)  (32,20)  (33,18)  (34,18)  (34,19)  (34,20)  (35,18)  (35,19)  (35,20)  (36,18)  (36,19)  (36,20)  (37,18)  (37,19)  (37,20)  (41,18)  (41,19)  (41,20)  (44,18)  (44,19)  (44,20)  (45,19)  (46,18)  (46,19)  (46,20)  (47,19)  (48,19)  (48,20)  (49,19)  (49,20)  (51,18)  (52,18)  (52,20)  (53,18)  (53,19)  (53,20)  (54,18)  (54,19)  (54,20)  (55,18)  (55,19)  (55,20)  (56,18)  (56,19)  (56,20)  (59,18)  (59,19)  (59,20)  (60,18)  (60,19)  (60,20)  (61,18)  (61,19)  (61,20)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (1, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (2, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (3, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (7, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (8, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (9, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (11, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (12, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (13, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (18, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (19, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (21, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (23, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (26, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (31, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (32, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (33, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (34, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (35, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (36, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (37, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (41, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (44, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (45, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (46, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (47, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (48, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 19), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (49, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (51, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 18), new lineNumber = 762
+ns_value = 1, nd_value = 1
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (52, 20), new lineNumber = 762
+ns_value = 1, nd_value = 2
+wa_value = 0
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (53, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (54, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (55, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (56, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (59, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (60, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 18), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 19), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+
+isTestable_wa = 1
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (61, 20), new lineNumber = 762
+ns_value = 0, nd_value = 2
+wa_value = 1
+
+isTestable_wa = 1
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(11, 0): 
+cost of current fault: 4
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(11,2)  (12,1)  (16,3)  (760,1)  
+MA_obs:
+(13,0)  (17,1)  (18,3)  (21,0)  (31,1)  (41,0)  (44,0)  (45,1)  (46,1)  (47,3)  (48,3)  (49,3)  (59,1)  (60,1)  (61,1)  (757,1)  (761,0)  
+MA_forced:
+(11,2)  (13,0)  (17,1)  (45,1)  (760,1)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(46, 1): 
+cost of current fault: 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(13,1)  (17,0)  (18,0)  (20,0)  (21,1)  (23,0)  (26,0)  (45,0)  (46,3)  (47,0)  (48,0)  (49,0)  (748,1)  (749,1)  (750,1)  (761,1)  
+MA_obs:
+(11,1)  (12,1)  (16,0)  (31,3)  (59,3)  (60,3)  (61,3)  (760,1)  
+MA_forced:
+(12,1)  (13,1)  (17,0)  (46,2)  (760,1)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(45, 1): 
+cost of current fault: 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(13,1)  (17,0)  (21,1)  (31,0)  (32,0)  (34,0)  (36,0)  (45,3)  (46,0)  (59,0)  (60,0)  (61,0)  (752,1)  (753,1)  (754,1)  (761,1)  
+MA_obs:
+(11,0)  (12,0)  (16,1)  (18,3)  (47,3)  (48,3)  (49,3)  (760,0)  
+MA_forced:
+(11,0)  (13,1)  (16,1)  (17,0)  (45,2)  (760,0)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(21, 1): 
+cost of current fault: 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(13,0)  (17,1)  (21,3)  (45,1)  (46,1)  (761,0)  
+MA_obs:
+(4,1)  (5,1)  (7,1)  (8,0)  (9,0)  (14,0)  (15,1)  (19,0)  (20,0)  (22,1)  (26,0)  (32,0)  (33,1)  (35,1)  (36,0)  (37,1)  (41,3)  (44,3)  (51,0)  (52,0)  (53,1)  (54,1)  (55,0)  (56,0)  (748,1)  (750,1)  (752,1)  (754,1)  (757,2)  (758,1)  (759,0)  
+MA_forced:
+(7,1)  (8,0)  (15,1)  (21,2)  (37,1)  (758,1)  (759,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(12, 1): 
+cost of current fault: 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(11,0)  (12,3)  (16,1)  (760,0)  
+MA_obs:
+(13,0)  (17,1)  (18,1)  (21,0)  (31,3)  (41,0)  (44,0)  (45,1)  (46,1)  (47,1)  (48,1)  (49,1)  (59,3)  (60,3)  (61,3)  (757,1)  (761,0)  
+MA_forced:
+(12,2)  (13,0)  (17,1)  (46,1)  (760,0)  (761,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(4, 0): 
+cost of current fault: 3
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,2)  (5,1)  (7,1)  (14,3)  (758,1)  
+MA_obs:
+(8,0)  (9,0)  (15,1)  (19,3)  (22,1)  (26,0)  (33,1)  (35,1)  (36,0)  (37,1)  (51,3)  (52,3)  (53,1)  (54,1)  (55,0)  (56,0)  (750,1)  (754,1)  (759,0)  
+MA_forced:
+(4,2)  (8,0)  (15,1)  (33,1)  (758,1)  (759,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(37, 1): 
+cost of current fault: 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,1)  (9,1)  (15,0)  (19,0)  (20,0)  (22,0)  (23,0)  (32,0)  (33,0)  (34,0)  (35,0)  (37,3)  (51,0)  (52,0)  (53,0)  (54,0)  (55,1)  (56,1)  (748,1)  (749,1)  (752,1)  (753,1)  (759,1)  
+MA_obs:
+(4,1)  (5,1)  (7,1)  (13,1)  (14,0)  (17,0)  (18,0)  (21,1)  (26,0)  (31,0)  (36,0)  (41,3)  (44,3)  (45,0)  (46,0)  (47,0)  (48,0)  (49,0)  (59,0)  (60,0)  (61,0)  (750,1)  (754,1)  (757,2)  (758,1)  (761,1)  
+MA_forced:
+(7,1)  (8,1)  (15,0)  (21,1)  (37,2)  (758,1)  (759,1)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(35, 1): 
+cost of current fault: 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,1)  (9,1)  (15,0)  (19,0)  (20,0)  (32,0)  (33,0)  (35,3)  (37,0)  (41,0)  (44,0)  (51,0)  (52,0)  (55,1)  (56,1)  (748,1)  (752,1)  (757,1)  (759,1)  
+MA_obs:
+(4,1)  (5,1)  (7,1)  (14,0)  (22,3)  (53,3)  (54,3)  (758,1)  
+MA_forced:
+(5,1)  (8,1)  (15,0)  (35,2)  (758,1)  (759,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(33, 1): 
+cost of current fault: 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(8,1)  (9,1)  (15,0)  (22,0)  (23,0)  (33,3)  (34,0)  (35,0)  (37,0)  (41,0)  (44,0)  (53,0)  (54,0)  (55,1)  (56,1)  (749,1)  (753,1)  (757,1)  (759,1)  
+MA_obs:
+(4,0)  (5,0)  (7,0)  (14,1)  (19,3)  (51,3)  (52,3)  (758,0)  
+MA_forced:
+(4,0)  (8,1)  (14,1)  (15,0)  (33,2)  (758,0)  (759,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 100000
+
+(7, 1): 
+cost of current fault: 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,0)  (5,0)  (7,3)  (14,1)  (22,0)  (23,0)  (34,0)  (53,0)  (54,0)  (749,1)  (753,1)  (758,0)  
+MA_obs:
+(8,0)  (9,0)  (13,1)  (15,1)  (17,0)  (18,0)  (19,1)  (20,0)  (21,1)  (26,0)  (31,0)  (32,0)  (33,1)  (35,1)  (36,0)  (37,1)  (41,1)  (44,3)  (45,0)  (46,0)  (47,0)  (48,0)  (49,0)  (51,1)  (52,1)  (55,0)  (56,0)  (59,0)  (60,0)  (61,0)  (748,1)  (750,1)  (752,1)  (754,1)  (757,2)  (759,0)  (761,1)  
+MA_forced:
+(7,2)  (8,0)  (15,1)  (21,1)  (37,1)  (41,1)  (758,0)  (759,0)  (761,1)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 8
+(0,41)  (4,41)  (5,41)  (22,41)  (23,41)  (34,41)  (53,41)  (54,41)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (0, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+Current fault (762,1) is untestable!
+isTestable_wa = 0
+find alternative wires!
+
+
+current target fault: (7,1), cost = 2
+newly untestable wires: 2
+(7,1)  cost = 2
+
+last size = 63
+##Check newly untestable faults!
+current fault: (7,1), cost = 2
+Current fault (7,1) is untestable!
+after remove redundancy, circuit size = 64
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (4, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+Current fault (762,1) is untestable!
+isTestable_wa = 0
+find alternative wires!
+
+
+current target fault: (7,1), cost = 2
+newly untestable wires: 2
+(7,1)  cost = 2
+
+last size = 63
+##Check newly untestable faults!
+current fault: (7,1), cost = 2
+Current fault (7,1) is untestable!
+after remove redundancy, circuit size = 64
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (5, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+Current fault (762,1) is untestable!
+isTestable_wa = 0
+find alternative wires!
+
+
+current target fault: (7,1), cost = 2
+newly untestable wires: 2
+(7,1)  cost = 2
+
+last size = 63
+##Check newly untestable faults!
+current fault: (7,1), cost = 2
+Current fault (7,1) is untestable!
+after remove redundancy, circuit size = 64
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+*Current candidate wire is (22, 41), new lineNumber = 762
+ns_value = 0, nd_value = 1
+wa_value = 1
+Current fault (762,1) is untestable!
+isTestable_wa = 0
+find alternative wires!
+
+
+current target fault: (7,1), cost = 2
+newly untestable wires: 2
+(7,1)  cost = 2
+(37,1)  cost = 2
+
+last size = 63
+##Check newly untestable faults!
+current fault: (37,1), cost = 2
+Current fault (37,1) is untestable!
+after remove redundancy, circuit size = 64
+current fault: (7,1), cost = 2
+Current fault (7,1) is untestable!
+after remove redundancy, circuit size = 62
+circuit size is reduced, cost of this fault = 2
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 2
+
+(5, 1): 
+cost of current fault: 2
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step1. Compute the MAs of current fault:
+MA_act:
+(4,0)  (5,3)  (14,1)  (765,0)  
+MA_obs:
+(8,0)  (9,0)  (15,1)  (19,1)  (22,3)  (26,0)  (33,1)  (35,1)  (36,0)  (51,1)  (52,1)  (53,3)  (54,3)  (55,0)  (56,0)  (750,1)  (754,1)  (762,3)  (763,3)  (766,0)  
+MA_forced:
+(5,2)  (8,0)  (15,1)  (35,1)  (765,0)  (766,0)  
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step2. Construt the set of candadicate wires
+cand_set: 0
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+step3. Check the validality of all candadicate wires
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Coming into rar!
+first_cost = 2
+Circuit size = 62
+*********************************************
+rF	Val	ci	n	nT	gT	FI		FO
+0	4	1	0	1	0			4 5 
+0	4	1	1	1	0			8 9 
+0	4	1	2	1	0			11 12 
+0	4	1	3	1	0			13 21 
+0	4	1	4	2	1	0 		14 
+0	4	1	5	2	1	0 		22 
+0	4	1	8	2	1	1 		15 
+0	4	1	9	2	1	1 		55 56 
+0	4	1	11	2	1	2 		16 
+0	4	1	12	2	1	2 		31 
+0	4	1	13	2	1	3 		17 
+0	4	1	14	0	5	4 		19 
+0	4	1	15	0	5	8 		33 35 
+0	4	1	16	0	5	11 		18 
+0	4	1	17	0	5	13 		45 46 
+0	4	1	18	0	7	16 45 		47 48 49 
+0	4	1	19	0	7	14 33 		51 52 
+0	4	1	20	0	7	47 51 		748 
+0	4	1	21	2	1	3 		764 
+0	4	1	22	0	7	5 35 		762 763 
+0	4	1	23	0	7	48 53 		749 
+0	4	1	26	0	7	49 55 		750 
+0	4	1	31	0	7	12 46 		59 60 61 
+0	4	1	32	0	7	52 59 		752 
+0	4	1	33	2	1	15 		19 
+0	4	1	34	0	7	54 60 		753 
+0	4	1	35	2	1	15 		22 
+0	4	1	36	0	7	56 61 		754 
+0	4	1	45	2	1	17 		18 
+0	4	1	46	2	1	17 		31 
+0	4	1	47	2	1	18 		20 
+0	4	1	48	2	1	18 		23 
+0	4	1	49	2	1	18 		26 
+0	4	1	51	2	1	19 		20 
+0	4	1	52	2	1	19 		32 
+0	4	1	53	2	1	763 		23 
+0	4	1	54	2	1	763 		34 
+0	4	1	55	2	1	9 		26 
+0	4	1	56	2	1	9 		36 
+0	4	1	59	2	1	31 		32 
+0	4	1	60	2	1	31 		34 
+0	4	1	61	2	1	31 		36 
+0	4	1	90	3	11	748 		
+0	4	1	91	3	11	749 		
+0	4	1	92	3	11	750 		
+0	1	1	93	3	10			
+0	4	1	94	3	11	752 		
+0	4	1	95	3	11	753 		
+0	4	1	96	3	11	754 		
+0	1	1	97	3	10			
+0	1	1	98	3	10			
+0	4	1	99	3	11	757 		
+0	4	1	748	0	5	20 		90 
+0	4	1	749	0	5	23 		91 
+0	4	1	750	0	5	26 		92 
+0	4	1	752	0	5	32 		94 
+0	4	1	753	0	5	34 		95 
+0	4	1	754	0	5	36 		96 
+0	4	1	757	0	5	764 		99 
+0	4	1	762	2	1	22 		764 
+0	4	1	763	2	1	22 		53 54 
+0	4	1	764	0	7	21 762 		757 
+*********************************************
+
+Run logic simulation on the whole circuit:
+Final circuit size = 62

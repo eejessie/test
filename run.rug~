@@ -1,0 +1,10 @@
+
+./main_v3 ./files/or_ckt/adder_16.ckt ./files/br_ckt_new/brc_adder_16_em300.ckt ./files/br_blif_new/brc_adder_16_em300.blif 
+
+./main_v3 ./files/or_ckt/adder_16.ckt ./files/br_ckt_new/brc_adder_16_em300_ef20.ckt ./files/br_blif_new/brc_adder_16_em300_ef20.blif
+
+./main_v3 ./files/or_ckt/adder_16.ckt ./files/br_ckt_new/brc_adder_16_em300_ef40.ckt ./files/br_blif_new/brc_adder_16_em300_ef40.blif
+
+./main_v3 ./files/or_ckt/adder_16.ckt ./files/br_ckt_new/brc_adder_16_em300_ef60.ckt ./files/br_blif_new/brc_adder_16_em300_ef60.blif
+
+./main_v3 ./files/or_ckt/adder_16.ckt ./files/br_ckt_new/brc_adder_16_em300_ef80.ckt ./files/br_blif_new/brc_adder_16_em300_ef80.blif

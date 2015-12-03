@@ -1,0 +1,40 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  podem.h
+ *
+ *    Description: 
+ *
+ *        Version:  1.0
+ *        Created:  11/08/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu
+ *
+ * =====================================================================================
+ */
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+
+#ifndef PODEM_H
+#define PODEM_H
+
+
+	int podem(map<int, CircuitNode> &masterNodeList, FaultList &objFault);
+
+
+#endif 
+

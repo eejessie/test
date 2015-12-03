@@ -1,0 +1,354 @@
+/*
+ * =====================================================================================
+ *
+ *       Filename:  merge_circuit.cc
+ *
+ *    Description:  This function merges the original circuit and the boolean relation 
+ *					circuit
+ *
+ *        Version:  1.0
+ *        Created:  2/07/2014
+ *       Revision:  none
+ *       Compiler:  gcc
+ *
+ *         Author:  Yi Wu <eejessie@sjtu.edu.cn>
+ *
+ * =====================================================================================
+ */
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+
+
+using namespace std;
+
+// #####   HEADER FILE INCLUDES   ################################################### 
+
+// This file contains the tables which are looked up for determinig the output.
+
+#ifndef LOGIC_TABLES_H_
+#include "include/logic_tables.h"
+#endif
+
+// Global constant definitions.
+
+#ifndef GLOBAL_DEFINES_H_
+#include "include/global_defines.h"
+#endif
+
+
+#include "class/CircuitNode.h"         // This class stores information about each node in the circuit.
+
+
+extern int numPI;
+extern int numPO;
+extern vector<int> inputList;
+extern vector<int> outputList; 
+
+
+namespace nameSpace_ATPG {
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  merge_circuit
+ *  Description:  The function takes in the original circuit and the boolean relation
+ *           	  circuit and merge them as a complete connected circuit.
+ * =====================================================================================
+ */
+void upd_fanin(map<int, CircuitNode> &brNodeList_m, CircuitNode &node, int line, int newline)
+{
+	map<int, CircuitNode>::iterator itrm;
+	set<int>::iterator itrs;
+
+	for(itrs = node.listFanIn.begin(); itrs != node.listFanIn.end(); itrs++)
+	{
+		for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+		{
+			if((*itrs) == itrm->second.lineNumber)
+			{	
+					itrm->second.listFanOut.erase(line);
+					itrm->second.listFanOut.insert(newline);
+			}
+		}						
+	}	
+		
+}
+
+void upd_fanout(map<int, CircuitNode> &brNodeList_m, CircuitNode &node, int line, int newline)
+{
+	map<int, CircuitNode>::iterator itrm;
+	set<int>::iterator itrs;
+
+	for(itrs = node.listFanOut.begin(); itrs != node.listFanOut.end(); itrs++)
+	{
+		for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+		{
+			if((*itrs) == itrm->second.lineNumber)
+			{	
+					itrm->second.listFanIn.erase(line);
+					itrm->second.listFanIn.insert(newline);
+			}
+		}						
+	}			
+}
+
+//change_lineNumber
+void change_lineNumber(int line, int maxLineNumber, map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m)
+{
+	map<int, CircuitNode>::iterator itrm;
+	int newline = maxLineNumber + 1;
+
+	for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+	{			
+		if(line == itrm->second.lineNumber)
+			switch(itrm->second.nodeType)
+			{
+				case PI:
+					upd_fanout(brNodeList_m, itrm->second, line, newline);
+				case GT:
+					upd_fanin(brNodeList_m, itrm->second, line, newline);
+					upd_fanout(brNodeList_m, itrm->second, line, newline);
+				case FB:
+					upd_fanin(brNodeList_m, itrm->second, line, newline);
+					upd_fanout(brNodeList_m, itrm->second, line, newline);
+				case PO:
+					upd_fanin(brNodeList_m, itrm->second, line, newline);
+			}
+
+		itrm->second.lineNumber = newline;
+	}
+			
+}
+
+//Check whether line is in a vector containing CircuitNode.
+int find_vector(vector<int> &outputList, int line)
+{
+	for(int i=0; i<outputList.size(); i++)
+		if(line == outputList[i])
+			return 1;
+
+	return 0;
+}
+
+//merge_circuit
+int merge_circuit(map<int, CircuitNode> &masterNodeList_m, map<int, CircuitNode> &orNodeList_m, map<int, CircuitNode> &brNodeList_m)
+{
+	map<int, CircuitNode>::iterator itrm, itrm1;
+	set<int>::iterator itrs;
+	
+	itrm = orNodeList_m.end();
+	itrm--;
+	int maxLineNumber1=itrm->second.lineNumber;
+
+	itrm1 = brNodeList_m.end();
+	itrm1--;
+	int maxLineNumber2=itrm1->second.lineNumber;
+
+	int maxLineNumber;
+	if(maxLineNumber1 > maxLineNumber2)
+		maxLineNumber = maxLineNumber1;
+	else
+		maxLineNumber = maxLineNumber2;
+
+	//cout<<"maxLineNumber = "<<maxLineNumber<<endl;
+
+
+	//Find nodes in brNodeList which have same line number as nodes in orNodeList, and change it to another number.
+	//Then update the corresponding fanin and fanout list (change_lineNumber).
+	int flag = 0;
+	for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+	{
+		int line = itrm->second.lineNumber;
+
+		//cout<<"Current node is "<<line<<endl;
+
+		//If the current node is the primary output of the original circuit, then skip.
+		flag = 0;
+		for(int k=0; k<outputList.size(); k++)
+			if(line == outputList[k])
+			{
+				flag = 1;
+				break;
+			}
+		if(flag == 1)
+			continue;
+
+		for(itrm1 = orNodeList_m.begin(); itrm1 != orNodeList_m.end(); itrm1++)
+			if(line == itrm1->second.lineNumber)
+			{					
+				//cout << "The current node "<<line<<" has same line number as node "<<orNodeList[j].lineNumber<<" in orNodeList"<<endl;
+				change_lineNumber(line, maxLineNumber, orNodeList_m, brNodeList_m);
+				break;
+			}
+				
+	}
+	//cout<<"flag1"<<endl;
+
+
+
+	//Get the input list of the BR circuit.
+	vector<int> brInputList;
+	for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+	{
+		if(itrm->second.nodeType == 1)              //PI
+			brInputList.push_back(itrm->second.lineNumber);
+	}
+/*	for(int i=0; i<brInputList.size(); i++)
+		cout<<brInputList[i]<<" ";
+	cout<<endl;*/
+
+	map<int, CircuitNode> tempOrNodeList = orNodeList_m;
+	map<int, CircuitNode> tempBrNodeList = brNodeList_m;
+    
+	for(int i=0; i<inputList.size(); i++)
+	{
+		//step 2
+		for(itrm1 = brNodeList_m.begin(); itrm1 != brNodeList_m.end(); itrm1++)
+			if(itrm1->second.lineNumber == brInputList[numPO + i])
+			{
+				itrm1->second.nodeType = FB;
+				itrm1->second.gateType = 1;
+				itrm1->second.listFanIn.insert(inputList[i]);
+				itrm1->second.numberFanIn = 1;
+				itrm1->second.circuitIndex = 3;
+			}
+				
+		//cout << "inputList ["<<i<<"] = "<<inputList[i]<<endl;
+		for(itrm = orNodeList_m.begin(); itrm != orNodeList_m.end(); itrm++)
+		{
+			if(itrm->second.lineNumber == inputList[i])
+			{
+				//step 1
+				set<int> tempFanOut = itrm->second.listFanOut;
+				itrm->second.listFanOut.clear();
+				itrm->second.listFanOut.insert(maxLineNumber + 1);
+				itrm->second.listFanOut.insert(brInputList[numPO + i]);
+				itrm->second.numberFanOut += 1;
+				itrm->second.circuitIndex = 3;
+			
+				//step 3
+				CircuitNode *addedNode;
+				addedNode = new CircuitNode(FB);
+				addedNode->gateType = 1;           //FB
+				addedNode->lineNumber = maxLineNumber + 1;
+				addedNode->listFanIn.insert(inputList[i]);
+				addedNode->listFanOut = tempFanOut;
+				addedNode->numberFanIn = 1;
+				addedNode->numberFanOut = tempFanOut.size();
+				addedNode->circuitIndex = 1;
+				orNodeList_m.insert(pair<int, CircuitNode>(addedNode->lineNumber, *addedNode));
+				delete addedNode;
+				
+
+				//step 4
+				for(itrs = tempFanOut.begin(); itrs != tempFanOut.end(); itrs++)
+					for(itrm1 = orNodeList_m.begin(); itrm1 != orNodeList_m.end(); itrm1++)
+					{
+						if(itrm1->second.lineNumber == *itrs)
+						{
+							itrm1->second.listFanIn.erase(inputList[i]);
+							itrm1->second.listFanIn.insert(maxLineNumber + 1);
+						}
+					}				
+			}				
+		}
+
+		itrm1 = orNodeList_m.end();
+		itrm1--;
+		maxLineNumber = itrm1->second.lineNumber;		
+
+	}
+
+	
+	//Put nodes in "orNodeList" and "brNodeList" into "masterNodeList".
+	masterNodeList_m.clear();
+ 	masterNodeList_m = orNodeList_m;
+	for(itrm = brNodeList_m.begin(); itrm != brNodeList_m.end(); itrm++)
+	{
+		for (int j=0; j<outputList.size(); j++)
+		{
+			flag = 0;
+			if(itrm->second.lineNumber == outputList[j])         //Not add the primary output nodes first.
+			{
+				flag = 1;
+				break;
+			}			
+		}
+		if (flag == 1)
+			continue;
+		masterNodeList_m.insert(pair<int, CircuitNode>(itrm->second.lineNumber, itrm->second));
+	}
+	//cout<<"flag2"<<endl;
+
+	//Handle the intermediate output nodes.
+	//Add the fanout information and change the node type to GT.
+	for(itrm = masterNodeList_m.begin(); itrm != masterNodeList_m.end(); itrm++)
+	{
+		int exist = find_vector(outputList, itrm->second.lineNumber);
+		if(!exist)
+			continue;
+		for(itrm1 = brNodeList_m.begin(); itrm1 != brNodeList_m.end(); itrm1++)
+		{
+			if(itrm1->second.lineNumber == itrm->second.lineNumber)
+			{	
+				set<int> tempFanOut = itrm1->second.listFanOut;
+				itrm->second.listFanOut = tempFanOut;
+				itrm->second.numberFanOut = tempFanOut.size();
+				itrm->second.nodeType = 0;                   //GT
+				itrm->second.listFanOut.clear();
+				for(itrs = tempFanOut.begin(); itrs != tempFanOut.end(); itrs++)
+				{
+					itrm->second.listFanOut.insert(*itrs);
+				}
+			}
+		}
+		itrm->second.circuitIndex = 4;
+		
+	}
+	//cout<<"flag3"<<endl;
+
+	
+	orNodeList_m = tempOrNodeList;
+	brNodeList_m = tempBrNodeList;
+
+	/*cout << "-------------------------------------------"<<endl;
+	cout << "After merging:"<<endl;
+	cout << "node\tnT\tgT\tFanIn\t\tFanOut"<<endl;
+	for (itrm = masterNodeList_m.begin(); itrm != masterNodeList_m.end(); itrm++)
+	{
+		cout << itrm->first<<"\t";
+		itrs = itrm->second.lineValue.begin();
+		cout <<itrm->second.nodeType<<"\t";
+		cout <<itrm->second.gateType<<"\t";
+		for(itrs = itrm->second.listFanIn.begin(); itrs != itrm->second.listFanIn.end(); itrs++)
+			cout <<*itrs<<" ";
+		cout << "\t\t";
+		for(itrs = itrm->second.listFanOut.begin(); itrs != itrm->second.listFanOut.end(); itrs++)
+			cout <<*itrs<<" ";
+		cout << endl;
+	}
+	cout << "-------------------------------------------"<<endl;*/
+
+	
+
+	return maxLineNumber;
+
+}
+
+
+
+
+
+
+}/* nameSpace_ATPG */
+

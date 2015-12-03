@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <set>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <math.h>
+#include <cassert>
+
+#include "../class/CircuitNode.h"
+#include "../class/FaultList.h"
+
+
+#ifndef RUN_FAULT_SIMULATION_H
+#define RUN_FAULT_SIMULATION_H
+
+void run_fault_simulation(map<int, CircuitNode> &masterNodeList_m, vector<FaultList> &original_sf, vector<FaultList> &leftFaultList, vector<string> &testPool);
+
+#endif
